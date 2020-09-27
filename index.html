@@ -13,24 +13,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
 
-    <!-- Style -->
+    <!-- Style, Script -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
 
 </head>
 
 <body>
     <div class="intro center_dis">
-        <img class="intro_img" src="img/intro/i1.png" alt="">
-        <h1 class="cl2 fz_300">Dice your <span class="fz_600">Big Project</span></h1>
+        <img class="intro_img tagline" src="img/intro/i1.png" alt="">
+        <h1 class="cl2 fz_300 tagline">Dice your <span class="fz_600">Big Project</span></h1>
     </div>
     <div class="intro center_dis">
-        <img class="intro_img" src="img/intro/i2.png" alt="">
-        <h1 class="cl2 fz_300">ถ้าหากตอนนี้คุณมีเงินอยู่ <span class="fz_600">$1 Billion</span></h1>
+        <img class="intro_img tagline" src="img/intro/i2.png" alt="">
+        <h1 class="cl2 fz_300 tagline">ถ้าหากตอนนี้คุณมีเงินอยู่ <span class="fz_600">$1 Billion</span></h1>
     </div>
     <div class="intro center_dis">
-        <img class="intro_img" src="img/intro/i3.png" alt="">
-        <h1 class="cl2 fz_300">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
+        <img class="intro_img tagline" src="img/intro/i3.png" alt="">
+        <h1 class="cl2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
     </div>
 
     <div>
@@ -38,8 +42,15 @@
     </div>
 
     <div class="arrow bounce">
-        <a href="#"><i class="cl4 fas fa-angle-down"></i></a>
-      </div>
+        <a><i class="cl4 fas fa-angle-down punchline"></i></a>
+    </div>
+
+    <script>
+        ScrollReveal().reveal('.headline');
+        ScrollReveal().reveal('.tagline', { delay: 500 });
+        ScrollReveal().reveal('.punchline', { delay: 1000 });
+    </script>
 </body>
+
 
 </html>
