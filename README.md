@@ -8,8 +8,8 @@ text here
 * [Website](https://suphakit01.github.io/BTS-since1999/)
 
 ## Built With
-* Python `3.7.1`
-    - pygal `2.0.0`
+* HTML5
+* JavaScript
 
 ## Authors
 * Suphakit  Nachom        61070250 - [suphakit01](https://github.com/suphakit01)
