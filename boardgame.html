@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game</title>
+
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
+
+    <!-- Style, Script -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <style>
+        .col-1 {
+            height: 5em;
+        }
+
+        .now {
+            position: absolute;
+            top: -1em;
+            left: 1.5em;
+            width: 3em;
+            height: 3em;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fulid my-5">
+            <div class="row">
+                <div class="col-3 p-5">
+                    <div class="money">
+                        <img class="buget_img" src="img/boards/coin.png" alt="">
+                        <h5 class="buget_value fz_600 ci1">100 billion</h5>
+                    </div>
+                    <div class="dice mt-5">
+                        <img class="dice_img" src="img/dice/d1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-9">
+
+                    <button class="btn btn-primary mb-5" @click="walkAway(1)">Walk 1</button>
+                    <button class="btn btn-primary mb-5" @click="walkAway(2)">Walk 2</button>
+                    <button class="btn btn-primary mb-5" @click="walkAway(3)">Walk 3</button>
+
+                    <div class="row">
+                        <div class="col-1 bg-danger" id="pos1"></div>
+                        <div class="col-1 bg-warning" id="pos2"></div>
+                        <div class="col-1 bg-danger" id="pos3"></div>
+                        <div class="col-1 bg-warning" id="pos4"></div>
+                        <div class="col-1 bg-danger" id="pos5"></div>
+                        <div class="col-1 bg-warning" id="pos6"></div>
+                        <div class="col-1 bg-danger" id="pos7"></div>
+                        <div class="col-1 bg-warning" id="pos8"></div>
+                        <div class="col-1 bg-danger" id="pos9"></div>
+                        <div class="col-1 bg-warning" id="pos10"></div>
+                        <div class="col-1 bg-danger" id="pos11"></div>
+                        <div class="col-1 bg-warning" id="pos12"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                before: 0,
+                count: 0,
+                message: 'Hello Vue!'
+            },
+            methods: {
+                walkAway: function (add) {
+                    // console.log()
+                    this.before = this.count;
+                    this.count += add;
+                    document.querySelector('#pos' + this.before).innerHTML = '';
+                    document.querySelector('#pos' + this.count).innerHTML = '<div class="now"></div>';
+                }
+            },
+            mounted() {
+                this.walkAway(1)
+            },
+        })
+    </script>
+</body>
+
+</html>

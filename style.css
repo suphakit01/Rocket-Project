@@ -12,33 +12,42 @@ body{
 
 
 /*------------------------------------------------------------ color */
-
-.cl1{
-    color: #333333 !important; /* <-- title1 */
+:root{
+    --ci1: #333333 !important;
+    --ci2: #666666 !important;
+    --ci3: #999999 !important;
+    --ci4: #cfcfcf !important;
+    --bg1: #FFFFFF !important;
+    --bg2: #EFEFEF !important;
+    --bg3: rgba(51, 51, 51, 0.45) !important;
 }
 
-.cl2{
-    color: #666666 !important; /* <-- title2 */
+.ci1{
+    color: var(--ci1); /* <-- title1 */
 }
 
-.cl3{
-    color: #999999 !important; /* <-- title3 */
+.ci2{
+    color: var(--ci2); /* <-- title2 */
 }
 
-.cl4{
-    color: #cfcfcf !important; /* <-- title3 */
+.ci3{
+    color: var(--ci3); /* <-- title3 */
+}
+
+.ci4{
+    color: var(--ci4); /* <-- title3 */
 }
 
 .bg1{
-    color: #FFFFFF !important; /* <-- Bg1 */
+    color: var(--bg1); /* <-- Bg1 */
 }
 
 .bg2{
-    color: #EFEFEF !important; /* <-- Bg2 */
+    color: var(--bg2); /* <-- Bg2 */
 }
 
-.bg2{
-    color: rgba(51, 51, 51, 0.45) !important; /* <-- Bg2 */
+.bg3{
+    color: var(--bg3); /* <-- Bg2 */
 }
 
 
@@ -71,7 +80,7 @@ body{
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: var(--bg1);
     text-align: center;
 }
 
@@ -109,4 +118,29 @@ a {
   60% {
     transform: translateY(-15px);
   }
+}
+
+/*------------------------------------------------------------ Board Game */
+
+
+.buget_img{
+    width: 4vw;
+}
+
+.money{
+    display: flex;
+    background-color: var(--ci4);
+    border-radius: 100em;
+    align-items: center;
+
+    /* width: 80%;
+    margin: 0 auto; */
+}
+
+.buget_value{
+    margin-left: 4%;
+}
+
+.dice_img{
+    width: 150px;
 }

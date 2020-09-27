@@ -7,8 +7,8 @@
         "badge":"ผู้กล้าแห่งดวงจันทร์",
         "budget":152,
         "currency":"billion",
-        "img":{"badge_img":"B1.jpg",
-            "project_img":"P1.jpg"
+        "img":{"badge_img":"b1.jpg",
+            "project_img":"p1.jpg"
         }
     },
     {
@@ -19,8 +19,8 @@
         "badge":"กาแล็กซี่ที่กว้างใหญ่",
         "budget":36,
         "currency":"million",
-        "img":{"badge_img":"B2.jpg",
-            "project_img":"P2.jpg"
+        "img":{"badge_img":"b2.jpg",
+            "project_img":"p2.jpg"
         }
     },
     {
@@ -31,8 +31,8 @@
         "badge":"เจ้าแห่งความเร็ว",
         "budget":9,
         "currency":"million",
-        "img":{"badge_img":"B3.jpg",
-            "project_img":"P3.jpg"
+        "img":{"badge_img":"b3.jpg",
+            "project_img":"p3.jpg"
         }
     },
     {
@@ -43,8 +43,8 @@
         "badge":"ความสูญเสียครั้งใหญ่",
         "budget":0,
         "currency":"-",
-        "img":{"badge_img":"B4.jpg",
-            "project_img":"P4.jpg"
+        "img":{"badge_img":"b4.jpg",
+            "project_img":"p4.jpg"
         }
     }
 ]
