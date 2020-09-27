@@ -17,6 +17,10 @@ body{
     --ci2: #666666 !important;
     --ci3: #999999 !important;
     --ci4: #cfcfcf !important;
+    --chs1: #FFCC66 !important;
+    --chs2: #EA7B6C !important;
+    --chs3: #66B2D8 !important;
+    --chs4: #61AF61 !important;
     --bg1: #FFFFFF !important;
     --bg2: #EFEFEF !important;
     --bg3: rgba(51, 51, 51, 0.45) !important;
@@ -50,6 +54,37 @@ body{
     color: var(--bg3); /* <-- Bg2 */
 }
 
+.chs1{
+    background-color: var(--chs1) !important;
+    border-top: solid var(--ci1) 3px;
+    border-bottom: solid var(--ci1) 3px;
+    border-right: solid var(--ci1) 3px;
+}
+
+.chs2{
+    background-color: var(--chs2) !important;
+    border-top: solid var(--ci1) 3px;
+    border-bottom: solid var(--ci1) 3px;
+    border-right: solid var(--ci1) 3px;
+
+}
+
+.chs3{
+    background-color: var(--chs3) !important;
+    border-top: solid var(--ci1) 3px;
+    border-bottom: solid var(--ci1) 3px;
+    border-right: solid var(--ci1) 3px;
+
+}
+
+.chs4{
+    background-color: var(--chs4) !important;
+    border-top: solid var(--ci1) 3px;
+    border-bottom: solid var(--ci1) 3px;
+    border-right: solid var(--ci1) 3px;
+
+}
+
 
 /*------------------------------------------------------------ fonts */
 
@@ -80,18 +115,8 @@ body{
     left: 0;
     bottom: 0;
     width: 100%;
-    color: var(--bg1);
+    color: var(--ci3);
     text-align: center;
-}
-
-.fade{
-    height: 300px;
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.205));
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
 }
 
 a {
@@ -144,3 +169,7 @@ a {
 .dice_img{
     width: 150px;
 }
+
+/*------------------------------------------------------------ Dice */
+
+  
