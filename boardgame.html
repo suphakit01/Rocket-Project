@@ -52,6 +52,10 @@
     <div id="app">
         <div class="container-fulid my-5">
             <div class="row">
+
+<!----------------------------------------------------------------------------->
+<!--------------------------------------------------------------------- Left -->
+
                 <div class="col-3 p-5">
                     <div class="money">
                         <img class="buget_img" src="img/boards/coin.png" alt="">
@@ -63,6 +67,10 @@
                         </a>
                     </div>
                 </div>
+
+<!------------------------------------------------------------------------------>
+<!--------------------------------------------------------------------- Board -->
+
                 <div class="col-9">
 
                     <!-- <button class="btn btn-primary mb-5" @click="walkAway(1)">Walk 1</button>-->
@@ -86,30 +94,53 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                before: 0,
-                count: 0,
-                message: 'Hello Vue!'
-            },
-            methods: {
-                walkAway: function (add) {
-                    // console.log()
-                    this.before = this.count;
-                    this.count += add;
-                    document.querySelector('#pos' + this.before).innerHTML = '';
-                    document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
-                }
-            },
-            mounted() {
-                this.walkAway(1)
-            },
-        })
-    </script>
 </body>
+
+<!----------------------------------------------------------------------------->
+<!--------------------------------------------------------------------- Vue -->
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            before: 0,
+            count: 0,
+            message: 'Hello Vue!'
+        },
+        methods: {
+            walkAway: function (add) {
+                // console.log()
+                this.before = this.count;
+                this.count += add;
+                document.querySelector('#pos' + this.before).innerHTML = '';
+                document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
+            }
+        },
+        mounted() {
+            this.walkAway(1)
+        },
+    })
+</script>
+
+<!----------------------------------------------------------------------------->
+<!--------------------------------------------------------------------- JSON -->
+
+<script>
+    let requestURL = "superheroes.json";
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var myArr = JSON.parse(request.responseText);
+            myFunction(myArr);
+        }
+    };
+    request.open("GET", requestURL, true);
+    request.send();
+
+</script>
+
+<!---------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------- Roll Dice -->
 
 <script>
 
