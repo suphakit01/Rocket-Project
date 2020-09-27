@@ -6,17 +6,30 @@ body{
 
 /* color */
 
-.ct1{
+.cl1{
     color: #333333; /* <-- title1 */
 }
 
-.ct2{
-    color: #333333;
+.cl2{
+    color: #666666; /* <-- title2 */
 }
 
-.ct3{
-    color: #333333;
+.cl3{
+    color: #999999; /* <-- title3 */
 }
-.my_bg{
-    background-color: #EFEFEF;
+
+.bg1{
+    color: #FFFFFF; /* <-- Bg1 */
 }
+
+.bg2{
+    color: #EFEFEF; /* <-- Bg2 */
+}
+
+.bg2{
+    color: rgba(51, 51, 51, 0.45)/* <-- Bg2 */
+}
+
+
+
+
