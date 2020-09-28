@@ -44,7 +44,7 @@
                     <div class="money">
                         <!--  money status -->
                         <img class="buget_img" src="img/boards/coin.png" alt="">
-                        <h4 class="buget_value fz_600 ci1">{{ moneyState }}</h4>
+                        <h4 class="buget_value fz_600 ci1">{{ money }}</h4>
                     </div>
 
                     <div class="dice mt-5">
@@ -145,8 +145,8 @@
         data: {
             before: 0,
             count: 0,
-            money: 100000000000,
-            moneyState: "100 Billion",
+            money: 400000000000,
+            moneyState: "400 Billion",
             dice: 0,
             data: [
                 {
@@ -155,7 +155,7 @@
                     highlight: "ยินดีด้วย คุณได้ส่งมนุษย์ไปเหยียบดวงจันทร์เป็นคนแรกได้สำเร็จ นี่คือเวลาประวัติศาสตร์ที่โลกต้องจารึก!!!",
                     details: "Apollo 11 เป็นโครงการอวกาศที่มนุษย์ลงจอดบนดวงจันทร์ได้เป็นครั้งแรก โดยผู้บัญชาการนีลอาร์มสตรองและนักบินโมดูลดวงจันทร์ Buzz Aldrin จากลูกเรือชาวอเมริกันที่ลงจอดด้วย Apollo Lunar Module Eagle ซึ่ง นีล อาร์มสตรองได้กลายเป็นมนุษย์คนแรกที่ได้ก้าวขึ้นบนพื้นผิวดวงจันทร์",
                     badge: "ผู้กล้าแห่งดวงจันทร์",
-                    budget: 152,
+                    budget: 152000000000,
                     currency: "billion",
                     img: {
                         badge_img: "b1.svg",
@@ -168,7 +168,7 @@
                     highlight: "คุณได้สร้างกล้องโทรทรรศน์อวกาศฮับเบิลที่แม้ไม่ได้เป็นกล้องโทรทรรศน์อวกาศตัวแรกของโลก แต่มันเป็นหนึ่งในเครื่องมือวิทยาศาสตร์ที่สำคัญที่สุดในประวัติศาสตร์การศึกษาดาราศาสตร์!!!",
                     details: "กล้องโทรทรรศน์อวกาศฮับเบิล (อังกฤษ: Hubble Space Telescope) คือ กล้องโทรทรรศน์ในวงโคจรของโลกที่กระสวยอวกาศดิสคัฟเวอรีนำส่งขึ้นสู่วงโคจรเมื่อเดือนเมษายน ค.ศ. 1990 ตั้งชื่อตามนักดาราศาสตร์ชาวอเมริกันชื่อ เอ็ดวิน ฮับเบิล",
                     badge: "กาแล็กซี่ที่กว้างใหญ่",
-                    budget: 36,
+                    budget: 36000000,
                     currency: "million",
                     img: {
                         badge_img: "b2.svg",
@@ -181,7 +181,7 @@
                     highlight: "ยอดเยี่ยมมาก คุณได้สร้าง เครื่องบิน X15 เครื่องบินที่ถือสถิติความเร็วที่ไม่มีใครทำลายได้อีกเลยตลอด 50 ปีที่ผ่านมา",
                     details: "เครื่องบินความเร็วเหนือเสียงที่ดำเนินการโดยกองทัพสหรัฐอเมริกา โดยเป็นเครื่องบินที่เก็บบันทึกค่าความเร็วและระดับความสูงเมื่อถึงขอบอวกาศและส่งข้อมูลอันเป็นประโยชน์ที่ใช้ในการออกแบบเครื่องบินและยานอวกาศ",
                     badge: "เจ้าแห่งความเร็ว",
-                    budget: 9,
+                    budget: 9000000,
                     currency: "million",
                     img: {
                         badge_img: "b3.svg",
@@ -218,12 +218,10 @@
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
                 console.log(randomNumber)
                 this.walkAway(randomNumber)
-                this.showMoneyState()
+                this.moneyStateFn()
             },
-            showMoneyState: function () {
-                if (this.data[count-1].currency == "billion"){
-                    this.moneyState = (money%1000000000) + "Billion";
-                }
+            moneyStateFn: function () {
+                this.money = this.money - this.data[this.count - 1].budget
             }
         },
         mounted() {
