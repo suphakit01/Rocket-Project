@@ -148,15 +148,21 @@
                     <div class="modal-body">
                         <div class="row pr-5 pl-5">
                             <div class="col-6">
-                                <div class="sunray"
-                                    style="background-image: url('img/modals/sunray1.png');">
-                                    <img :src="'img/modals/p'+index+'.svg'" class=" mx-auto center_dis">
+                                <div class="sunray" style="background-image: url('img/modals/sunray1.png');">
+                                    <img :src="'img/modals/'+data[index].img.project_img" class="center_dis">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <h3 class="ci1 fz_600">{{ data[index].name }}</h3>
                                 <br>
                                 <p class="ci2 fz_300">{{ data[index].highlight }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                            </div>
+                            <div class="col-6">
+                                
                             </div>
                         </div>
                     </div>
@@ -192,7 +198,7 @@
                     currency: "billion",
                     img: {
                         badge_img: "b1.svg",
-                        project_img: "p1.jpg"
+                        project_img: "p1.svg"
                     }
                 },
                 {
@@ -205,7 +211,7 @@
                     currency: "million",
                     img: {
                         badge_img: "b2.svg",
-                        project_img: "p2.jpg"
+                        project_img: "p2.svg"
                     }
                 },
                 {
@@ -218,7 +224,7 @@
                     currency: "million",
                     img: {
                         badge_img: "b3.svg",
-                        project_img: "p3.jpg"
+                        project_img: "p3.svg"
                     }
                 },
                 {
@@ -231,7 +237,7 @@
                     currency: "-",
                     img: {
                         badge_img: "b4.svg",
-                        project_img: "p4.jpg"
+                        project_img: "p4.svg"
                     }
                 },
                 {
@@ -244,7 +250,7 @@
                     currency: "-",
                     img: {
                         badge_img: "b5.svg",
-                        project_img: "p5.jpg"
+                        project_img: "p5.svg"
                     }
                 },
                 {
@@ -257,7 +263,7 @@
                     currency: "-",
                     img: {
                         badge_img: "b6.svg",
-                        project_img: "p6.jpg"
+                        project_img: "p6.svg"
                     }
                 },
                 {
@@ -270,7 +276,7 @@
                     currency: "-",
                     img: {
                         badge_img: "b7.svg",
-                        project_img: "p7.jpg"
+                        project_img: "p7.svg"
                     }
                 },
                 {
@@ -283,7 +289,7 @@
                     currency: "million",
                     img: {
                         badge_img: "b8.svg",
-                        project_img: "p8.jpg"
+                        project_img: "p8.svg"
                     }
                 },
                 {
@@ -296,7 +302,7 @@
                     currency: "million",
                     img: {
                         badge_img: "b9.svg",
-                        project_img: "p9.jpg"
+                        project_img: "p9.svg"
                     }
                 },
                 {
@@ -309,7 +315,7 @@
                     currency: "million",
                     img: {
                         badge_img: "b10.svg",
-                        project_img: "p10.jpg"
+                        project_img: "p10.svg"
                     }
                 }
             ]

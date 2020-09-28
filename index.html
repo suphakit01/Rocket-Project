@@ -49,8 +49,7 @@
     </div>
     <div class="intro center_dis">
         <img class="intro_img tagline" src="img/intro/i3.png" alt="">
-            <h1 class="ci2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
-            <div href="boardgame.html">enter</div>
+        <h1 class="ci2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
     </div>
 
     <div>
@@ -61,10 +60,22 @@
         <a><i class="fas fa-angle-down punchline"></i></a>
     </div>
 
+    <div class="bounce">
+        <a href="boardgame.html">
+            <h1 class="text-center">Start</h1>
+        </a>
+    </div>
+
     <script>
         ScrollReveal().reveal('.headline');
         ScrollReveal().reveal('.tagline', { delay: 500 });
         ScrollReveal().reveal('.punchline', { delay: 1000 });
+
+        $(window).scroll(function() {
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                document.querySelector('.arrow').style.display = 'none'
+            }
+        });
     </script>
 </body>
 
