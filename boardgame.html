@@ -36,23 +36,23 @@
         <div class="container-fulid my-5">
             <div class="row">
 
-<!----------------------------------------------------------------------------->
-<!--------------------------------------------------------------------- Left -->
+                <!----------------------------------------------------------------------------->
+                <!--------------------------------------------------------------------- Left -->
 
                 <div class="col-md-3 p-5">
                     <div class="money">
                         <img class="buget_img" src="img/boards/coin.png" alt="">
-                        <h4 class="buget_value fz_600 ci1">100 billion</h4>
+                        <h4 class="buget_value fz_600 ci1">{{ money }}</h4>
                     </div>
                     <div class="dice mt-5">
-                        <a onclick="roll()">
-                            <img @click="walkAway(1)" id="dice" src="img/dice/d1.svg">
+                        <a @click="roll">
+                            <img id="dice" src="img/dice/d1.svg">
                         </a>
                     </div>
                 </div>
 
-<!------------------------------------------------------------------------------>
-<!--------------------------------------------------------------------- Board -->
+                <!------------------------------------------------------------------------------>
+                <!--------------------------------------------------------------------- Board -->
 
                 <div class="col-md-9">
 
@@ -61,12 +61,17 @@
                     <!--------------------------------------------------------------------- row1 -->
 
                     <div class="pt-5 row">
-                        <div class="col-4"></div>
+                        <div class="col-3"></div>
+                        <div class="col-1 chs4 border1" id="pos0">start</div>
                         <div class="col-1 chs1 border1" id="pos1">1</div>
-                        <div class="col-1 chs2 border1" id="pos2">2</div>
+                        <div class="col-1 chs2 border1" id="pos2" style="background-image : url('img/modals/p2.svg');background-repeat: no-repeat;background-attachment: cover;">
+                            <!-- <img class="inner_img" src="img/modals/p2.svg" alt=""> -->
+                        </div>
                         <div class="col-1 chs3 border1" id="pos3">3</div>
                         <div class="col-1 chs2 border1" id="pos4">4</div>
-                        <div class="col-1 chs4 border1" id="pos5">5</div>
+                        <div class="col-1 chs4 border1" id="pos5">
+                            <img class="inner_img" src="img/modals/p5.svg" alt="">
+                        </div>
                         <div class="col-1 chs1 border1" id="pos6">6</div>
                         <div class="col-1 chs3 border2" style="border-top-right-radius: 100%;"></div>
                         <div class="col-1"></div>
@@ -110,14 +115,14 @@
                         <div class="col-1 chs2 border4" style="border-bottom-left-radius: 100%;"></div>
                         <div class="col-1 chs3 border6" id="pos17">17</div>
                         <div class="col-1 chs1 border1" id="pos18">18</div>
-                        <div class="col-1 chs4 border2" id="pos19" style="border-top-right-radius: 100%;">19</div>
+                        <div class="col-1 chs4 border0" id="pos19" style="border-top-right-radius: 100%;">19</div>
                     </div>
 
                     <!--------------------------------------------------------------------- row5 -->
 
                     <div class="row">
                         <div class="col-4"></div>
-                        <div class="col-1 chs3 border0" id="pos20">20</div>
+                        <div class="col-1 chs3 border4" id="pos20">20</div>
                     </div>
                 </div>
             </div>
@@ -129,54 +134,37 @@
 <!--------------------------------------------------------------------- Vue -->
 
 <script>
+
     var app = new Vue({
         el: '#app',
         data: {
             before: 0,
             count: 0,
-            message: 'Hello Vue!'
+            money: 100000000000,
+            dice: 0,
+            data: []
         },
         methods: {
             walkAway: function (add) {
                 this.before = this.count;
                 this.count += add;
                 document.querySelector('#pos' + this.before).innerHTML = '';
+                if (this.count > 20) {
+                    this.count = 20
+                }
                 document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
+            },
+            roll: function () {
+                var randomNumber = Math.floor(Math.random() * 6) + 1;
+                var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+                console.log(randomNumber)
+                this.walkAway(randomNumber)
             }
         },
         mounted() {
-            this.walkAway(1)
+            this.walkAway(0);
         },
     })
-</script>
-
-<!----------------------------------------------------------------------------->
-<!--------------------------------------------------------------------- JSON -->
-
-<script>
-    let requestURL = "project.json";
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            var myPro = JSON.parse(request.responseText);
-            displayFn(myPro);
-        }
-    };
-    request.open("GET", requestURL, true);
-    request.send();
-
-</script>
-
-<!---------------------------------------------------------------------------------->
-<!--------------------------------------------------------------------- Roll Dice -->
-
-<script>
-
-    var sides = 6
-    function roll() {
-        var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-        var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-    }
 </script>
 
 </html>
