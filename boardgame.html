@@ -40,15 +40,20 @@
                 <!--------------------------------------------------------------------- Left -->
 
                 <div class="col-md-3 p-5">
+
                     <div class="money">
+                        <!--  money status -->
                         <img class="buget_img" src="img/boards/coin.png" alt="">
-                        <h4 class="buget_value fz_600 ci1">{{ money }}</h4>
+                        <h4 class="buget_value fz_600 ci1">{{ moneyState }}</h4>
                     </div>
+
                     <div class="dice mt-5">
+                        <!-- Dice -->
                         <a @click="roll">
                             <img id="dice" src="img/dice/d1.svg">
                         </a>
                     </div>
+
                 </div>
 
                 <!------------------------------------------------------------------------------>
@@ -64,13 +69,13 @@
                         <div class="col-3"></div>
                         <div class="col-1 chs4 border1" id="pos0">start</div>
                         <div class="col-1 chs1 border1" id="pos1">1</div>
-                        <div class="col-1 chs2 border1" id="pos2" style="background-image : url('img/modals/p2.svg');background-repeat: no-repeat;background-attachment: cover;">
-                            <!-- <img class="inner_img" src="img/modals/p2.svg" alt=""> -->
+                        <div class="col-1 chs2 border1" id="pos2"
+                            style="background-image : url('img/modals/p2.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs3 border1" id="pos3">3</div>
                         <div class="col-1 chs2 border1" id="pos4">4</div>
-                        <div class="col-1 chs4 border1" id="pos5">
-                            <img class="inner_img" src="img/modals/p5.svg" alt="">
+                        <div class="col-1 chs4 border1" id="pos5"
+                            style="background-image : url('img/modals/p5.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs1 border1" id="pos6">6</div>
                         <div class="col-1 chs3 border2" style="border-top-right-radius: 100%;"></div>
@@ -141,6 +146,7 @@
             before: 0,
             count: 0,
             money: 100000000000,
+            moneyState: "100 billion",
             dice: 0,
             data: []
         },
@@ -159,6 +165,9 @@
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
                 console.log(randomNumber)
                 this.walkAway(randomNumber)
+            },
+            showMoney: function(){
+                this.money
             }
         },
         mounted() {

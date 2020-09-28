@@ -218,7 +218,6 @@ a {
 
     width: 3.25em;
     height: 10em;
-    /* background-color: #000; */
     background-image: url('img/character/c1.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -229,7 +228,7 @@ a {
 
 .dice{
     transition: 0.5s;
-    max-width: 50%;
+    max-width: 40%;
 
 }
 
