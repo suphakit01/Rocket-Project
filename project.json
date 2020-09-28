@@ -8,7 +8,7 @@
         budget:152000000000,
         currency:"billion",
         img:{badge_img:"b1.svg",
-            project_img:"p1.jpg"
+            project_img:"p1.svg"
         }
     },
     {
@@ -20,7 +20,7 @@
         budget:36000000,
         currency:"million",
         img:{badge_img:"b2.svg",
-            project_img:"p2.jpg"
+            project_img:"p2.svg"
         }
     },
     {
@@ -32,7 +32,7 @@
         budget:9000000,
         currency:"million",
         img:{badge_img:"b3.svg",
-            project_img:"p3.jpg"
+            project_img:"p3.svg"
         }
     },
     {
@@ -44,7 +44,7 @@
         budget:0,
         currency:"-",
         img:{badge_img:"b4.svg",
-            project_img:"p4.jpg"
+            project_img:"p4.svg"
         }
     },
     {
@@ -56,7 +56,7 @@
         budget:0,
         currency:"-",
         img:{badge_img:"b5.svg",
-            project_img:"p5.jpg"
+            project_img:"p5.svg"
         }
     },
     {
@@ -68,7 +68,7 @@
         budget:0,
         currency:"-",
         img:{badge_img:"b6.svg",
-            project_img:"p6.jpg"
+            project_img:"p6.svg"
         }
     },
     {
@@ -80,7 +80,7 @@
         budget:0,
         currency:"-",
         img:{badge_img:"b7.svg",
-            project_img:"p7.jpg"
+            project_img:"p7.svg"
         }
     },
     {
@@ -92,7 +92,7 @@
         budget:165000000,
         currency:"million",
         img:{badge_img:"b8.svg",
-            project_img:"p8.jpg"
+            project_img:"p8.svg"
         }
     },
     {
@@ -104,7 +104,7 @@
         budget:74000000,
         currency:"million",
         img:{badge_img:"b9.svg",
-            project_img:"p9.jpg"
+            project_img:"p9.svg"
         }
     },
     {
@@ -116,7 +116,7 @@
         budget:816000000,
         currency:"million",
         img:{badge_img:"b10.svg",
-            project_img:"p10.jpg"
+            project_img:"p10.svg"
         }
     }
 ]
