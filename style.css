@@ -241,3 +241,9 @@ a {
     width: 7rem;
     height: 7rem;
 }
+
+/*------------------------------------------------------------ Modal */
+
+.modal-header{
+    border-bottom: none;
+}

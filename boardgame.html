@@ -36,20 +36,20 @@
         <div class="container-fulid my-5">
             <div class="row">
 
-                <!----------------------------------------------------------------------------->
-                <!--------------------------------------------------------------------- Left -->
+                <!------------------------------------------------------------------------------>
+                <!--------------------------------------------------------------------- State -->
 
-                <div class="col-md-3 p-5">
+                <div class="col-md-3 pl-5">
 
                     <div class="money">
                         <!--  money status -->
                         <img class="buget_img" src="img/boards/coin.png" alt="">
-                        <h4 class="buget_value fz_600 ci1">{{ money }}</h4>
+                        <h4 class="buget_value fz_600 ci1">{{ moneyState }}</h4>
                     </div>
 
                     <div class="dice mt-5">
                         <!-- Dice -->
-                        <a @click="roll">
+                        <a @click="roll" data-toggle="modal" data-target="#staticBackdrop">
                             <img id="dice" src="img/dice/d1.svg">
                         </a>
                     </div>
@@ -132,6 +132,27 @@
                 </div>
             </div>
         </div>
+
+        <!------------------------------------------------------------------------------>
+        <!--------------------------------------------------------------------- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
@@ -145,8 +166,9 @@
         data: {
             before: 0,
             count: 0,
+            index: 0,
             money: 400000000000,
-            moneyState: "400 Billion",
+            moneyState: '400 Billion',
             dice: 0,
             data: [
                 {
@@ -207,6 +229,7 @@
             walkAway: function (add) {
                 this.before = this.count;
                 this.count += add;
+                this.index = this.count - 1;
                 document.querySelector('#pos' + this.before).innerHTML = '';
                 if (this.count > 20) {
                     this.count = 20
@@ -216,12 +239,25 @@
             roll: function () {
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+
                 console.log(randomNumber)
                 this.walkAway(randomNumber)
                 this.moneyStateFn()
             },
             moneyStateFn: function () {
+                console.log("เงินตั้งต้น", this.money)
+                console.log("เงินใช้จ่าย", this.data[this.count - 1].budget)
                 this.money = this.money - this.data[this.count - 1].budget
+                console.log("เงินเหลือ", this.money)
+
+                if (this.money >= 1000000000) {
+                    console.log("billion", this.moneyState = this.money / 1000000000 + " Billion")
+                    // this.moneyState = this.money%1000000000 + " Billion"
+                }
+                else if (this.money >= 1000000) {
+                    console.log("test", this.moneyState = this.money % 100000000 + " Billion")
+                    // this.moneyState = this.money%1000000 + " Million"
+                }
             }
         },
         mounted() {
