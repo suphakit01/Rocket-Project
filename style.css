@@ -10,7 +10,6 @@ body{
     align-items: center;
 }
 
-
 /*------------------------------------------------------------ color */
 :root{
     --ci1: #333333 !important;
@@ -72,8 +71,13 @@ body{
 
 /*------------------------------------------------------------ Border */
 
+.border0{
+    /* around */
+    border: solid var(--ci1) 7px !important;
+}
+
 .border1{ 
-    /* top, left, bottom */
+    /* top, bottom, left */
     border-top: solid var(--ci1) 7px !important;
     border-left: solid var(--ci1) 7px !important;
     border-bottom: solid var(--ci1) 7px !important;
@@ -93,10 +97,23 @@ body{
 }
 
 .border4{ 
-    /* left, right */
+    /* bottom, left, right */
+    border-bottom: solid var(--ci1) 7px !important;
     border-left: solid var(--ci1) 7px !important;
     border-right: solid var(--ci1) 7px !important;
+}
+
+.border5{
+    /* top, left, right */
+    border-top: solid var(--ci1) 7px !important;
+    border-left: solid var(--ci1) 7px !important;
+    border-right: solid var(--ci1) 7px !important;
+}
+
+.border6{
+    /* bottom, top */
     border-bottom: solid var(--ci1) 7px !important;
+    border-top: solid var(--ci1) 7px !important;
 }
 
 .b_t{
@@ -201,7 +218,7 @@ a {
 }
 
 .col-1 {
-    height: 7.5em;
+    height: 6.5em;
 }
 
 .character {
