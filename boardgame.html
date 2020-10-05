@@ -333,6 +333,10 @@
             },
             roll: function () {
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
+                for(i=0;i<=10;i++){
+                    var randomNumber = Math.floor(Math.random() * 6) + 1;
+                    var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+                }
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
 
                 console.log(randomNumber)
