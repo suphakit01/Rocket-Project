@@ -43,7 +43,7 @@
 
                     <div class="money">
                         <!--  money status -->
-                        <img class="buget_img" src="img/boards/coin.svg" alt="">
+                        <img class="buget_img" src="img/boards/coin.svg">
                         <h4 class="buget_value fz_600 ci1">{{ tokenState }}</h4>
                     </div>
 
@@ -162,17 +162,17 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
-                        <div class="row pr-5 pl-5">
-                            <div class="col-6">
-                                <div class="sunray rotating sunRay_1">
-                                    <img :src="'img/modals/'+data[index].img.project_img" class="none_rotate center_dis">
-                                </div>
+                        <div class="row pr-4 pl-4">
+                            <div class="col-lg-6">
+                                <img class="sunray rotating" src="img/modals/sunray1.png">
+                                <img class="modalImg center_dis" :src="'img/modals/'+data[index].img.project_img">
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6">
                                 <h3 class="ci1 fz_600">{{ data[index].name }}</h3>
                                 <br>
-                                <p class="ci2 fz_300">{{ data[index].highlight }}</p>
+                                <p class="ci2 fz_300 modalDetail">{{ data[index].details }}</p>
                                 <br>
                                 <button class="btn btn-success" @click="selectResult(true)" data-toggle="modal"
                                     data-target="#openResult">ลงทุน</button>
@@ -207,8 +207,8 @@
                                 <br>
                                 <h1 class="text-center">Congrats !</h1>
                                 <br>
-                                <h1 class="text-center">+ 500 points</h1>
-                                <h1 class="text-center">+ 500 points</h1>
+                                <h1 class="text-center">{{ investState }}</h1>
+                                <h1 class="text-center">...</h1>
                                 <br>
                                 <h1 class="text-center">Reward</h1>
                                 <br>
@@ -216,7 +216,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 </body>
 
@@ -232,8 +231,9 @@
             count: 0,
             index: 0,
             money: 200000000000,
-            tokenState: '200 Billion',
+            tokenState: '200 Token',
             dice: 0,
+            investState: '',
             data: [
                 {
                     id: 1,
@@ -586,22 +586,27 @@
 
             // Calculation Money Function
             tokenStateFn: function () {
-                console.log("เงินตั้งต้น", this.money)
-                console.log("เงินใช้จ่าย", this.data[this.count - 1].budget)
+                // console.log("เงินตั้งต้น", this.money)
+                // console.log("เงินใช้จ่าย", this.data[this.count - 1].budget)
                 this.money = this.money - this.data[this.count - 1].budget
-                console.log("เงินเหลือ", this.money)
+                // console.log("เงินเหลือ", this.money)
 
                 if (this.money >= 1000000000) {
-                    console.log("billion", this.tokenState = this.money / 1000000000 + " Billion")
-                    // this.tokenState = this.money%1000000000 + " Billion"
+                    console.log("billion", this.tokenState = this.money / 1000000000 + " Token")
+                    // this.tokenState = this.money%1000000000 + " Token"
                 }
                 else if (this.money >= 1000000) {
-                    console.log("test", this.tokenState = this.money % 100000000 + " Billion")
-                    // this.tokenState = this.money%1000000 + " Million"
+                    console.log("test", this.tokenState = this.money % 100000000 + " Token")
+                    // this.tokenState = this.money%1000000 + " Token"
                 }
             },
             selectResult: function (status) {
-
+                if (status == true) {
+                    this.investState = '+20 points'
+                }
+                else {
+                    this.investState = '-20 points'
+                }
             }
         },
         mounted() {

@@ -243,28 +243,31 @@ a {
 
 /*------------------------------------------------------------ Modal */
 
+
+/* modal set width and height */
+.modal-dialog {
+    width: 50vw !important;
+    height: 100vh !important;
+ }
+ 
+.modal-content {
+    /* 80% of window height */
+    height: 60%;
+}
+
 .modal-header{
     border-bottom: none;
 }
 
+/* ----------------------------------- */
+
+/* sunray background style */
 .sunray{
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    width: 350px;
-    height: 350px;
-}
-
-.none_rotate{
-    -webkit-animation: none !important;
-    -moz-animation: none !important;
-    -ms-animation: none !important;
-    -o-animation: none !important;
-    animation: none !important;
-}
-
-.sunRay_1{
-    background-image: url('img/modals/sunray1.png');
+    background-position: center; */
+    width: 100%;
+    height: auto;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -301,4 +304,23 @@ a {
     -ms-animation: rotating 10s linear infinite;
     -o-animation: rotating 10s linear infinite;
     animation: rotating 10s linear infinite;
+}
+
+/* modal image style */
+
+.modalImg{
+    position: absolute;
+    top: 0;
+}
+
+/* modal details style */
+
+.modalDetail{
+    overflow: auto;
+    padding: 0 5px;
+    height: 45%;
+}
+
+.modal-open .modal{
+    overflow-y: hidden !important;
 }
