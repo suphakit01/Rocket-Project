@@ -154,30 +154,28 @@
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-
                 <!-- modal-dialog-centered -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            @click="popupStatus = 0">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
-                    <div class="modal-body">
+                    <div class="modal-body" v-if="popupStatus == 0">
                         <div class="row pr-4 pl-4">
                             <div class="col-lg-6">
                                 <img class="sunray rotating" src="img/modals/sunray1.png">
-                                <img class="modalImg center_dis" :src="'img/modals/'+data[index].img.project_img">
+                                <img class="modalImg center_dis bounce" :src="'img/modals/'+data[index].img.project_img">
                             </div>
                             <div class="col-lg-6">
                                 <h3 class="ci1 fz_600">{{ data[index].name }}</h3>
                                 <br>
                                 <p class="ci2 fz_300 modalDetail">{{ data[index].details }}</p>
                                 <br>
-                                <button class="btn btn-success" @click="selectResult(true)" data-toggle="modal"
-                                    data-target="#openResult">ลงทุน</button>
-                                <button class="btn btn-danger" @click="selectResult(false)" data-toggle="modal"
-                                    data-target="#openResult">ไม่ลงทุน</button>
+                                <button class="btn btn-success" @click="selectResult(true, index)">ลงทุน</button>
+                                <button class="btn btn-danger" @click="selectResult(false, index)">ไม่ลงทุน</button>
                             </div>
                         </div>
                         <div class="row">
@@ -187,36 +185,23 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!------------------------------------------------------------------------------------->
-                <!--------------------------------------------------------------------- Modal page 2 -->
-                <div class="modal fade" id="openResult" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                    aria-labelledby="openResultLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <!-- modal-dialog-centered -->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <br>
-                                <h1 class="text-center">ICON ^_^</h1>
-                                <br>
-                                <h1 class="text-center">Congrats !</h1>
-                                <br>
-                                <h1 class="text-center">{{ investState }}</h1>
-                                <h1 class="text-center">...</h1>
-                                <br>
-                                <h1 class="text-center">Reward</h1>
-                                <br>
-                            </div>
+                    <div class="modal-body" v-else-if="popupStatus == 1">
+                        <div class="modalInvest">
+                            <img class="sunray rotating" src="img/modals/sunray1.png" v-if="data[index].state == 'Good'">
+                            <img class="sunray rotating" src="img/modals/sunray2.png" v-else>
+                            <img class="modalImg center_dis bounce" :src="'img/modals/'+data[index].img.project_img">
                         </div>
+                        <h5 class="modalInvest_destail text-center">{{ investState }}</h5>
+                        <br>
+                    </div>
+                    <div class="modal-body" v-else-if="popupStatus == 2">
+                        <!-- Result -->
+                        <h3>สรุปผล</h3>
                     </div>
                 </div>
             </div>
+        </div>
 </body>
 
 <!----------------------------------------------------------------------------->
@@ -234,6 +219,7 @@
             tokenState: '200 Token',
             dice: 0,
             investState: '',
+            popupStatus: 0,
             data: [
                 {
                     id: 1,
@@ -565,7 +551,8 @@
                 this.index = this.count - 1;
                 document.querySelector('#pos' + this.before).innerHTML = '';
                 if (this.count > 20) {
-                    this.count = 20
+                    this.count = 20;
+                    this.selectResult();
                 }
                 document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
             },
@@ -600,12 +587,18 @@
                     // this.tokenState = this.money%1000000 + " Token"
                 }
             },
-            selectResult: function (status) {
-                if (status == true) {
-                    this.investState = '+20 points'
+            selectResult: function (status, index) {
+                if (this.count == 20){
+                    this.popupStatus = 2;
                 }
-                else {
-                    this.investState = '-20 points'
+                else if(this.popupStatus != 2){
+                    this.popupStatus = 1;
+                    if (status == true) {
+                        this.investState = this.data[index].result;
+                    }
+                    else {
+                        this.investState = "ไม่ลงทุน";
+                    }
                 }
             }
         },

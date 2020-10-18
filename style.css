@@ -241,17 +241,11 @@ a {
     height: 7rem;
 }
 
-/*------------------------------------------------------------ Modal */
+/*------------------------------------------------------------ Modal_1 */
 
 
 /* modal set width and height */
-.modal-dialog {
-    width: 50vw !important;
-    height: 100vh !important;
- }
- 
 .modal-content {
-    /* 80% of window height */
     height: 60%;
 }
 
@@ -259,13 +253,8 @@ a {
     border-bottom: none;
 }
 
-/* ----------------------------------- */
-
 /* sunray background style */
 .sunray{
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     width: 100%;
     height: auto;
 }
@@ -306,6 +295,49 @@ a {
     animation: rotating 10s linear infinite;
 }
 
+@-webkit-keyframes bounce /* Safari and Chrome */ {
+    from {
+      -webkit-transform: scale(1.0);
+      -o-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+    to {
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  @keyframes bounce {
+    0% {
+      -ms-transform: scale(1.0);
+      -moz-transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+      -o-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+    50% {
+      -ms-transform: scale(1.04);
+      -moz-transform: scale(1.04);
+      -webkit-transform: scale(1.04);
+      -o-transform: scale(1.04);
+      transform: scale(1.04);
+    }
+    100% {
+        -ms-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        transform: scale(1.0);
+      }
+}
+  .bounce {
+    -webkit-animation: bounce 1.25s ease-in-out infinite;
+    -moz-animation: bounce 1.25s ease-in-out infinite;
+    -ms-animation: bounce 1.25s ease-in-out infinite;
+    -o-animation: bounce 1.25s ease-in-out infinite;
+    animation: bounce 1.25s ease-in-out infinite;
+}
+
 /* modal image style */
 
 .modalImg{
@@ -323,4 +355,16 @@ a {
 
 .modal-open .modal{
     overflow-y: hidden !important;
+}
+
+/*------------------------------------------------------------ Modal_2 */
+
+.modalInvest{
+    width: 35% !important;
+    position: inherit;
+    margin: 0 auto;
+}
+
+.modalInvest_destail{
+    padding: 0 20% !important;
 }
