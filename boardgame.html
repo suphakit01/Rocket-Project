@@ -10,17 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600&display=swap" rel="stylesheet">
@@ -32,6 +25,11 @@
 </head>
 
 <body>
+
+    <!-------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------- loading -->
+    <div class="preloader"></div>
+
     <div id="app">
         <div class="container-fulid my-5">
             <div class="row">
@@ -39,7 +37,7 @@
                 <!------------------------------------------------------------------------------>
                 <!--------------------------------------------------------------------- State -->
 
-                <div class="col-md-3 pl-5">
+                <div class="col-md-3 statePanel">
 
                     <div class="money">
                         <!--  money status -->
@@ -61,23 +59,18 @@
 
                 <div class="col-md-9">
 
-                    <!-- <button class="btn btn-primary mb-5" @click="walkAway(1)">Walk 1</button>-->
-
                     <!--------------------------------------------------------------------- row1 -->
 
                     <div class="pt-5 row">
                         <div class="col-3"></div>
-                        <div class="col-1 chs4 border1" id="pos0"
-                            style="background-image : url('img/boards/start.svg');background-repeat: no-repeat;background-size: contain;background-position: center;">
+                        <div class="col-1 chs4 border1" id="pos0" style="background-image : url('img/boards/start.svg');background-repeat: no-repeat;background-size: contain;background-position: center;">
                             start</div>
                         <div class="col-1 chs1 border1" id="pos1"></div>
-                        <div class="col-1 chs2 border1" id="pos2"
-                            style="background-image : url('img/modals/p2.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs2 border1" id="pos2" style="background-image : url('img/modals/p2.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs3 border1" id="pos3"></div>
                         <div class="col-1 chs2 border1" id="pos4"></div>
-                        <div class="col-1 chs4 border1" id="pos5"
-                            style="background-image : url('img/modals/p5.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs4 border1" id="pos5" style="background-image : url('img/modals/p5.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs1 border1" id="pos6"></div>
                         <div class="col-1 chs3 border2" style="border-top-right-radius: 100%;"></div>
@@ -88,8 +81,7 @@
 
                     <div class="row">
                         <div class="col-10"></div>
-                        <div class="col-1 chs3 border3" id="pos7"
-                            style="background-image : url('img/modals/p7.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs3 border3" id="pos7" style="background-image : url('img/modals/p7.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1"></div>
                     </div>
@@ -100,18 +92,15 @@
                         <div class="col-1"></div>
                         <div class="col-1 chs2 border5" style="border-top-left-radius: 100%;"></div>
                         <div class="col-1 chs1 border6" id="pos15"></div>
-                        <div class="col-1 chs2 border1" id="pos14"
-                            style="background-image : url('img/modals/p14.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs2 border1" id="pos14" style="background-image : url('img/modals/p14.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs4 border1" id="pos13"></div>
                         <div class="col-1 chs3 border1" id="pos12"></div>
                         <div class="col-1 chs1 border1" id="pos11"></div>
-                        <div class="col-1 chs2 border1" id="pos10"
-                            style="background-image : url('img/modals/p10.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs2 border1" id="pos10" style="background-image : url('img/modals/p10.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs4 border1" id="pos9"></div>
-                        <div class="col-1 chs1 border1" id="pos8"
-                            style="background-image : url('img/modals/p8.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs1 border1" id="pos8" style="background-image : url('img/modals/p8.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs3 border4" style="border-bottom-right-radius: 100%;"></div>
                         <div class="col-1" id="pos12"></div>
@@ -121,8 +110,7 @@
 
                     <div class="row">
                         <div class="col-1"></div>
-                        <div class="col-1 chs2 border3" id="pos16"
-                            style="background-image : url('img/modals/p16.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs2 border3" id="pos16" style="background-image : url('img/modals/p16.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-10"></div>
                     </div>
@@ -131,8 +119,7 @@
                         <div class="col-1"></div>
                         <div class="col-1 chs2 border4" style="border-bottom-left-radius: 100%;"></div>
                         <div class="col-1 chs3 border6" id="pos17"></div>
-                        <div class="col-1 chs1 border1" id="pos18"
-                            style="background-image : url('img/modals/p18.svg');background-repeat: no-repeat;background-attachment: cover;">
+                        <div class="col-1 chs1 border1" id="pos18" style="background-image : url('img/modals/p18.svg');background-repeat: no-repeat;background-attachment: cover;">
                         </div>
                         <div class="col-1 chs4 border0" id="pos19" style="border-top-right-radius: 100%;"></div>
                     </div>
@@ -141,8 +128,7 @@
 
                     <div class="row">
                         <div class="col-4"></div>
-                        <div class="col-1 chs3 border4" id="pos20"
-                            style="background-image : url('img/boards/finish_line.svg');background-repeat: no-repeat;background-size: contain;background-position: center;">
+                        <div class="col-1 chs3 border4" id="pos20" style="background-image : url('img/boards/finish_line.svg');background-repeat: no-repeat;background-size: contain;background-position: center;">
                         </div>
                     </div>
                 </div>
@@ -151,14 +137,16 @@
 
         <!------------------------------------------------------------------------------>
         <!--------------------------------------------------------------------- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
+
                 <!-- modal-dialog-centered -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                            @click="popupStatus = 0">
+                        <button type="button" class="close" v-if="token <= 0 || count >= 20" @click="popupStatus = 2">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <button type="button" class="close" v-else data-dismiss="modal" aria-label="Close" @click="popupStatus = 0">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -174,6 +162,13 @@
                                 <br>
                                 <p class="ci2 fz_300 modalDetail">{{ data[index].details }}</p>
                                 <br>
+
+                                <div class="moneyModal">
+                                    <!--  Token status -->
+                                    <img class="buget_Modal_img" src="img/boards/coin.svg">
+                                    <h5 class="buget_Modal_value fz_600 ci2">{{ data[index].token }}</h5>
+                                </div>
+
                                 <button class="btn btn-success" @click="selectResult(true, index)">ลงทุน</button>
                                 <button class="btn btn-danger" @click="selectResult(false, index)">ไม่ลงทุน</button>
                             </div>
@@ -186,6 +181,8 @@
                         </div>
                     </div>
 
+                    <!-- Invest modal -->
+
                     <div class="modal-body" v-else-if="popupStatus == 1">
                         <div class="modalInvest">
                             <img class="sunray rotating" src="img/modals/sunray1.png" v-if="data[index].state == 'Good'">
@@ -195,9 +192,18 @@
                         <h5 class="modalInvest_destail text-center">{{ investState }}</h5>
                         <br>
                     </div>
+
+                    <!-- Result modal -->
+
                     <div class="modal-body" v-else-if="popupStatus == 2">
-                        <!-- Result -->
-                        <h3>สรุปผล</h3>
+                        <div class="modalInvest">
+                            <img class="sunray rotating" src="img/modals/sunray1.png">
+                            <img class="modalImg center_dis bounce" src="img/modals/ResultLabel.svg">
+                        </div>
+                        <h5 class="text-align-center">งบประมาณที่คุณใช้ไป</h5>
+                        <h5 class="text-align-center">เหลืองบในจินตนาการ</h5>
+                        <h5 class="text-align-center">badge ที่คุณได้รับ</h5>
+                        <button class="btn btn-success" onClick="window.location.href=window.location.href">เล่นอีกครั้ง</button>
                     </div>
                 </div>
             </div>
@@ -208,357 +214,337 @@
 <!--------------------------------------------------------------------- Vue -->
 
 <script>
-
     var app = new Vue({
         el: '#app',
         data: {
             before: 0,
             count: 0,
             index: 0,
-            money: 200000000000,
-            tokenState: '200 Token',
             dice: 0,
+            token: 20,
+            tokenState: '20 Token',
             investState: '',
             popupStatus: 0,
-            data: [
-                {
-                    id: 1,
-                    name: "Apollo 11",
-                    result: "ยินดีด้วย คุณได้ส่งมนุษย์ไปเหยียบดวงจันทร์เป็นคนแรกได้สำเร็จ นี่คือเวลาประวัติศาสตร์ที่โลกต้องจารึก!!!",
-                    details: "Apollo 11 เป็นโครงการอวกาศที่มนุษย์ลงจอดบนดวงจันทร์ได้เป็นครั้งแรก โดยผู้บัญชาการนีลอาร์มสตรองและนักบินโมดูลดวงจันทร์ Buzz Aldrin จากลูกเรือชาวอเมริกันที่ลงจอดด้วย Apollo Lunar Module Eagle ซึ่ง นีล อาร์มสตรองได้กลายเป็นมนุษย์คนแรกที่ได้ก้าวขึ้นบนพื้นผิวดวงจันทร์",
-                    token: "50",
-                    state: "Good",
-                    points: 500,
-                    badge: "ผู้กล้าแห่งดวงจันทร์",
-                    budget: 152000000000,
-                    currency: "billion",
-                    img: {
-                        badge_img: "b1.svg",
-                        project_img: "p1.svg"
-                    }
-                },
-                {
-                    id: 2,
-                    name: "Hubble Space Telescope",
-                    result: "คุณได้สร้างกล้องโทรทรรศน์อวกาศฮับเบิลที่แม้ไม่ได้เป็นกล้องโทรทรรศน์อวกาศตัวแรกของโลก แต่มันเป็นหนึ่งในเครื่องมือวิทยาศาสตร์ที่สำคัญที่สุดในประวัติศาสตร์การศึกษาดาราศาสตร์!!!",
-                    details: "กล้องโทรทรรศน์อวกาศฮับเบิล (อังกฤษ: Hubble Space Telescope) คือ กล้องโทรทรรศน์ในวงโคจรของโลกที่กระสวยอวกาศดิสคัฟเวอรีนำส่งขึ้นสู่วงโคจรเมื่อเดือนเมษายน ค.ศ. 1990 ตั้งชื่อตามนักดาราศาสตร์ชาวอเมริกันชื่อ เอ็ดวิน ฮับเบิล",
-                    token: "20",
-                    state: "Good",
-                    points: 100,
-                    badge: "กาแล็กซี่ที่กว้างใหญ่",
-                    budget: 36000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b2.svg",
-                        project_img: "p2.svg"
-                    }
-                },
-                {
-                    id: 3,
-                    name: "North American X-15",
-                    result: "ยอดเยี่ยมมาก คุณได้สร้าง เครื่องบิน X15 เครื่องบินที่ถือสถิติความเร็วที่ไม่มีใครทำลายได้อีกเลยตลอด 50 ปีที่ผ่านมา",
-                    details: "เครื่องบินความเร็วเหนือเสียงที่ดำเนินการโดยกองทัพสหรัฐอเมริกา โดยเป็นเครื่องบินที่เก็บบันทึกค่าความเร็วและระดับความสูงเมื่อถึงขอบอวกาศและส่งข้อมูลอันเป็นประโยชน์ที่ใช้ในการออกแบบเครื่องบินและยานอวกาศ",
-                    token: "10",
-                    state: "Good",
-                    points: 30,
-                    badge: "เจ้าแห่งความเร็ว",
-                    budget: 9000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b3.svg",
-                        project_img: "p3.svg"
-                    }
-                },
-                {
-                    id: 4,
-                    name: "Space Shuttle Challenger (OV-099)",
-                    result: "พระเจ้าช่วย! นี่คือโศกนาฏกรรมอีกครั้งของนาซ่า กระสวยอวกาศระเบิด OV-099 ได้ระเบิดหลังพุ่งทยานขึ้นสู่ฟ้าและได้พรากชีวิตนักบินอวกาศของเราไปถึง 7 คน",
-                    details: "กระสวยอวกาศชาเลนเจอร์ เป็นกระสวยอวกาศลำที่สองที่ใช้ปฏิบัติภารกิจในอวกาศขององค์การนาซ่า ปฏิบัติภารกิจมาแล้วถึง 9 ครั้งก่อนที่จะมาประสบอุบัติเหตุกระสวยอวกาศระเบิด(ในภารกิจที่ STS-51-L) ในวันที่ 28 มกราคม 1986 หลังจากที่ปล่อยกระสวยสู่ท้องฟ้าได้ 73 วินาที และนักบินอวกาศทั้ง 7 เสียชีวิตทั้งหมด",
-                    token: "20",
-                    state: "Bad",
-                    points: 400,
-                    badge: "ความสูญเสียครั้งใหญ่",
-                    budget: 0,
-                    currency: "-",
-                    img: {
-                        badge_img: "b4.svg",
-                        project_img: "p4.svg"
-                    }
-                },
-                {
-                    id: 5,
-                    name: "Orbiter Vehicle Designation (OV-102)",
-                    result: "แย่แล้ว! ยานขนส่งอวกาศโคลัมเบียที่กำลังเดินทางกลับพื้นโลกเกิดการระเบิดขึ้น ทำให้สูญเสียนักบินของเราไปถึง 7 คน",
-                    details: "ยานขนส่งอวกาศโคลัมเบียขององค์การนาซา เกิดการระเบิดเหนือท้องฟ้าของสหรัฐฯ ขณะกำลังเดินทางกลับสู่พื้นโลก อุบัติเหตุครั้งนี้ทำให้นักบิน 7 คนเสียชีวิต ยานขนส่งอวกาศโคลัมเบียระเบิดเมื่อเวลา 16 นาทีก่อนที่จะได้ร่อนลงจอดที่ศูนย์อวกาศเคเนดีในฟลอริดาตามกำหนดการ โคลัมเบียเพิ่งจะกลับจากการปฏิบัติภารกิจในวงโคจรรอบโลกเป็นเวลานาน 16 วัน ซึ่งมีเป้าหมายในการทดลองทางวิทยาศาสตร์หลายสิบรายการ",
-                    token: "40",
-                    state: "Bad",
-                    points: 800,
-                    badge: "อุบัติเหตุร้ายแรงที่ไม่คาดคิด",
-                    budget: 0,
-                    currency: "-",
-                    img: {
-                        badge_img: "b5.svg",
-                        project_img: "p5.svg"
-                    }
-                },
-                {
-                    id: 6,
-                    name: "Glory mission",
-                    result: "แจ้งเตือน! ขณะนี้จรวด Taurus XLของเราที่ได้ส่งขึ้นไปไม่สามารถสลัดดาวเทียวออกจากตัวจรวดได้เพราะอุปกรณ์ไม่เป็นไปตามมาตรฐาน  ทำให้กระสวยและดาวเทียวตกอยู่กลางมหาสมุทร",
-                    details: "โครงการดาวเทียมที่วางแผนไว้เพื่อเฝ้าสังเกตระดับของก๊าซคาร์บอนไดออกไซด์ (CO2) ในชั้นบรรยากาศ และรวบรวมข้อมูลเพื่อทำความเข้าใจในวัฏจักรของธาตุคาร์บอน ในวันที่ 24 กุมภาพันธ์ ค.ศ. 2009 จรวดชื่อ Taurus XL ถูกส่งขึ้นไป เพื่อนำดาวเทียมเข้าสู่วงโคจร แต่เกิดความผิดพลาดขึ้น เนื่องจาก Payload fairing ไม่ได้ถูกสลัดออกจากดาวเทียมตามแผน ทำให้กระสวยทั้งหมดพร้อมกับดาวเทียมตกลงสู่มหาสมุทรใกล้กับแอนตาร์กติกา วันที่ 4 มีนาคม ค.ศ. 2011 เกิดความผิดพลาดในทำนองเดียวกัน ผลจากการสอบสวนพบว่าสาเหตุของความล้มเหลวทั้ง 2 ครั้ง เกิดจากชิ้นส่วนอลูมิเนียมที่ถูกอัดขึ้นรูป และใช้เป็นส่วนประกอบของ Payload fairing ที่ไม่เป็นไปตามมาตรฐาน",
-                    token: "15",
-                    state: "Bad",
-                    points: 300,
-                    badge: "ความผิดพลาดจากอุปกรณ์ที่ผิดรูป",
-                    budget: 0,
-                    currency: "-",
-                    img: {
-                        badge_img: "b6.svg",
-                        project_img: "p6.svg"
-                    }
-                },
-                {
-                    id: 7,
-                    name: "Soyuz MS-10",
-                    result: "ทางเราพบว่ายานอวกาศ Soyuz MS-10 ของคุณเกิดอุบัติเหตุในการปล่อยยานทำให้ต้องกลับมายังโลก โชคดี! ทางเราไม่พบผู้เสียชีวิตในอุบัติเหตุ",
-                    details: "ยานอวกาศ Soyuz มีจุดประสงค์เพื่อขนส่งสมาชิกลูกเรือ Expedition 57 สองคนไปยังสถานีอวกาศนานาชาติ เนื่องจากความล้มเหลวของเครื่องกระตุ้นยานพาหนะปล่อย Soyuz-FG MS-10 ทำให้ไม่กี่นาทีหลังจากการออกตัว ยานเกิดความล้มเหลวในสถานการณ์ฉุกเฉินเนื่องจากบูสเตอร์และต้องกลับมายังโลก ลูกเรือทั้งสองคนกลับมาได้อย่างปลอดภัย และการยกเลิกเที่ยวบิน MS-10 เป็นตัวอย่างแรกของอุบัติเหตุที่เกิดจากลูกเรือรัสเซียในรอบ 35 ปีนับตั้งแต่ Soyuz T-10-1",
-                    token: "10",
-                    state: "Bad",
-                    points: 200,
-                    badge: "ความล้มเหลวในการปล่อยยาน",
-                    budget: 0,
-                    currency: "-",
-                    img: {
-                        badge_img: "b7.svg",
-                        project_img: "p7.svg"
-                    }
-                },
-                {
-                    id: 8,
-                    name: "The MOSAiC",
-                    result: "ยินดีด้วย! เรือที่คุณสร้างได้นำนักวิทยาศาสตร์เข้าสู่ขั้วโลกเหนือเพื่อสำรวจต้นตอของปัญหาภาวะโลกร้อน",
-                    details: "เรือวิจัยโลร์สเติร์นนำคณะนักวิทยาศาสตร์นานาชาติ ออกเดินทางจากท่าเรือเมืองทรอมโซในนอร์เวย์ มุ่งหน้าสู่ภูมิภาคอาร์ติกแถบขั้วโลกเหนือ ที่ซึ่งจะปักหลักอยู่นาน 1 ปี เพื่อทำการสำรวจวิจัยเกี่ยวกับการเปลี่ยนแปลงของสภาพภูมิอากาศโลก ซึ่งเป็นต้นตอของปัญหาภาวะโลกร้อน",
-                    token: "30",
-                    state: "Good",
-                    points: 300,
-                    badge: "กัปตันผู้พิชิตโลกร้อน",
-                    budget: 165000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b8.svg",
-                        project_img: "p8.svg"
-                    }
-                },
-                {
-                    id: 9,
-                    name: "Mars orbiter mission",
-                    result: "ว้าว คุณได้สร้างเทคโนโลยีทางวิทยาศาสตร์เพื่อใช้ในการปฏิบัติการสำรวจดาวอังคารแล้ว",
-                    details: "โครงการพัฒนาเทคโนโลยีสำหรับการออกแบบและการวางแผนจัดการ การปฎิบัติภารกิจระหว่างดาวเคราะห์ และ สำรวจลักษณะพื้นผิวของดาวอังคาร การสังเกตุชั้นบรรยากาศของดาวอังคารโดยใช้เครื่องมือทางวิทยาศาสตร์",
-                    token: "10",
-                    state: "Good",
-                    points: 100,
-                    badge: "นักสำรวจดาวอังคาร",
-                    budget: 74000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b9.svg",
-                        project_img: "p9.svg"
-                    }
-                },
-                {
-                    id: 10,
-                    name: "XMM-Newton",
-                    result: "สุดยอด ด้วยกล้องโทรทรรศน์ที่คุณได้สร้างขึ้นทำให้สามารถส่องได้ออกนอกไปในอวกาศเพื่อเฝ้าดูความลับของจักรวาล",
-                    details: "โครงการเกี่ยวกับการตรวจจับและศึกษาแหล่งกำเนิดรังสีเอกซ์บนท้องฟ้าผ่านดาวเทียมที่ติดตั้งกล้องโทรทรรศน์ในอวกาศเพราะเนื่องจากชั้นบรรยากาศของโลกปิดกั้นรังสีเอกซ์ทั้งหมด รวมถึงใช้ในการไขความลึกลับของจักรวาล",
-                    token: "25",
-                    state: "Good",
-                    points: 250,
-                    badge: "สิ่งลึกลับในอวกาศ",
-                    budget: 816000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b10.svg",
-                        project_img: "p10.svg"
-                    }
-                },
-                {
-                    id: 11,
-                    name: "COVAX",
-                    result: "ยินดีด้วย ตอนนี้คุณมีวัคซีนต้านCovid-19และยังได้มอบวัคซีนไปทั่วโลกแล้ว",
-                    details: "วิจัยและพัฒนาวัคซีนต้านโควิด-19 รวมทั้งส่งมอบวัคซีน 2 พันล้านโดสให้แก่นานาประเทศทั่วโลก",
-                    token: "40",
-                    state: "Good",
-                    points: 400,
-                    badge: "วัคซีนต้านCovid-19",
-                    budget: 1400000000,
-                    currency: "billion",
-                    img: {
-                        badge_img: "b11.svg",
-                        project_img: "p11.svg"
-                    }
-                },
-                {
-                    id: 12,
-                    name: "Neuralink",
-                    result: "ตอนนี้คุณได้พัฒนาชิปสั่งการผ่านสื่อประสาทสมอง ทำให้สามารถช่วยเหลือผู้ป่วยที่สูญเสียการควบคุม",
-                    details: "พัฒนาระบบเส้นสื่อประสาทที่เชื่อมระหว่างสมองของคนเข้ากับชิปคอมพิวเตอร์ และสามารถแปลงความต้องการหรือคำสั่งของสมองออกมาให้กลายเป็นการกระทำ สามารถปลูกถ่ายให้กับผู้ป่วยอัมพาต ผู้ป่วยโรคหลอดเลือดสมอง ผู้ป่วยโรคมะเร็ง หรือผู้ป่วยโรคอื่นๆ ที่สูญเสียการควบคุมร่างกาย",
-                    token: "20",
-                    state: "Good",
-                    points: 200,
-                    badge: "ชิปประสาทสั่งการ",
-                    budget: 100000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b12.svg",
-                        project_img: "p12.svg"
-                    }
-                },
-                {
-                    id: 13,
-                    name: "Voyager",
-                    result: "ยินดีด้วย คุณได้สร้างยานสำรวจอวกาศเพื่อการสำรวจระบบสุริยะ",
-                    details: "ยานสำรวจอวกาศไร้คนขับเคลื่อน ประกอบด้วย Voyager1 และ Voyager2 เพื่อเก็บข้อมูลของระบบสุริยะ เป็นยานที่มีอายุยาวนานและสำรวจไกลที่สุดในประวัติศาสตร์ มวลมนุษยชาติ",
-                    token: "30",
-                    state: "Good",
-                    points: 300,
-                    badge: "นักสำรวจระบบสุริยะ",
-                    budget: 856000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b13.svg",
-                        project_img: "p13.svg"
-                    }
-                },
-                {
-                    id: 14,
-                    name: "China Sky Eye",
-                    result: "ยินดีด้วย คุณได้สร้างกล้องโทรทรรศน์ China Sky Eye ทำให้ตอนนี้สามารถศึกษาและเข้าใจถึงการเกิดของจักรวาลได้",
-                    details: "กล้องโทรทรรศน์ที่ใหญ่ที่สุดของโลก ใช้ตรวจจับสัญญาณคลื่นแม่เหล็กจากเศษซากของดาวฤกษ์เพื่อทำความเข้าใจการเกิดของจักรวาลรวมถึงการค้นหาสัญญาณสิ่งมีชีวิตทรงภูมิปัญญานอกโลก",
-                    token: "15",
-                    state: "Good",
-                    points: 150,
-                    badge: "ผู้เฝ้ามองจักรวาล",
-                    budget: 171000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b14.svg",
-                        project_img: "p14.svg"
-                    }
-                },
-                {
-                    id: 15,
-                    name: "SpaceX",
-                    result: "ยินดีด้วย โครงการ SpaceX ของคุณได้สร้างความประหลาดใจเป็นอย่างมาก นอกจากลดต้นทุนการขนส่งแล้วยังทำให้สามารถตั้งรกรากบนดาวอังคารได้",
-                    details: "โครงการที่มีเป้าหมายในการลดต้นทุนการขนส่งทางอวกาศเพื่อให้สามารถตั้งรกรากบนดาวอังคารได้ SpaceX ได้พัฒนายานเปิดตัวหลายรุ่น เช่น กลุ่มดาวเทียม Starlink, ยานอวกาศขนส่ง Dragon และส่งมนุษย์ไปยังสถานีอวกาศนานาชาติในยาน Crew Dragon Demo-2",
-                    token: "40",
-                    state: "Good",
-                    points: 400,
-                    badge: "ผู้บุกเบิกดาวอังคาร",
-                    budget: 6000000000,
-                    currency: "billion",
-                    img: {
-                        badge_img: "b15.svg",
-                        project_img: "p15.svg"
-                    }
-                },
-                {
-                    id: 16,
-                    name: "Starlink",
-                    result: "ยินดีด้วย กลุ่มดาวอินเตอร์เน็ตผ่านดาวเทียมของคุณได้สร้างประโยชน์ให้ทางการทหาร, วิทยาศาสตร์ และการสำรวจเป็นอย่างมาก",
-                    details: "กลุ่มดาวอินเทอร์เน็ตผ่านดาวเทียมถูกสร้างขึ้นโดย SpaceX ให้บริการอินเทอร์เน็ตผ่านดาวเทียม ประกอบด้วยดาวเทียมขนาดเล็กจำนวนมากที่สร้างขึ้นจำนวนมากในวงโคจรของโลกโดยทำงานร่วมกับเครื่องรับส่งสัญญาณภาคพื้นดิน SpaceX ยังวางแผนที่จะขายดาวเทียมบางส่วนเพื่อวัตถุประสงค์ทางการทหาร, วิทยาศาสตร์หรือการสำรวจ โดยมีศูนย์พัฒนาดาวเทียม SpaceX ในเรดมันด์วอชิงตันเป็นที่ตั้งของการวิจัยการพัฒนาการผลิตและการควบคุมบนวงโคจรของ Starlinkย",
-                    token: "40",
-                    state: "Good",
-                    points: 400,
-                    badge: "สุดยอดเครือข่าย",
-                    budget: 60000000000,
-                    currency: "billion",
-                    img: {
-                        badge_img: "b16.svg",
-                        project_img: "p16.svg"
-                    }
-                },
-                {
-                    id: 17,
-                    name: "International Space Station, ISS",
-                    result: "ยินดีด้วย คุณได้สร้างสถานีอวกาศนานาชาติเป็นห้องปฏิบัติการลอยฟ้าในชื่อ ISS เพื่อใช้ในการทำการทดลองต่างๆ",
-                    details: "สถานีอวกาศนานาชาติเป็นห้องปฏิบัติการลอยฟ้าซึ่งโคจรรอบโลก ทำหน้าที่เป็นห้องทดลองวิจัยอย่างถาวรในอวกาศ  ทำการทดลองด้านต่าง ๆ ได้แก่ ชีววิทยา ชีววิทยามนุษย์ ฟิสิกส์ ดาราศาสตร์ และ อุตุนิยมวิทยา เราสามารถมองเห็นสถานีอวกาศนานาชาติได้ด้วยตาเปล่าจากพื้นโลก",
-                    token: "50",
-                    state: "Good",
-                    points: 500,
-                    badge: "ห้องปฏิบัติการลอยฟ้า",
-                    budget: 35000000000, /*35-100 billion*/
-                    currency: "billion",
-                    img: {
-                        badge_img: "b17.svg",
-                        project_img: "p17.svg"
-                    }
-                },
-                {
-                    id: 18,
-                    name: "Svalbard International Seed Vault",
-                    result: "สุดยอด คุณได้สร้างอุโมงค์เมล็ดพืชขึ้นมาซึ่งมีพืชพันธุ์มากกว่าถึง 1 ล้านชนิด",
-                    details: "อุโมงค์เมล็ดพันธุ์พืชแห่งสฟาลบาร์ เป็นแหล่งสำรองเมล็ดพรรณจากทั่วโลก ตั้งอยู่บนเกาะสปีตสเบร์เกน ประเทศนอร์เวย์ ปัจจุบันมีเมล็ดพันธุ์พืชมากกว่า 1 ล้านชนิด ทั้งหมดแยกเก็บรักษาในหีบห่อที่มิดชิด พร้อมควบคุมความชื้นภายใน ใส่ไว้ในห้องนิรภัยที่มีอุณหภูมิติดลบ  -18 องศาเซลเซียส ซึ่งสามารถเก็บไว้ใช้เมื่อเกิดวิกฤติต่าง ๆ ในอนาคตมากถึง 1,000 ปีเลย!",
-                    token: "5",
-                    state: "Good",
-                    points: 50,
-                    badge: "นักพฤกษศาสตร์",
-                    budget: 9000000,
-                    currency: "million",
-                    img: {
-                        badge_img: "b18.svg",
-                        project_img: "p18.svg"
-                    }
-                },
-                {
-                    id: 19,
-                    name: "Space Elevator",
-                    result: "ไม่น่าเชื่อ! คุณได้สร้างลิฟต์ที่จะส่งขึ้นไปยังสถานีอวกาศได้โดยไม่ต้องพึ่งการยิงจรวดส่งคนขึ้นไป อีกทั้งยังประหยัดค่าใช้จ่ายอีกด้วย",
-                    details: "ประเทศญี่ปุ่นจะก่อสร้างปล่องลิฟต์สูงขึ้นไปจนถึงสถานีอวกาศปลายทางที่ความสูง 35,000 กิโลเมตรเหนือพื้นโลก ผู้เชี่ยวชาญด้านเทคโนโลยีมองกันว่า ลิฟต์อวกาศที่สามารถขนส่งผู้คนและสิ่งของจากพื้นโลกขึ้นไปสู่อวกาศได้โดยตรง อาจเป็นทางเลือกที่ดีกว่าการยิงจรวด เนื่องจากประหยัดเชื้อเพลิงมากกว่า ทั้งเสียเวลาเตรียมการเดินทางและเสียค่าใช้จ่ายน้อยกว่ากันมาก โดยตั้งเป้าให้ใช้งานได้จริงภายในปี 2050",
-                    token: "25",
-                    state: "Good",
-                    points: 250,
-                    badge: "ประตูลิฟต์สู่อวกาศ",
-                    budget: 90000000000,
-                    currency: "billion",
-                    img: {
-                        badge_img: "b19.svg",
-                        project_img: "p19.svg"
-                    }
-                },
-                {
-                    id: 20,
-                    name: "ExoMars",
-                    result: "ยินดีด้วย ภารกิจExoMars ของคุณได้ทำการสำรวจดาวอังคารด้วยTrace Gas Orbiter เพื่อตรวจสอบความเป็นไปได้ที่จะมีสิ่งมีชีวิตบนดาวอังคาร และทกลองการลงจอดบนดาวอังคาร",
-                    details: "เป็นภารกิจสำรวจดาวอังคารแบ่งออกเป็น 2 เฟส เฟสที่ 1 ที่จะถูกส่งขึ้นไปวันนี้ประกอบด้วย Trace Gas Orbiter ที่จะโคจรรอบดาวอังคารเพื่อตรวจวัดก๊าซบนผิวดาว โดยเฉพาะมีเทนที่บ่งชี้ถึงความเป็นไปได้ที่จะมีสิ่งมีชีวิตบนดาวอังคาร ยานอีกลำที่ส่งไปพร้อมกันคือ Schiaparelli EDM ที่จะลงจอดบนผิวดาว เพื่อทดสอบเทคโนโลยีการลงจอด เป็นการนำร่องสำหรับ เฟส 2 ที่จะส่งยานสำรวจ (rover) ไปลงจอดบนผิวดาวในอีก 2 – 3 ปีข้างหน้า สำหรับ Trace Gas Orbiter และ Schiaparelli EDM จะถูกส่งโดยจรวด Proton ของรัสเซียจากฐานปล่อยจรวด ไบโครนัวร์ ประเทศคาซัคสถาน",
-                    token: "25",
-                    state: "Good",
-                    points: 250,
-                    badge: "ผู้พิชิตดาวอังคาร",
-                    budget: 1300000000, /*>1.3 Billion*/
-                    currency: "billion",
-                    img: {
-                        badge_img: "b20.svg",
-                        project_img: "p20.svg"
-                    }
+            data: [{
+                id: 1,
+                name: "Apollo 11",
+                result: "ยินดีด้วย คุณได้ส่งมนุษย์ไปเหยียบดวงจันทร์เป็นคนแรกได้สำเร็จ นี่คือเวลาประวัติศาสตร์ที่โลกต้องจารึก!!!",
+                details: "Apollo 11 เป็นโครงการอวกาศที่มนุษย์ลงจอดบนดวงจันทร์ได้เป็นครั้งแรก โดยผู้บัญชาการนีลอาร์มสตรองและนักบินโมดูลดวงจันทร์ Buzz Aldrin จากลูกเรือชาวอเมริกันที่ลงจอดด้วย Apollo Lunar Module Eagle ซึ่ง นีล อาร์มสตรองได้กลายเป็นมนุษย์คนแรกที่ได้ก้าวขึ้นบนพื้นผิวดวงจันทร์",
+                token: 50,
+                state: "Good",
+                points: 500,
+                badge: "ผู้กล้าแห่งดวงจันทร์",
+                budget: 152000000000,
+                currency: "billion",
+                img: {
+                    badge_img: "b1.svg",
+                    project_img: "p1.svg"
                 }
-            ]
+            }, {
+                id: 2,
+                name: "Hubble Space Telescope",
+                result: "คุณได้สร้างกล้องโทรทรรศน์อวกาศฮับเบิลที่แม้ไม่ได้เป็นกล้องโทรทรรศน์อวกาศตัวแรกของโลก แต่มันเป็นหนึ่งในเครื่องมือวิทยาศาสตร์ที่สำคัญที่สุดในประวัติศาสตร์การศึกษาดาราศาสตร์!!!",
+                details: "กล้องโทรทรรศน์อวกาศฮับเบิล (อังกฤษ: Hubble Space Telescope) คือ กล้องโทรทรรศน์ในวงโคจรของโลกที่กระสวยอวกาศดิสคัฟเวอรีนำส่งขึ้นสู่วงโคจรเมื่อเดือนเมษายน ค.ศ. 1990 ตั้งชื่อตามนักดาราศาสตร์ชาวอเมริกันชื่อ เอ็ดวิน ฮับเบิล",
+                token: 20,
+                state: "Good",
+                points: 100,
+                badge: "กาแล็กซี่ที่กว้างใหญ่",
+                budget: 36000000,
+                currency: "million",
+                img: {
+                    badge_img: "b2.svg",
+                    project_img: "p2.svg"
+                }
+            }, {
+                id: 3,
+                name: "North American X-15",
+                result: "ยอดเยี่ยมมาก คุณได้สร้าง เครื่องบิน X15 เครื่องบินที่ถือสถิติความเร็วที่ไม่มีใครทำลายได้อีกเลยตลอด 50 ปีที่ผ่านมา",
+                details: "เครื่องบินความเร็วเหนือเสียงที่ดำเนินการโดยกองทัพสหรัฐอเมริกา โดยเป็นเครื่องบินที่เก็บบันทึกค่าความเร็วและระดับความสูงเมื่อถึงขอบอวกาศและส่งข้อมูลอันเป็นประโยชน์ที่ใช้ในการออกแบบเครื่องบินและยานอวกาศ",
+                token: 10,
+                state: "Good",
+                points: 30,
+                badge: "เจ้าแห่งความเร็ว",
+                budget: 9000000,
+                currency: "million",
+                img: {
+                    badge_img: "b3.svg",
+                    project_img: "p3.svg"
+                }
+            }, {
+                id: 4,
+                name: "Space Shuttle Challenger (OV-099)",
+                result: "พระเจ้าช่วย! นี่คือโศกนาฏกรรมอีกครั้งของนาซ่า กระสวยอวกาศระเบิด OV-099 ได้ระเบิดหลังพุ่งทยานขึ้นสู่ฟ้าและได้พรากชีวิตนักบินอวกาศของเราไปถึง 7 คน",
+                details: "กระสวยอวกาศชาเลนเจอร์ เป็นกระสวยอวกาศลำที่สองที่ใช้ปฏิบัติภารกิจในอวกาศขององค์การนาซ่า ปฏิบัติภารกิจมาแล้วถึง 9 ครั้งก่อนที่จะมาประสบอุบัติเหตุกระสวยอวกาศระเบิด(ในภารกิจที่ STS-51-L) ในวันที่ 28 มกราคม 1986 หลังจากที่ปล่อยกระสวยสู่ท้องฟ้าได้ 73 วินาที และนักบินอวกาศทั้ง 7 เสียชีวิตทั้งหมด",
+                token: 20,
+                state: "Bad",
+                points: 400,
+                badge: "ความสูญเสียครั้งใหญ่",
+                budget: 0,
+                currency: "-",
+                img: {
+                    badge_img: "b4.svg",
+                    project_img: "p4.svg"
+                }
+            }, {
+                id: 5,
+                name: "Orbiter Vehicle Designation (OV-102)",
+                result: "แย่แล้ว! ยานขนส่งอวกาศโคลัมเบียที่กำลังเดินทางกลับพื้นโลกเกิดการระเบิดขึ้น ทำให้สูญเสียนักบินของเราไปถึง 7 คน",
+                details: "ยานขนส่งอวกาศโคลัมเบียขององค์การนาซา เกิดการระเบิดเหนือท้องฟ้าของสหรัฐฯ ขณะกำลังเดินทางกลับสู่พื้นโลก อุบัติเหตุครั้งนี้ทำให้นักบิน 7 คนเสียชีวิต ยานขนส่งอวกาศโคลัมเบียระเบิดเมื่อเวลา 16 นาทีก่อนที่จะได้ร่อนลงจอดที่ศูนย์อวกาศเคเนดีในฟลอริดาตามกำหนดการ โคลัมเบียเพิ่งจะกลับจากการปฏิบัติภารกิจในวงโคจรรอบโลกเป็นเวลานาน 16 วัน ซึ่งมีเป้าหมายในการทดลองทางวิทยาศาสตร์หลายสิบรายการ",
+                token: 40,
+                state: "Bad",
+                points: 800,
+                badge: "อุบัติเหตุร้ายแรงที่ไม่คาดคิด",
+                budget: 0,
+                currency: "-",
+                img: {
+                    badge_img: "b5.svg",
+                    project_img: "p5.svg"
+                }
+            }, {
+                id: 6,
+                name: "Glory mission",
+                result: "แจ้งเตือน! ขณะนี้จรวด Taurus XLของเราที่ได้ส่งขึ้นไปไม่สามารถสลัดดาวเทียวออกจากตัวจรวดได้เพราะอุปกรณ์ไม่เป็นไปตามมาตรฐาน  ทำให้กระสวยและดาวเทียวตกอยู่กลางมหาสมุทร",
+                details: "โครงการดาวเทียมที่วางแผนไว้เพื่อเฝ้าสังเกตระดับของก๊าซคาร์บอนไดออกไซด์ (CO2) ในชั้นบรรยากาศ และรวบรวมข้อมูลเพื่อทำความเข้าใจในวัฏจักรของธาตุคาร์บอน ในวันที่ 24 กุมภาพันธ์ ค.ศ. 2009 จรวดชื่อ Taurus XL ถูกส่งขึ้นไป เพื่อนำดาวเทียมเข้าสู่วงโคจร แต่เกิดความผิดพลาดขึ้น เนื่องจาก Payload fairing ไม่ได้ถูกสลัดออกจากดาวเทียมตามแผน ทำให้กระสวยทั้งหมดพร้อมกับดาวเทียมตกลงสู่มหาสมุทรใกล้กับแอนตาร์กติกา วันที่ 4 มีนาคม ค.ศ. 2011 เกิดความผิดพลาดในทำนองเดียวกัน ผลจากการสอบสวนพบว่าสาเหตุของความล้มเหลวทั้ง 2 ครั้ง เกิดจากชิ้นส่วนอลูมิเนียมที่ถูกอัดขึ้นรูป และใช้เป็นส่วนประกอบของ Payload fairing ที่ไม่เป็นไปตามมาตรฐาน",
+                token: 15,
+                state: "Bad",
+                points: 300,
+                badge: "ความผิดพลาดจากอุปกรณ์ที่ผิดรูป",
+                budget: 0,
+                currency: "-",
+                img: {
+                    badge_img: "b6.svg",
+                    project_img: "p6.svg"
+                }
+            }, {
+                id: 7,
+                name: "Soyuz MS-10",
+                result: "ทางเราพบว่ายานอวกาศ Soyuz MS-10 ของคุณเกิดอุบัติเหตุในการปล่อยยานทำให้ต้องกลับมายังโลก โชคดี! ทางเราไม่พบผู้เสียชีวิตในอุบัติเหตุ",
+                details: "ยานอวกาศ Soyuz มีจุดประสงค์เพื่อขนส่งสมาชิกลูกเรือ Expedition 57 สองคนไปยังสถานีอวกาศนานาชาติ เนื่องจากความล้มเหลวของเครื่องกระตุ้นยานพาหนะปล่อย Soyuz-FG MS-10 ทำให้ไม่กี่นาทีหลังจากการออกตัว ยานเกิดความล้มเหลวในสถานการณ์ฉุกเฉินเนื่องจากบูสเตอร์และต้องกลับมายังโลก ลูกเรือทั้งสองคนกลับมาได้อย่างปลอดภัย และการยกเลิกเที่ยวบิน MS-10 เป็นตัวอย่างแรกของอุบัติเหตุที่เกิดจากลูกเรือรัสเซียในรอบ 35 ปีนับตั้งแต่ Soyuz T-10-1",
+                token: 10,
+                state: "Bad",
+                points: 200,
+                badge: "ความล้มเหลวในการปล่อยยาน",
+                budget: 0,
+                currency: "-",
+                img: {
+                    badge_img: "b7.svg",
+                    project_img: "p7.svg"
+                }
+            }, {
+                id: 8,
+                name: "The MOSAiC",
+                result: "ยินดีด้วย! เรือที่คุณสร้างได้นำนักวิทยาศาสตร์เข้าสู่ขั้วโลกเหนือเพื่อสำรวจต้นตอของปัญหาภาวะโลกร้อน",
+                details: "เรือวิจัยโลร์สเติร์นนำคณะนักวิทยาศาสตร์นานาชาติ ออกเดินทางจากท่าเรือเมืองทรอมโซในนอร์เวย์ มุ่งหน้าสู่ภูมิภาคอาร์ติกแถบขั้วโลกเหนือ ที่ซึ่งจะปักหลักอยู่นาน 1 ปี เพื่อทำการสำรวจวิจัยเกี่ยวกับการเปลี่ยนแปลงของสภาพภูมิอากาศโลก ซึ่งเป็นต้นตอของปัญหาภาวะโลกร้อน",
+                token: 30,
+                state: "Good",
+                points: 300,
+                badge: "กัปตันผู้พิชิตโลกร้อน",
+                budget: 165000000,
+                currency: "million",
+                img: {
+                    badge_img: "b8.svg",
+                    project_img: "p8.svg"
+                }
+            }, {
+                id: 9,
+                name: "Mars orbiter mission",
+                result: "ว้าว คุณได้สร้างเทคโนโลยีทางวิทยาศาสตร์เพื่อใช้ในการปฏิบัติการสำรวจดาวอังคารแล้ว",
+                details: "โครงการพัฒนาเทคโนโลยีสำหรับการออกแบบและการวางแผนจัดการ การปฎิบัติภารกิจระหว่างดาวเคราะห์ และ สำรวจลักษณะพื้นผิวของดาวอังคาร การสังเกตุชั้นบรรยากาศของดาวอังคารโดยใช้เครื่องมือทางวิทยาศาสตร์",
+                token: 10,
+                state: "Good",
+                points: 100,
+                badge: "นักสำรวจดาวอังคาร",
+                budget: 74000000,
+                currency: "million",
+                img: {
+                    badge_img: "b9.svg",
+                    project_img: "p9.svg"
+                }
+            }, {
+                id: 10,
+                name: "XMM-Newton",
+                result: "สุดยอด ด้วยกล้องโทรทรรศน์ที่คุณได้สร้างขึ้นทำให้สามารถส่องได้ออกนอกไปในอวกาศเพื่อเฝ้าดูความลับของจักรวาล",
+                details: "โครงการเกี่ยวกับการตรวจจับและศึกษาแหล่งกำเนิดรังสีเอกซ์บนท้องฟ้าผ่านดาวเทียมที่ติดตั้งกล้องโทรทรรศน์ในอวกาศเพราะเนื่องจากชั้นบรรยากาศของโลกปิดกั้นรังสีเอกซ์ทั้งหมด รวมถึงใช้ในการไขความลึกลับของจักรวาล",
+                token: 25,
+                state: "Good",
+                points: 250,
+                badge: "สิ่งลึกลับในอวกาศ",
+                budget: 816000000,
+                currency: "million",
+                img: {
+                    badge_img: "b10.svg",
+                    project_img: "p10.svg"
+                }
+            }, {
+                id: 11,
+                name: "COVAX",
+                result: "ยินดีด้วย ตอนนี้คุณมีวัคซีนต้านCovid-19และยังได้มอบวัคซีนไปทั่วโลกแล้ว",
+                details: "วิจัยและพัฒนาวัคซีนต้านโควิด-19 รวมทั้งส่งมอบวัคซีน 2 พันล้านโดสให้แก่นานาประเทศทั่วโลก",
+                token: 40,
+                state: "Good",
+                points: 400,
+                badge: "วัคซีนต้านCovid-19",
+                budget: 1400000000,
+                currency: "billion",
+                img: {
+                    badge_img: "b11.svg",
+                    project_img: "p11.svg"
+                }
+            }, {
+                id: 12,
+                name: "Neuralink",
+                result: "ตอนนี้คุณได้พัฒนาชิปสั่งการผ่านสื่อประสาทสมอง ทำให้สามารถช่วยเหลือผู้ป่วยที่สูญเสียการควบคุม",
+                details: "พัฒนาระบบเส้นสื่อประสาทที่เชื่อมระหว่างสมองของคนเข้ากับชิปคอมพิวเตอร์ และสามารถแปลงความต้องการหรือคำสั่งของสมองออกมาให้กลายเป็นการกระทำ สามารถปลูกถ่ายให้กับผู้ป่วยอัมพาต ผู้ป่วยโรคหลอดเลือดสมอง ผู้ป่วยโรคมะเร็ง หรือผู้ป่วยโรคอื่นๆ ที่สูญเสียการควบคุมร่างกาย",
+                token: 20,
+                state: "Good",
+                points: 200,
+                badge: "ชิปประสาทสั่งการ",
+                budget: 100000000,
+                currency: "million",
+                img: {
+                    badge_img: "b12.svg",
+                    project_img: "p12.svg"
+                }
+            }, {
+                id: 13,
+                name: "Voyager",
+                result: "ยินดีด้วย คุณได้สร้างยานสำรวจอวกาศเพื่อการสำรวจระบบสุริยะ",
+                details: "ยานสำรวจอวกาศไร้คนขับเคลื่อน ประกอบด้วย Voyager1 และ Voyager2 เพื่อเก็บข้อมูลของระบบสุริยะ เป็นยานที่มีอายุยาวนานและสำรวจไกลที่สุดในประวัติศาสตร์ มวลมนุษยชาติ",
+                token: 30,
+                state: "Good",
+                points: 300,
+                badge: "นักสำรวจระบบสุริยะ",
+                budget: 856000000,
+                currency: "million",
+                img: {
+                    badge_img: "b13.svg",
+                    project_img: "p13.svg"
+                }
+            }, {
+                id: 14,
+                name: "China Sky Eye",
+                result: "ยินดีด้วย คุณได้สร้างกล้องโทรทรรศน์ China Sky Eye ทำให้ตอนนี้สามารถศึกษาและเข้าใจถึงการเกิดของจักรวาลได้",
+                details: "กล้องโทรทรรศน์ที่ใหญ่ที่สุดของโลก ใช้ตรวจจับสัญญาณคลื่นแม่เหล็กจากเศษซากของดาวฤกษ์เพื่อทำความเข้าใจการเกิดของจักรวาลรวมถึงการค้นหาสัญญาณสิ่งมีชีวิตทรงภูมิปัญญานอกโลก",
+                token: 15,
+                state: "Good",
+                points: 150,
+                badge: "ผู้เฝ้ามองจักรวาล",
+                budget: 171000000,
+                currency: "million",
+                img: {
+                    badge_img: "b14.svg",
+                    project_img: "p14.svg"
+                }
+            }, {
+                id: 15,
+                name: "SpaceX",
+                result: "ยินดีด้วย โครงการ SpaceX ของคุณได้สร้างความประหลาดใจเป็นอย่างมาก นอกจากลดต้นทุนการขนส่งแล้วยังทำให้สามารถตั้งรกรากบนดาวอังคารได้",
+                details: "โครงการที่มีเป้าหมายในการลดต้นทุนการขนส่งทางอวกาศเพื่อให้สามารถตั้งรกรากบนดาวอังคารได้ SpaceX ได้พัฒนายานเปิดตัวหลายรุ่น เช่น กลุ่มดาวเทียม Starlink, ยานอวกาศขนส่ง Dragon และส่งมนุษย์ไปยังสถานีอวกาศนานาชาติในยาน Crew Dragon Demo-2",
+                token: 40,
+                state: "Good",
+                points: 400,
+                badge: "ผู้บุกเบิกดาวอังคาร",
+                budget: 6000000000,
+                currency: "billion",
+                img: {
+                    badge_img: "b15.svg",
+                    project_img: "p15.svg"
+                }
+            }, {
+                id: 16,
+                name: "Starlink",
+                result: "ยินดีด้วย กลุ่มดาวอินเตอร์เน็ตผ่านดาวเทียมของคุณได้สร้างประโยชน์ให้ทางการทหาร, วิทยาศาสตร์ และการสำรวจเป็นอย่างมาก",
+                details: "กลุ่มดาวอินเทอร์เน็ตผ่านดาวเทียมถูกสร้างขึ้นโดย SpaceX ให้บริการอินเทอร์เน็ตผ่านดาวเทียม ประกอบด้วยดาวเทียมขนาดเล็กจำนวนมากที่สร้างขึ้นจำนวนมากในวงโคจรของโลกโดยทำงานร่วมกับเครื่องรับส่งสัญญาณภาคพื้นดิน SpaceX ยังวางแผนที่จะขายดาวเทียมบางส่วนเพื่อวัตถุประสงค์ทางการทหาร, วิทยาศาสตร์หรือการสำรวจ โดยมีศูนย์พัฒนาดาวเทียม SpaceX ในเรดมันด์วอชิงตันเป็นที่ตั้งของการวิจัยการพัฒนาการผลิตและการควบคุมบนวงโคจรของ Starlinkย",
+                token: 40,
+                state: "Good",
+                points: 400,
+                badge: "สุดยอดเครือข่าย",
+                budget: 60000000000,
+                currency: "billion",
+                img: {
+                    badge_img: "b16.svg",
+                    project_img: "p16.svg"
+                }
+            }, {
+                id: 17,
+                name: "International Space Station, ISS",
+                result: "ยินดีด้วย คุณได้สร้างสถานีอวกาศนานาชาติเป็นห้องปฏิบัติการลอยฟ้าในชื่อ ISS เพื่อใช้ในการทำการทดลองต่างๆ",
+                details: "สถานีอวกาศนานาชาติเป็นห้องปฏิบัติการลอยฟ้าซึ่งโคจรรอบโลก ทำหน้าที่เป็นห้องทดลองวิจัยอย่างถาวรในอวกาศ  ทำการทดลองด้านต่าง ๆ ได้แก่ ชีววิทยา ชีววิทยามนุษย์ ฟิสิกส์ ดาราศาสตร์ และ อุตุนิยมวิทยา เราสามารถมองเห็นสถานีอวกาศนานาชาติได้ด้วยตาเปล่าจากพื้นโลก",
+                token: 50,
+                state: "Good",
+                points: 500,
+                badge: "ห้องปฏิบัติการลอยฟ้า",
+                budget: 35000000000,
+                /*35-100 billion*/
+                currency: "billion",
+                img: {
+                    badge_img: "b17.svg",
+                    project_img: "p17.svg"
+                }
+            }, {
+                id: 18,
+                name: "Svalbard International Seed Vault",
+                result: "สุดยอด คุณได้สร้างอุโมงค์เมล็ดพืชขึ้นมาซึ่งมีพืชพันธุ์มากกว่าถึง 1 ล้านชนิด",
+                details: "อุโมงค์เมล็ดพันธุ์พืชแห่งสฟาลบาร์ เป็นแหล่งสำรองเมล็ดพรรณจากทั่วโลก ตั้งอยู่บนเกาะสปีตสเบร์เกน ประเทศนอร์เวย์ ปัจจุบันมีเมล็ดพันธุ์พืชมากกว่า 1 ล้านชนิด ทั้งหมดแยกเก็บรักษาในหีบห่อที่มิดชิด พร้อมควบคุมความชื้นภายใน ใส่ไว้ในห้องนิรภัยที่มีอุณหภูมิติดลบ  -18 องศาเซลเซียส ซึ่งสามารถเก็บไว้ใช้เมื่อเกิดวิกฤติต่าง ๆ ในอนาคตมากถึง 1,000 ปีเลย!",
+                token: 5,
+                state: "Good",
+                points: 50,
+                badge: "นักพฤกษศาสตร์",
+                budget: 9000000,
+                currency: "million",
+                img: {
+                    badge_img: "b18.svg",
+                    project_img: "p18.svg"
+                }
+            }, {
+                id: 19,
+                name: "Space Elevator",
+                result: "ไม่น่าเชื่อ! คุณได้สร้างลิฟต์ที่จะส่งขึ้นไปยังสถานีอวกาศได้โดยไม่ต้องพึ่งการยิงจรวดส่งคนขึ้นไป อีกทั้งยังประหยัดค่าใช้จ่ายอีกด้วย",
+                details: "ประเทศญี่ปุ่นจะก่อสร้างปล่องลิฟต์สูงขึ้นไปจนถึงสถานีอวกาศปลายทางที่ความสูง 35,000 กิโลเมตรเหนือพื้นโลก ผู้เชี่ยวชาญด้านเทคโนโลยีมองกันว่า ลิฟต์อวกาศที่สามารถขนส่งผู้คนและสิ่งของจากพื้นโลกขึ้นไปสู่อวกาศได้โดยตรง อาจเป็นทางเลือกที่ดีกว่าการยิงจรวด เนื่องจากประหยัดเชื้อเพลิงมากกว่า ทั้งเสียเวลาเตรียมการเดินทางและเสียค่าใช้จ่ายน้อยกว่ากันมาก โดยตั้งเป้าให้ใช้งานได้จริงภายในปี 2050",
+                token: 25,
+                state: "Good",
+                points: 250,
+                badge: "ประตูลิฟต์สู่อวกาศ",
+                budget: 90000000000,
+                currency: "billion",
+                img: {
+                    badge_img: "b19.svg",
+                    project_img: "p19.svg"
+                }
+            }, {
+                id: 20,
+                name: "ExoMars",
+                result: "ยินดีด้วย ภารกิจExoMars ของคุณได้ทำการสำรวจดาวอังคารด้วยTrace Gas Orbiter เพื่อตรวจสอบความเป็นไปได้ที่จะมีสิ่งมีชีวิตบนดาวอังคาร และทกลองการลงจอดบนดาวอังคาร",
+                details: "เป็นภารกิจสำรวจดาวอังคารแบ่งออกเป็น 2 เฟส เฟสที่ 1 ที่จะถูกส่งขึ้นไปวันนี้ประกอบด้วย Trace Gas Orbiter ที่จะโคจรรอบดาวอังคารเพื่อตรวจวัดก๊าซบนผิวดาว โดยเฉพาะมีเทนที่บ่งชี้ถึงความเป็นไปได้ที่จะมีสิ่งมีชีวิตบนดาวอังคาร ยานอีกลำที่ส่งไปพร้อมกันคือ Schiaparelli EDM ที่จะลงจอดบนผิวดาว เพื่อทดสอบเทคโนโลยีการลงจอด เป็นการนำร่องสำหรับ เฟส 2 ที่จะส่งยานสำรวจ (rover) ไปลงจอดบนผิวดาวในอีก 2 – 3 ปีข้างหน้า สำหรับ Trace Gas Orbiter และ Schiaparelli EDM จะถูกส่งโดยจรวด Proton ของรัสเซียจากฐานปล่อยจรวด ไบโครนัวร์ ประเทศคาซัคสถาน",
+                token: 25,
+                state: "Good",
+                points: 250,
+                badge: "ผู้พิชิตดาวอังคาร",
+                budget: 1300000000,
+                /*>1.3 Billion*/
+                currency: "billion",
+                img: {
+                    badge_img: "b20.svg",
+                    project_img: "p20.svg"
+                }
+            }]
         },
         methods: {
             // walk function
-            walkAway: function (add) {
+            walkAway: function(add) {
                 this.before = this.count;
                 this.count += add;
                 this.index = this.count - 1;
                 document.querySelector('#pos' + this.before).innerHTML = '';
-                if (this.count > 20) {
+                if (this.count > 20 || this.token <= 0) {
                     this.count = 20;
                     this.selectResult();
                 }
-                document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
+                document.querySelector('#pos' + this.count).innerHTML = '<div class="character bounce"></div>';
             },
 
             // Rolling Dice Function
-            roll: function () {
+            roll: function() {
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
                 for (i = 0; i <= 10; i++) {
                     var randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -568,35 +554,27 @@
 
                 console.log(randomNumber)
                 this.walkAway(randomNumber)
-                this.tokenStateFn()
+                    // this.tokenStateFn()
             },
 
-            // Calculation Money Function
-            tokenStateFn: function () {
-                // console.log("เงินตั้งต้น", this.money)
-                // console.log("เงินใช้จ่าย", this.data[this.count - 1].budget)
-                this.money = this.money - this.data[this.count - 1].budget
-                // console.log("เงินเหลือ", this.money)
-
-                if (this.money >= 1000000000) {
-                    console.log("billion", this.tokenState = this.money / 1000000000 + " Token")
-                    // this.tokenState = this.money%1000000000 + " Token"
-                }
-                else if (this.money >= 1000000) {
-                    console.log("test", this.tokenState = this.money % 100000000 + " Token")
-                    // this.tokenState = this.money%1000000 + " Token"
-                }
+            // Calculation token Function
+            tokenStateFn: function() {
+                // Keep Data
+                this.tokenUsed = this.data[this.count - 1].token
             },
-            selectResult: function (status, index) {
-                if (this.count == 20){
+
+            selectResult: function(status, index) {
+                if (this.count == 20 || this.token <= 0) {
                     this.popupStatus = 2;
-                }
-                else if(this.popupStatus != 2){
+                } else if (this.popupStatus != 2) {
                     this.popupStatus = 1;
                     if (status == true) {
+                        // If Click button 'Invest'
                         this.investState = this.data[index].result;
-                    }
-                    else {
+                        // Calc Token Total
+                        this.token = this.token - this.data[this.count - 1].token
+                        this.tokenState = this.token + ' Token'
+                    } else {
                         this.investState = "ไม่ลงทุน";
                     }
                 }
@@ -606,6 +584,12 @@
             this.walkAway(0);
         },
     })
+
+    // Loading Function
+    function fadeOut() {
+        document.querySelector(".preloader").remove();
+    }
+    setTimeout(fadeOut, 2000);
 </script>
 
 </html>

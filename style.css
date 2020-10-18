@@ -1,17 +1,33 @@
-body{
+body {
     background-color: #EFEFEF !important;
     font-family: 'Kodchasan', sans-serif;
+    overflow-x: hidden !important;
 }
 
-.center_dis{
+.center_dis {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url('img/intro/loading.svg');
+    background-repeat: no-repeat;
+    background-color: var(--bg1);
+    background-position: center;
+}
+
+
 /*------------------------------------------------------------ color */
-:root{
+
+:root {
     --ci1: #333333 !important;
     --ci2: #666666 !important;
     --ci3: #999999 !important;
@@ -23,96 +39,104 @@ body{
     --bg1: #FFFFFF !important;
     --bg2: #EFEFEF !important;
     --bg3: rgba(51, 51, 51, 0.45) !important;
-
+    --bg4: #fafafa !important;
     --bd_size: 8px !important;
 }
 
-.ci1{
-    color: var(--ci1); /* <-- title1 */
+.ci1 {
+    color: var(--ci1);
+    /* <-- title1 */
 }
 
-.ci2{
-    color: var(--ci2); /* <-- title2 */
+.ci2 {
+    color: var(--ci2);
+    /* <-- title2 */
 }
 
-.ci3{
-    color: var(--ci3); /* <-- title3 */
+.ci3 {
+    color: var(--ci3);
+    /* <-- title3 */
 }
 
-.ci4{
-    color: var(--ci4); /* <-- title3 */
+.ci4 {
+    color: var(--ci4);
+    /* <-- title3 */
 }
 
-.bg1{
-    color: var(--bg1); /* <-- Bg1 */
+.bg1 {
+    color: var(--bg1);
+    /* <-- Bg1 */
 }
 
-.bg2{
-    color: var(--bg2); /* <-- Bg2 */
+.bg2 {
+    color: var(--bg2);
+    /* <-- Bg2 */
 }
 
-.bg3{
-    color: var(--bg3); /* <-- Bg2 */
+.bg3 {
+    color: var(--bg3);
+    /* <-- Bg2 */
 }
 
-.chs1{
+.chs1 {
     background-color: var(--chs1) !important;
 }
 
-.chs2{
+.chs2 {
     background-color: var(--chs2) !important;
 }
 
-.chs3{
+.chs3 {
     background-color: var(--chs3) !important;
 }
 
-.chs4{
+.chs4 {
     background-color: var(--chs4) !important;
 }
 
+
 /*------------------------------------------------------------ Border */
 
-.border0{
+.border0 {
     /* around */
     border: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border1{ 
+.border1 {
     /* top, bottom, left */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-bottom: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border2{ 
+.border2 {
     /* top, left, right */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border3{ 
+.border3 {
     /* left, right */
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border4{ 
+.border4 {
     /* bottom, left, right */
     border-bottom: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border5{
+.border5 {
     /* top, left, right */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border6{
+.border6 {
     /* bottom, top */
     border-bottom: solid var(--ci1) var(--bd_size) !important;
     border-top: solid var(--ci1) var(--bd_size) !important;
@@ -121,22 +145,23 @@ body{
 
 /*------------------------------------------------------------ fonts */
 
-.fz_300{
+.fz_300 {
     font-weight: 300 !important;
 }
 
-.fz_600{
+.fz_600 {
     font-weight: 600 !important;
 }
 
+
 /*------------------------------------------------------------ intro */
 
-.intro_img{
+.intro_img {
     max-width: 12vw;
-    margin-bottom:2vw;
+    margin-bottom: 2vw;
 }
 
-.intro{
+.intro {
     /* width: 100vw; */
     height: 98vh;
 }
@@ -153,57 +178,61 @@ body{
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
 }
+
 
 /*------------------------------------------------------------ Board Game */
 
-.inner_img{
+.statePanel {
+    padding: 5vh 0 0 10vh;
+}
+
+.inner_img {
     width: 100%;
     height: 100%;
 }
 
-.buget_img{
+.buget_img {
     width: 4vw;
 }
 
-.money{
+.money {
     display: flex;
     background-color: var(--ci4);
     border-radius: 100em;
     align-items: center;
-
     /* width: 80%;
     margin: 0 auto; */
 }
 
-.buget_value{
+.buget_value {
     margin-left: 4%;
 }
 
-.dice_img{
+.dice_img {
     width: 150px;
 }
 
@@ -213,9 +242,9 @@ a {
 
 .character {
     position: absolute;
+    z-index: 999;
     top: -5em;
     left: 1.5em;
-
     width: 3.25em;
     height: 10em;
     background-image: url('img/character/c1.png');
@@ -224,70 +253,112 @@ a {
     background-position: center;
 }
 
+
 /*------------------------------------------------------------ Dice */
 
-.dice{
+.dice {
     transition: 0.5s;
     max-width: 40%;
-
 }
 
-.dice:hover { 
+.dice:hover {
     transform: scale(1.05);
 }
 
-.col-1{
+.col-1 {
     width: 7rem;
     height: 7rem;
 }
 
+
 /*------------------------------------------------------------ Modal_1 */
 
 
+/* Scroll Bar Style */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px var(--ci4);
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--ci4);
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--ci3);
+}
+
+
 /* modal set width and height */
+
 .modal-content {
     height: 60%;
 }
 
-.modal-header{
+.modal-header {
     border-bottom: none;
 }
 
+
 /* sunray background style */
-.sunray{
+
+.sunray {
     width: 100%;
     height: auto;
 }
 
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+@-webkit-keyframes rotating
+/* Safari and Chrome */
+
+{
     from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes rotating {
-    from {
-      -ms-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -ms-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
-  .rotating {
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
     -webkit-animation: rotating 10s linear infinite;
     -moz-animation: rotating 10s linear infinite;
     -ms-animation: rotating 10s linear infinite;
@@ -295,32 +366,36 @@ a {
     animation: rotating 10s linear infinite;
 }
 
-@-webkit-keyframes bounce /* Safari and Chrome */ {
+@-webkit-keyframes bounce
+/* Safari and Chrome */
+
+{
     from {
-      -webkit-transform: scale(1.0);
-      -o-transform: scale(1.0);
-      transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        transform: scale(1.0);
     }
     to {
-      -webkit-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
     }
-  }
-  @keyframes bounce {
+}
+
+@keyframes bounce {
     0% {
-      -ms-transform: scale(1.0);
-      -moz-transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-      -o-transform: scale(1.0);
-      transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        transform: scale(1.0);
     }
     50% {
-      -ms-transform: scale(1.04);
-      -moz-transform: scale(1.04);
-      -webkit-transform: scale(1.04);
-      -o-transform: scale(1.04);
-      transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -webkit-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
     }
     100% {
         -ms-transform: scale(1.0);
@@ -328,9 +403,10 @@ a {
         -webkit-transform: scale(1.0);
         -o-transform: scale(1.0);
         transform: scale(1.0);
-      }
+    }
 }
-  .bounce {
+
+.bounce {
     -webkit-animation: bounce 1.25s ease-in-out infinite;
     -moz-animation: bounce 1.25s ease-in-out infinite;
     -ms-animation: bounce 1.25s ease-in-out infinite;
@@ -338,33 +414,53 @@ a {
     animation: bounce 1.25s ease-in-out infinite;
 }
 
+
 /* modal image style */
 
-.modalImg{
+.modalImg {
     position: absolute;
     top: 0;
 }
 
+
 /* modal details style */
 
-.modalDetail{
+.modalDetail {
     overflow: auto;
     padding: 0 5px;
     height: 45%;
+    margin-bottom: 0;
 }
 
-.modal-open .modal{
+.modal-open .modal {
     overflow-y: hidden !important;
 }
 
+.moneyModal {
+    display: flex;
+    border-radius: 100em;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.buget_Modal_img {
+    width: 1.5rem;
+}
+
+.buget_Modal_value {
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+
+
 /*------------------------------------------------------------ Modal_2 */
 
-.modalInvest{
+.modalInvest {
     width: 35% !important;
     position: inherit;
     margin: 0 auto;
 }
 
-.modalInvest_destail{
+.modalInvest_destail {
     padding: 0 20% !important;
 }
