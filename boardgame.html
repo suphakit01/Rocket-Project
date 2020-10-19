@@ -200,13 +200,13 @@
                             <div class="col-2"></div>
 
                             <div class="col-4 badge_Score">
-                                <img class="bagde_Score_img center_dis" src="img/modals/score_1.svg" v-if="data[index].state == 'Good'">
-                                <img class="bagde_Score_img center_dis" src="img/modals/score_2.svg" v-else>
+                                <img class="bagde_Score_img center_dis myhover" src="img/modals/score_1.svg" v-if="data[index].state == 'Good'">
+                                <img class="bagde_Score_img center_dis myhover" src="img/modals/score_2.svg" v-else>
                                 <h4 class="my-0 text-center fz_600 ci1" v-if="data[index].state == 'Good'">+ {{ data[index].points }} point</h4>
                                 <h4 class="my-0 text-center fz_600 ci1" v-else>- {{ data[index].points }} point</h4>
                             </div>
                             <div class="col-4 badge_Score">
-                                <img class="bagde_Score_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
+                                <img class="bagde_Score_img center_dis myhover" :src="'img/badge/'+data[index].img.badge_img">
                                 <p class="my-0 text-center fz_600 ci1">{{ data[index].badge }}</p>
                             </div>
                             <div class="col-2"></div>
@@ -224,7 +224,7 @@
                         <div class="row">
                             <div class="col-4"></div>
                             <div class="col-4">
-                                <h2 class="fz_600 center_dis">SCORE</h2>
+                                <h3 class="fz_600 center_dis">SCORE</h3>
                                 <h1 class="fz_600 center_dis fz_700">{{ point }}</h1>
                                 <br>
                                 <hr>
@@ -239,8 +239,8 @@
                         </div>
                         <div class="row w-75 mx-auto">
                             <div class="col-md-3" v-for="(badge, index) in badgeAppend">
-                                <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)">
-                                <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)">
+                                <img :title="data[index].name" class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
+                                <img :title="data[index].name" class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)" />
                             </div>
                         </div>
 
