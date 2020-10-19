@@ -627,7 +627,7 @@
             },
 
             selectResult: function(status, index) {
-                if (this.count == 20 || this.token <= 0) {
+                if (this.count >= 20 || this.token <= 0) {
                     this.popupStatus = 2;
                 } else if (this.popupStatus != 2) {
                     this.popupStatus = 1;
