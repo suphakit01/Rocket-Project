@@ -551,17 +551,45 @@
             },
 
             // Rolling Dice Function
+            // roll: function() {
+            //     var randomNumber = Math.floor(Math.random() * 6) + 1;
+            //     for (i = 0; i <= 10; i++) {
+            //         var randomNumber = Math.floor(Math.random() * 6) + 1;
+            //         var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+            //     }
+            //     var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+
+            //     console.log(randomNumber)
+            //     this.walkAway(randomNumber)
+            //         // this.tokenStateFn()
+            // },
+
+            // // Calculation token Function
+            // tokenStateFn: function() {
+            //     // Keep Data
+            //     this.tokenUsed = this.data[this.count - 1].token
+
+            // New Random Rolling Dice Function
             roll: function() {
+                const ROLLING_NUMBER = 5;
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
-                for (i = 0; i <= 10; i++) {
-                    var randomNumber = Math.floor(Math.random() * 6) + 1;
-                    var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-                }
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
 
-                console.log(randomNumber)
-                this.walkAway(randomNumber)
-                    // this.tokenStateFn()
+                console.log('randomNumber', randomNumber)
+
+                for (let i = 1; i <= ROLLING_NUMBER; i++) {
+                    setTimeout(() => {
+                        var randomNumber = Math.floor(Math.random() * 6) + 1;
+                        var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+                        if (i === ROLLING_NUMBER) {
+                            $('#staticBackdrop').modal('show')
+                            this.walkAway(randomNumber)
+                        }
+                    }, 100 * i);
+                }
+
+
+                // this.tokenStateFn()
             },
 
             // Calculation token Function
@@ -596,7 +624,15 @@
     function fadeOut() {
         document.querySelector(".preloader").remove();
     }
-    setTimeout(fadeOut, 2000);
+    // setTimeout(fadeOut, 2000);
+    setTimeout(fadeOut, 100);
+
+    // Set delay popup modals
+    $(window).load(function() {
+        setTimeout(function() {
+            $('#myModal').modal('show');
+        }, 500);
+    });
 </script>
 
 </html>
