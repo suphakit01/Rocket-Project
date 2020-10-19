@@ -186,7 +186,7 @@
 
                     <!-- Invest modal -->
 
-                    <div class="modal-body" v-else-if="popupStatus == 1">
+                    <div class="modal-body" v-if="popupStatus == 1">
                         <div class="modalInvest">
                             <img class="sunray rotating" src="img/modals/sunray1.png" v-if="data[index].state == 'Good'">
                             <img class="sunray rotating" src="img/modals/sunray2.png" v-else>
@@ -215,7 +215,7 @@
 
                     <!-- Result modal -->
 
-                    <div class="modal-body" v-else-if="popupStatus == 2">
+                    <div class="modal-body" v-if="popupStatus == 2">
                         <div class="modalInvest">
                             <img class="sunray rotating" src="img/modals/sunray1.png">
                             <img class="modalImg center_dis bounce" src="img/modals/ResultLabel.svg">
@@ -239,8 +239,8 @@
                         </div>
                         <div class="row w-75 mx-auto">
                             <div class="col-md-3" v-for="(badge, index) in badgeAppend">
-                                <img :title="data[index].name" class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
-                                <img :title="data[index].name" class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)" />
+                                <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
+                                <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)" />
                             </div>
                         </div>
 
@@ -585,11 +585,15 @@
                 this.before = this.count;
                 this.count += add;
                 this.index = this.count - 1;
+
                 document.querySelector('#pos' + this.before).innerHTML = '';
-                if (this.count > 20 || this.token <= 0) {
+                if (this.count >= 20) {
                     this.count = 20;
                     this.selectResult();
                 }
+                console.log(this.count)
+
+
                 document.querySelector('#pos' + this.count).innerHTML = '<div class="character bounce"></div>';
             },
 
@@ -599,8 +603,6 @@
                 const ROLLING_NUMBER = 5;
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
                 var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-
-                console.log('randomNumber', randomNumber)
 
                 for (let i = 1; i <= ROLLING_NUMBER; i++) {
                     setTimeout(() => {
@@ -629,6 +631,7 @@
             selectResult: function(status, index) {
                 if (this.count >= 20 || this.token <= 0) {
                     this.popupStatus = 2;
+                    this.loadBadge();
                 } else if (this.popupStatus != 2) {
                     this.popupStatus = 1;
                     if (status == true) {
@@ -648,8 +651,6 @@
                         this.investState = "ไม่ลงทุน";
                     }
                 }
-                this.loadBadge();
-
             },
 
             loadBadge: function() {
