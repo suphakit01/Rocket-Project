@@ -46,9 +46,9 @@
                         <h4 class="buget_value fz_600 ci1">{{ tokenState }}</h4>
                     </div>
 
-                    <div class="dice mt-5">
+                    <div class="dice myhover mt-5">
                         <!-- Dice -->
-                        <a @click="roll">
+                        <a @click.prevent="roll">
                             <img id="dice" src="img/dice/d1.svg">
                         </a>
                     </div>
@@ -144,7 +144,8 @@
                 <!-- modal-dialog-centered -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" v-if="token <= 0 || count >= 20" @click="popupStatus = 2">
+                        <div v-if="popupStatus == 2"></div>
+                        <button type="button" class="close" v-else-if="token <= 0 || count >= 20" @click="popupStatus = 2">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <button type="button" class="close" v-else data-dismiss="modal" aria-label="Close" @click="popupStatus = 0">
@@ -171,7 +172,8 @@
                                 </div>
 
                                 <button class="btn btn-success" @click="selectResult(true, index)">ลงทุน</button>
-                                <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">ไม่ลงทุน</button>
+                                <button class="btn btn-danger" data-dismiss="modal" aria-label="Close" aria-hidden="true">ไม่ลงทุน</button>
+                                <br><br>
                             </div>
                         </div>
                         <div class="row">
@@ -200,12 +202,12 @@
                             <div class="col-4 badge_Score">
                                 <img class="bagde_Score_img center_dis" src="img/modals/score_1.svg" v-if="data[index].state == 'Good'">
                                 <img class="bagde_Score_img center_dis" src="img/modals/score_2.svg" v-else>
-                                <p class="text-center fz_600 ci1" v-if="data[index].state == 'Good'">+ {{ data[index].points }} point</p>
-                                <p class="text-center fz_600 ci1" v-else>- {{ data[index].points }} point</p>
+                                <h4 class="my-0 text-center fz_600 ci1" v-if="data[index].state == 'Good'">+ {{ data[index].points }} point</h4>
+                                <h4 class="my-0 text-center fz_600 ci1" v-else>- {{ data[index].points }} point</h4>
                             </div>
                             <div class="col-4 badge_Score">
                                 <img class="bagde_Score_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
-                                <p class="text-center fz_600 ci1">{{ data[index].badge }}</p>
+                                <p class="my-0 text-center fz_600 ci1">{{ data[index].badge }}</p>
                             </div>
                             <div class="col-2"></div>
                         </div>
@@ -225,14 +227,26 @@
                                 <h2 class="fz_600 center_dis">SCORE</h2>
                                 <h1 class="fz_600 center_dis fz_700">{{ point }}</h1>
                                 <br>
-                                <h5 class="fz_300 center_dis">badge ที่คุณได้รับ</h5>
+                                <hr>
+                                <h5 class="fz_300 center_dis mt-2">badge ที่คุณได้รับ</h5>
                             </div>
-                            <div class="col-4"></div>
+                        </div>
+                        <div class="alert alert-secondary w-75 mx-auto my-3" role="alert" v-if="badgeOpenDetail == 1">
+                            <h4 class="alert-heading fz_600">{{ badgeDetail.name }}</h4>
+                            <p>{{ badgeDetail.details }}</p>
+                            <hr>
+                            <p class="mb-0">งบประมาณที่ใช้ ${{ badgeDetail.budget }}</p>
+                        </div>
+                        <div class="row w-75 mx-auto">
+                            <div class="col-md-3" v-for="(badge, index) in badgeAppend">
+                                <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)">
+                                <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)">
+                            </div>
                         </div>
 
                         <br>
                         <div class="text-center">
-                            <button class="text-center btn btn-success" onClick="window.location.href=window.location.href">เล่นอีกครั้ง <i class="fas fa-redo-alt"></i></button>
+                            <button class="text-center btn btn-success mb-5" onClick="window.location.href=window.location.href">เล่นอีกครั้ง <i class="fas fa-redo-alt"></i></button>
                         </div>
                     </div>
                 </div>
@@ -251,13 +265,16 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 2,
+            token: 230,
             tokenState: '230 Token',
             investState: '',
             popupStatus: 0,
             point: 0,
             badge: '',
             badgeResult: [],
+            badgeAppend: [],
+            badgeOpenDetail: 0,
+            badgeDetail: 0,
             data: [{
                 id: 1,
                 name: "China Sky Eye",
@@ -328,7 +345,7 @@
                 state: "Bad",
                 points: 400,
                 badge: "ความสูญเสียครั้งใหญ่",
-                budget: 0,
+                budget: '-',
                 currency: "-",
                 img: {
                     badge_img: "b5.svg",
@@ -373,7 +390,7 @@
                 state: "Bad",
                 points: 300,
                 badge: "ความผิดพลาดจากอุปกรณ์ที่ผิดรูป",
-                budget: 0,
+                budget: '-',
                 currency: "-",
                 img: {
                     badge_img: "b8.svg",
@@ -463,7 +480,7 @@
                 state: "Bad",
                 points: 200,
                 badge: "ความล้มเหลวในการปล่อยยาน",
-                budget: 0,
+                budget: '-',
                 currency: "-",
                 img: {
                     badge_img: "b14.svg",
@@ -524,7 +541,7 @@
                 state: "Bad",
                 points: 800,
                 badge: "อุบัติเหตุร้ายแรงที่ไม่คาดคิด",
-                budget: 0,
+                budget: '-',
                 currency: "-",
                 img: {
                     badge_img: "b18.svg",
@@ -631,6 +648,36 @@
                         this.investState = "ไม่ลงทุน";
                     }
                 }
+                this.loadBadge();
+
+            },
+
+            loadBadge: function() {
+                for (var i = 1; i <= 20; i++) {
+                    if (this.badgeResult.includes("b" + i + ".svg")) {
+                        var obj = {};
+                        obj["badge_name"] = 'test';
+                        obj["badge_img"] = 'img/badge/b' + i + '.svg';
+                        obj["status"] = true;
+                        this.badgeAppend.push(obj);
+                        // this.badgeAppend += "<div class='col-md-3'>";
+                        // this.badgeAppend += '<img class="w-100" src="img/badge/b' + i + '.svg">';
+                        // this.badgeAppend += "</div>";
+                    } else {
+                        var obj = {};
+                        obj["badge_name"] = 'test';
+                        obj["badge_img"] = 'img/badge/b' + i + '.svg';
+                        obj["status"] = false;
+                        this.badgeAppend.push(obj);
+                        // this.badgeAppend += "<div class='col-md-3'><img class='w-100' style='filter: grayscale(100%);' src='img/badge/b" + i + ".svg'></div>";
+                    }
+                }
+            },
+
+            getBadgeDetail: function(index) {
+                console.log(0);
+                this.badgeOpenDetail = 1;
+                this.badgeDetail = this.data[index];
             }
         },
         mounted() {

@@ -267,12 +267,7 @@ a {
 /*------------------------------------------------------------ Dice */
 
 .dice {
-    transition: 0.5s;
     max-width: 40%;
-}
-
-.dice:hover {
-    transform: scale(1.05);
 }
 
 .col-1 {
@@ -485,4 +480,16 @@ a {
 .bagde_Score_img {
     padding-right: 0 !important;
     width: 4.5rem !important;
+}
+
+
+/* 
+ */
+
+.myhover {
+    transition: 0.5s;
+}
+
+.myhover:hover {
+    transform: scale(1.1);
 }
