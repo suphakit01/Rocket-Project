@@ -49,7 +49,7 @@
 
                     <div class="dice mt-5">
                         <!-- Dice -->
-                        <a @click="roll" data-toggle="modal" data-target="#staticBackdrop">
+                        <a @click="roll">
                             <img id="dice" src="img/dice/d1.svg">
                         </a>
                     </div>
@@ -331,6 +331,7 @@
                 }
                 document.querySelector('#pos' + this.count).innerHTML = '<div class="character"></div>';
             },
+<<<<<<< Updated upstream
             roll: function () {
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
                 for(i=0;i<=10;i++){
@@ -342,6 +343,35 @@
                 console.log(randomNumber)
                 this.walkAway(randomNumber)
                 this.moneyStateFn()
+=======
+            // Rolling Dice Function
+            roll: function() {
+                const ROLLING_NUMBER = 10;
+                var randomNumber = Math.floor(Math.random() * 6) + 1;
+                var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+
+                console.log('randomNumber', randomNumber)
+
+                for (let i = 1; i <= ROLLING_NUMBER; i++) {
+                    setTimeout(() => {
+                        var randomNumber = Math.floor(Math.random() * 6) + 1;
+                        var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+                        if (i === ROLLING_NUMBER) {
+                            $('#staticBackdrop').modal('show')
+                            this.walkAway(randomNumber)
+                        }
+                    }, 100 * i);
+                }
+
+
+                    // this.tokenStateFn()
+            },
+
+            // Calculation token Function
+            tokenStateFn: function() {
+                // Keep Data
+                this.tokenUsed = this.data[this.count - 1].token
+>>>>>>> Stashed changes
             },
             moneyStateFn: function () {
                 console.log("เงินตั้งต้น", this.money)
