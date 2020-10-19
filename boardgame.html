@@ -191,6 +191,27 @@
                         </div>
                         <h5 class="modalInvest_destail text-center">{{ investState }}</h5>
                         <br>
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                <img class="invest_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                <img class="invest_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                <img class="invest_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
                     </div>
 
                     <!-- Result modal -->
@@ -228,10 +249,13 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 200,
+            token: 230,
             tokenState: '200 Token',
             investState: '',
             popupStatus: 0,
+            point: 0,
+            badge: '',
+            badgeResult: [],
             data: [{
                 id: 1,
                 name: "China Sky Eye",
@@ -550,25 +574,6 @@
                 document.querySelector('#pos' + this.count).innerHTML = '<div class="character bounce"></div>';
             },
 
-            // Rolling Dice Function
-            // roll: function() {
-            //     var randomNumber = Math.floor(Math.random() * 6) + 1;
-            //     for (i = 0; i <= 10; i++) {
-            //         var randomNumber = Math.floor(Math.random() * 6) + 1;
-            //         var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-            //     }
-            //     var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-
-            //     console.log(randomNumber)
-            //     this.walkAway(randomNumber)
-            //         // this.tokenStateFn()
-            // },
-
-            // // Calculation token Function
-            // tokenStateFn: function() {
-            //     // Keep Data
-            //     this.tokenUsed = this.data[this.count - 1].token
-
             // New Random Rolling Dice Function
 
             roll: function() {
@@ -611,8 +616,15 @@
                         // If Click button 'Invest'
                         this.investState = this.data[index].result;
                         // Calc Token Total
-                        this.token = this.token - this.data[this.count - 1].token
-                        this.tokenState = this.token + ' Token'
+                        this.token = this.token - this.data[index].token;
+                        this.tokenState = this.token + ' Token';
+                        if (this.data[index].state == 'Good') {
+                            this.point += this.data[index].points;
+                            this.badge = this.data[index].img.badge_img;
+                            this.badgeResult.push(this.data[index].img.badge_img);
+                        } else {
+                            this.point -= this.data[index].points;
+                        }
                     } else {
                         this.investState = "ไม่ลงทุน";
                     }

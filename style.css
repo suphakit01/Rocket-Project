@@ -181,13 +181,13 @@ a {
     text-decoration: none;
 }
 
-.bounce {
-    -moz-animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
+.bounceIntro {
+    -moz-animation: bounceIntro 2s infinite;
+    -webkit-animation: bounceIntro 2s infinite;
+    animation: bounceIntro 2s infinite;
 }
 
-@keyframes bounce {
+@keyframes bounceIntro {
     0%,
     20%,
     50%,
@@ -452,6 +452,11 @@ a {
 .buget_Modal_value {
     margin-left: 2%;
     margin-bottom: 0;
+}
+
+.invest_img {
+    width: 6rem !important;
+    margin: 0 auto;
 }
 
 
