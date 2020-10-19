@@ -206,6 +206,12 @@ a {
 
 /*------------------------------------------------------------ Board Game */
 
+.boardImg {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 .statePanel {
     padding: 5vh 0 0 10vh;
 }
@@ -430,10 +436,6 @@ a {
     padding: 0 5px;
     height: 45%;
     margin-bottom: 0;
-}
-
-.modal-open .modal {
-    overflow-y: hidden !important;
 }
 
 .moneyModal {
