@@ -16,7 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
 
@@ -171,7 +171,7 @@
                                 </div>
 
                                 <button class="btn btn-success" @click="selectResult(true, index)">ลงทุน</button>
-                                <button class="btn btn-danger" @click="selectResult(false, index)">ไม่ลงทุน</button>
+                                <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">ไม่ลงทุน</button>
                             </div>
                         </div>
                         <div class="row">
@@ -196,26 +196,16 @@
 
                         <div class="row">
                             <div class="col-2"></div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img class="invest_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="modalInvest_destail text-center fz_600 ci1">{{ data[index].badge }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img class="invest_img center_dis" src="img/modals/score.svg">
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="modalInvest_destail text-center fz_600 ci1">+ {{ data[index].points }} point</p>
-                                    </div>
-                                </div>
 
+                            <div class="col-4 badge_Score">
+                                <img class="bagde_Score_img center_dis" src="img/modals/score_1.svg" v-if="data[index].state == 'Good'">
+                                <img class="bagde_Score_img center_dis" src="img/modals/score_2.svg" v-else>
+                                <p class="text-center fz_600 ci1" v-if="data[index].state == 'Good'">+ {{ data[index].points }} point</p>
+                                <p class="text-center fz_600 ci1" v-else>- {{ data[index].points }} point</p>
+                            </div>
+                            <div class="col-4 badge_Score">
+                                <img class="bagde_Score_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
+                                <p class="text-center fz_600 ci1">{{ data[index].badge }}</p>
                             </div>
                             <div class="col-2"></div>
                         </div>
@@ -233,7 +223,7 @@
                             <div class="col-4"></div>
                             <div class="col-4">
                                 <h2 class="fz_600 center_dis">SCORE</h2>
-                                <h1 class="fz_600 center_dis">{{ points }}</h1>
+                                <h1 class="fz_600 center_dis fz_700">{{ point }}</h1>
                                 <br>
                                 <h5 class="fz_300 center_dis">badge ที่คุณได้รับ</h5>
                             </div>

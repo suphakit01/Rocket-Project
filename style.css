@@ -153,6 +153,10 @@ body {
     font-weight: 600 !important;
 }
 
+.fz_700 {
+    font-weight: 700 !important;
+}
+
 
 /*------------------------------------------------------------ intro */
 
@@ -470,4 +474,15 @@ a {
 
 .modalInvest_destail {
     padding: 0 20% !important;
+}
+
+.badge_Score {
+    display: flex;
+    border-radius: 100em;
+    align-items: center;
+}
+
+.bagde_Score_img {
+    padding-right: 0 !important;
+    width: 4.5rem !important;
 }
