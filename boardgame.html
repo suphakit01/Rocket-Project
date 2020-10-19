@@ -191,22 +191,32 @@
                         </div>
                         <h5 class="modalInvest_destail text-center">{{ investState }}</h5>
                         <br>
+                        <hr>
+
                         <div class="row">
-                            <div class="col-3"></div>
-                            <div class="col-3">
+                            <div class="col-2"></div>
+                            <div class="col-4">
                                 <div class="row">
                                     <div class="col-2">
                                         <img class="invest_img center_dis" :src="'img/badge/'+data[index].img.badge_img">
                                     </div>
                                     <div class="col-10">
-                                        <p class="modalInvest_destail text-center">{{ data[index].badge }}</p>
+                                        <p class="modalInvest_destail text-center fz_600 ci1">{{ data[index].badge }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <img class="invest_img center_dis" src="img/modals/">
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img class="invest_img center_dis" src="img/modals/score.svg">
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="modalInvest_destail text-center fz_600 ci1">+ {{ data[index].points }} point</p>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="col-3"></div>
+                            <div class="col-2"></div>
                         </div>
                     </div>
 
