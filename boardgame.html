@@ -18,6 +18,7 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
 
     <!-- Style, Script -->
     <link rel="stylesheet" href="style.css">
@@ -231,13 +232,18 @@
                         <div class="row">
                             <div class="col-4"></div>
                             <div class="col-4">
-                                <h5 class="text-align-center">งบประมาณที่คุณใช้ไป</h5>
-                                <h5 class="text-align-center">เหลืองบในจินตนาการ</h5>
-                                <h5 class="text-align-center">badge ที่คุณได้รับ</h5>
+                                <h2 class="fz_600 center_dis">SCORE</h2>
+                                <h1 class="fz_600 center_dis">{{ points }}</h1>
+                                <br>
+                                <h5 class="fz_300 center_dis">badge ที่คุณได้รับ</h5>
                             </div>
                             <div class="col-4"></div>
                         </div>
-                        <button class="btn btn-success" onClick="window.location.href=window.location.href">เล่นอีกครั้ง</button>
+
+                        <br>
+                        <div class="text-center">
+                            <button class="text-center btn btn-success" onClick="window.location.href=window.location.href">เล่นอีกครั้ง <i class="fas fa-redo-alt"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,7 +261,7 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 230,
+            token: 2,
             tokenState: '230 Token',
             investState: '',
             popupStatus: 0,
