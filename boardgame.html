@@ -159,10 +159,19 @@
                                 <img class="sunray rotating" src="img/modals/sunray1.png">
                                 <img class="modalImg center_dis bounce" :src="'img/modals/'+data[index].img.project_img">
                             </div>
+
                             <div class="col-lg-6">
                                 <h3 class="ci1 fz_600">{{ data[index].name }}</h3>
-                                <br>
-                                <p class="ci2 fz_300 modalDetail">{{ data[index].details }}</p>
+                                <p class="ci2 fz_300 modalDetail">
+                                    <br> {{ data[index].details }}
+                                    <br><br>
+                                    <i class="fas fa-building"></i> {{ data[index].agency }}
+                                    <br>
+                                    <i class="fas fa-clock"></i> {{ data[index].date }}
+                                    <br>
+                                    <br>
+                                    <a class="ci2" :href="data[index].cr" target="_blank">อ่านเพิ่มเติม <i class="fad fa-angle-double-right"></i></a>
+                                </p>
                                 <br>
 
                                 <div class="moneyModal">
@@ -279,7 +288,7 @@
                 id: 1,
                 name: "China Sky Eye",
                 result: "ยินดีด้วย คุณได้สร้างกล้องโทรทรรศน์ China Sky Eye ทำให้ตอนนี้สามารถศึกษาและเข้าใจถึงการเกิดของจักรวาลได้",
-                details: "กล้องโทรทรรศน์ที่ใหญ่ที่สุดของโลก ใช้ตรวจจับสัญญาณคลื่นแม่เหล็กจากเศษซากของดาวฤกษ์เพื่อทำความเข้าใจการเกิดของจักรวาลรวมถึงการค้นหาสัญญาณสิ่งมีชีวิตทรงภูมิปัญญานอกโลก",
+                details: "กล้องโทรทรรศน์ที่ใหญ่ที่สุดของโลก โดยมีอีกชื่อเรียกหนึ่งว่า 'FAST' ที่ย่อมาจาก 'Five-hundred-meter Aperture Spherical radio Telescope' มีความว่องไวในการตรวจจับมากกว่ากล้องปกติถึง 2.5 เท่า และสามารถรับข้อมูลได้สูงสุด 38 กิกะไบต์ต่อวินาที ใช้ตรวจจับสัญญาณคลื่นแม่เหล็กจากเศษซากของดาวฤกษ์เพื่อทำความเข้าใจการเกิดของจักรวาลรวมถึงการค้นหาสัญญาณสิ่งมีชีวิตทรงภูมิปัญญานอกโลก โดยมีผลงานคือการค้นพบพัลซาร์ (pulsar) หรือเศษซากดาวฤกษ์ความหนาแน่นสูงทั้งหมด 102 ดวง มากกว่าจำนวนพัลซาร์ที่ทีมวิจัยในยุโรปและสหรัฐฯ ค้นพบรวมกันในช่วงเวลาเดียวกัน",
                 token: "15",
                 state: "Good",
                 points: 150,
@@ -289,7 +298,10 @@
                 img: {
                     badge_img: "b1.svg",
                     project_img: "p1.svg"
-                }
+                },
+                agency: "National Development and Reform Commission (NDRC) ประเทศจีน",
+                date: "มีนาคม 2011 – 3 กรกฎาคม 2016",
+                cr: "https://fast.bao.ac.cn"
             }, {
                 id: 2,
                 name: "Neuralink",
@@ -304,12 +316,15 @@
                 img: {
                     badge_img: "b2.svg",
                     project_img: "p2.svg"
-                }
+                },
+                agency: "Neuralink Corporation ก่อตั้งโดย Elon Musk ประเทศสหรัฐอเมริกา",
+                date: "กรกฎาคม 2016 - ปัจจุบัน",
+                cr: "https://neuralink.com/"
             }, {
                 id: 3,
                 name: "COVAX",
                 result: "ยินดีด้วย ตอนนี้คุณมีวัคซีนต้านCovid-19และยังได้มอบวัคซีนไปทั่วโลกแล้ว",
-                details: "วิจัยและพัฒนาวัคซีนต้านโควิด-19 รวมทั้งส่งมอบวัคซีน 2 พันล้านโดสให้แก่นานาประเทศทั่วโลก",
+                details: "โครงการวิจัยและพัฒนาวัคซีนต้านโควิด-19 เกิดขึ้นภายใต้ความร่วมมือของกลุ่มพันธมิตรความร่วมมือด้านนวัตกรรมเพื่อรับมือโรคระบาด (Coalition for Epidemic Preparedness Innovations: CEPI) องค์กรกาวี (Gavi, the Vaccine Alliance) และองค์การอนามัยโลก ซึ่งทำงานร่วมกับผู้ผลิตวัคซีนทั้งในประเทศพัฒนาแล้วและประเทศกำลังพัฒนา ซึ่งจัดตั้งขึ้นเพื่อสนับสนุนการเข้าถึงวัคซีนโควิด-19 ของประเทศต่างๆ ทั่วโลก โดย WHO มั่นใจว่าโครงการนี้ จะเป็นเสาหลักให้ทุกประเทศสามารถเข้าถึงวัคซีนต้านโควิด-19 ที่พัฒนาสำเร็จแล้วและผ่านการจดทะเบียนรับรองได้อย่างเท่าเทียมกัน",
                 token: "40",
                 state: "Good",
                 points: 400,
@@ -319,7 +334,10 @@
                 img: {
                     badge_img: "b3.svg",
                     project_img: "p3.svg"
-                }
+                },
+                agency: "Coalition for Epidemic Preparedness Innovations:CEPI, Gavi, the Vaccine Alliance, World Health Organization:WHO",
+                date: "24 สิงหาคม 2020 - ปัจจุบัน",
+                cr: "https://www.gavi.org/covax-facility"
             }, {
                 id: 4,
                 name: "International Space Station, ISS",
@@ -335,7 +353,10 @@
                 img: {
                     badge_img: "b4.svg",
                     project_img: "p4.svg"
-                }
+                },
+                agency: "NASA (สหรัฐอเมริกา), Roscosmos (รัสเซีย), JAXA (ญี่ปุ่น), ESA (ยุโรป) และ CSA (แคนาดา)",
+                date: "ปล่อยสู่ชั้นบรรยากาศวันที่ 20 พฤศจิกายน 1998 และยังคงโคจรรอบโลกถึงปัจจุบัน",
+                cr: "https://www.nasa.gov/mission_pages/station/main/index.html"
             }, {
                 id: 5,
                 name: "Space Shuttle Challenger (OV-099)",
@@ -350,7 +371,10 @@
                 img: {
                     badge_img: "b5.svg",
                     project_img: "p5.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA",
+                date: "เริ่มโครงการสร้าง: 1 มกราคม 1979 - เกิดเหตุ: 28 มกราคม 1986",
+                cr: "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/challenger-info.html"
             }, {
                 id: 6,
                 name: "Space Elevator",
@@ -365,7 +389,10 @@
                 img: {
                     badge_img: "b6.svg",
                     project_img: "p6.svg"
-                }
+                },
+                agency: "โครงการโดยทีมนักวิจัยของมหาวิทยาลัยชิสุโอกะ ประเทศญี่ปุ่น",
+                date: "26 สิงหาคม 2018 - ปัจจุบัน",
+                cr: "https://mainichi.jp/english/articles/20180826/p2a/00m/0na/005000c"
             }, {
                 id: 7,
                 name: "Mars orbiter mission",
@@ -380,7 +407,10 @@
                 img: {
                     badge_img: "b7.svg",
                     project_img: "p7.svg"
-                }
+                },
+                agency: "Indian Space Research Organisation (ISRO) ประเทศอินเดีย",
+                date: "5 พฤศจิกายน 2013 และยังโคจรรอบดางอังคารถึงปัจจุบัน",
+                cr: "https://www.isro.gov.in/pslv-c25-mars-orbiter-mission"
             }, {
                 id: 8,
                 name: "Glory mission",
@@ -395,7 +425,10 @@
                 img: {
                     badge_img: "b8.svg",
                     project_img: "p8.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA",
+                date: "ปล่อยตัว: 4 มีนาคม 2011 และเกิดเหตุในวันเดียวกัน",
+                cr: "https://www.nasa.gov/mission_pages/Glory/main/"
             }, {
                 id: 9,
                 name: "The MOSAiC",
@@ -410,12 +443,15 @@
                 img: {
                     badge_img: "b9.svg",
                     project_img: "p9.svg"
-                }
+                },
+                agency: "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research:AWI ประเทศเยอรมันนี",
+                date: "กันยายน 2019 - ภายในปี 2020",
+                cr: "https://mosaic-expedition.org/"
             }, {
                 id: 10,
                 name: "North American X-15",
                 result: "ยอดเยี่ยมมาก คุณได้สร้าง เครื่องบิน X15 เครื่องบินที่ถือสถิติความเร็วที่ไม่มีใครทำลายได้อีกเลยตลอด 50 ปีที่ผ่านมา",
-                details: "เครื่องบินความเร็วเหนือเสียงที่ดำเนินการโดยกองทัพสหรัฐอเมริกา โดยเป็นเครื่องบินที่เก็บบันทึกค่าความเร็วและระดับความสูงเมื่อถึงขอบอวกาศและส่งข้อมูลอันเป็นประโยชน์ที่ใช้ในการออกแบบเครื่องบินและยานอวกาศ",
+                details: "เครื่องบินความเร็วเหนือเสียงที่ดำเนินการโดยกองทัพสหรัฐอเมริกา สามารถทำความเร็วสูงสุดอยู่ที่ 4,520 ไมล์ต่อชั่วโมง (7,274 กม./ชม.) บนความสูง 102,100 ฟุต (31,120 เมตร) โดยเป็นเครื่องบินที่เก็บบันทึกค่าความเร็วและระดับความสูงเมื่อถึงขอบอวกาศและส่งข้อมูลอันเป็นประโยชน์ที่ใช้ในการออกแบบเครื่องบินและยานอวกาศ",
                 token: "10",
                 state: "Good",
                 points: 30,
@@ -425,12 +461,15 @@
                 img: {
                     badge_img: "b10.svg",
                     project_img: "p10.svg"
-                }
+                },
+                agency: "United States Air Force, National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา",
+                date: "เริ่มโครงการสร้าง: 30 ธันวาคม 1954 - ปลดประจำการ: 20 ธันวาคม 1968",
+                cr: "https://www.nasa.gov/centers/armstrong/news/FactSheets/FS-052-DFRC.html"
             }, {
                 id: 11,
                 name: "XMM-Newton",
                 result: "สุดยอด ด้วยกล้องโทรทรรศน์ที่คุณได้สร้างขึ้นทำให้สามารถส่องได้ออกนอกไปในอวกาศเพื่อเฝ้าดูความลับของจักรวาล",
-                details: "โครงการเกี่ยวกับการตรวจจับและศึกษาแหล่งกำเนิดรังสีเอกซ์บนท้องฟ้าผ่านดาวเทียมที่ติดตั้งกล้องโทรทรรศน์ในอวกาศเพราะเนื่องจากชั้นบรรยากาศของโลกปิดกั้นรังสีเอกซ์ทั้งหมด รวมถึงใช้ในการไขความลึกลับของจักรวาล",
+                details: "โครงการเกี่ยวกับการตรวจจับและศึกษาแหล่งกำเนิดรังสีเอกซ์บนท้องฟ้าผ่านดาวเทียมที่ติดตั้งกล้องโทรทรรศน์ในอวกาศเพราะเนื่องจากชั้นบรรยากาศของโลกปิดกั้นรังสีเอกซ์ทั้งหมด รวมถึงใช้ในการไขความลึกลับของจักรวาล เนื่องจากยานอวกาศมีสุขภาพที่ดีและผลตอบแทนที่สำคัญของข้อมูล XMM-Newton จึงได้รับการขยายภารกิจหลายอย่างโดยคณะกรรมการโครงการวิทยาศาสตร์ของ ESA ถึง 5 ครั้ง โดยล่าสุดได้ขยายขอบเขตสิ้นสุดภารกิจไปถึงภายในปี 2022",
                 token: "25",
                 state: "Good",
                 points: 250,
@@ -440,7 +479,10 @@
                 img: {
                     badge_img: "b11.svg",
                     project_img: "p11.svg"
-                }
+                },
+                agency: "European Space Agency สหภาพยุโรป",
+                date: "ปล่อยตัว: 10 ธันวาคม 1999 - เสร็จสิ้นภารกิจ: ปลายปี 2022",
+                cr: "https://sci.esa.int/web/xmm-newton/"
             }, {
                 id: 12,
                 name: "Hubble Space Telescope",
@@ -455,12 +497,15 @@
                 img: {
                     badge_img: "b12.svg",
                     project_img: "p12.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา, European Space Agency:ESA สหภาพยุโรป, Space Telescope Science Institute:STScl ประเทศสหรัฐอเมริกา",
+                date: "22 เมษายน 1990 - ปัจจุบัน",
+                cr: "https://www.nasa.gov/hubble"
             }, {
                 id: 13,
                 name: "Voyager",
                 result: "ยินดีด้วย คุณได้สร้างยานสำรวจอวกาศเพื่อการสำรวจระบบสุริยะ",
-                details: "ยานสำรวจอวกาศไร้คนขับเคลื่อน ประกอบด้วย Voyager1 และ Voyager2 เพื่อเก็บข้อมูลของระบบสุริยะ เป็นยานที่มีอายุยาวนานและสำรวจไกลที่สุดในประวัติศาสตร์ มวลมนุษยชาติ",
+                details: "ยานสำรวจอวกาศไร้คนขับเคลื่อน ประกอบด้วย Voyager1 และ Voyager2 เพื่อเก็บข้อมูลของระบบสุริยะและเป็นยานที่มีอายุยาวนานที่สำรวจไกลที่สุดในประวัติศาสตร์ของมวลมนุษยชาติ โดย Voyager1 มีภารกิจในการไปสำรวจดาวพฤหัสบดี, ดาวเสาร์ และดวงจันทร์ไททันของดาวเสาร์ และ Voyager2 อยู่ในภารกิจขยายเพื่อค้นหาและศึกษาพื้นที่และขอบเขตของเฮลิโอสเฟียร์ชั้นนอกและเริ่มสำรวจ สื่อระหว่างดวงดาว(Interstellar Medium:ISM)",
                 token: "30",
                 state: "Good",
                 points: 300,
@@ -470,7 +515,10 @@
                 img: {
                     badge_img: "b13.svg",
                     project_img: "p13.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา",
+                date: "ปล่อยตัวยาน: 20 กันยายน 1977 - สิ้นสุดภารกิจ: ภายในปี 2025",
+                cr: "https://www.voyager.jpl.nasa.gov"
             }, {
                 id: 14,
                 name: "Soyuz MS-10",
@@ -485,7 +533,10 @@
                 img: {
                     badge_img: "b14.svg",
                     project_img: "p14.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา, Roscosmos ประเทศรัสเซีย",
+                date: "ปล่อยตัวยาน: 11 ตุลาคม 2018 และเกิดเหตุในวันเดียวกัน",
+                cr: "https://www.nasaspaceflight.com/2018/11/soyuz-ms-10-abort-sensor-failure-booster-separation/"
             }, {
                 id: 15,
                 name: "Apollo 11",
@@ -500,7 +551,10 @@
                 img: {
                     badge_img: "b15.svg",
                     project_img: "p15.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา",
+                date: "เริ่มโครงการ: 25 พฤษภาคม 1961 - ปล่อยตัวยาน: 16 กรกฎาคม 1969",
+                cr: "https://www.nasa.gov/mission_pages/apollo/missions/apollo11.html"
             }, {
                 id: 16,
                 name: "ExoMars",
@@ -516,7 +570,10 @@
                 img: {
                     badge_img: "b16.svg",
                     project_img: "p16.svg"
-                }
+                },
+                agency: "European Space Agency:ESA สหภาพยุโรป, Russian Federal Space Agency ประเทศรัสเซีย",
+                date: "ปล่อยตัวยาน: 14 มีนาคม 2016 – ลงจอดบนดาวอังคาร: 19 ตุลาคม 2016 และยังสำรวจบนดาวอังคารถึงปัจจุบัน",
+                cr: "http://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars"
             }, {
                 id: 17,
                 name: "SpaceX",
@@ -531,7 +588,10 @@
                 img: {
                     badge_img: "b17.svg",
                     project_img: "p17.svg"
-                }
+                },
+                agency: "Tesla ประเทศสหรัฐอเมริกา",
+                date: "เริ่มโครงการ: 6 May 2002 - ปัจจุบัน",
+                cr: "https://www.spacex.com/"
             }, {
                 id: 18,
                 name: "Orbiter Vehicle Designation (OV-102)",
@@ -546,7 +606,10 @@
                 img: {
                     badge_img: "b18.svg",
                     project_img: "p18.svg"
-                }
+                },
+                agency: "National Aeronautics and Space Administration:NASA ประเทศสหรัฐอเมริกา",
+                date: "เริ่มโครงการสร้าง: 26 กรกฎาคม 1972 - เกิดเหตุ: 16 มกราคม 2003",
+                cr: "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/columbia_info.html"
             }, {
                 id: 19,
                 name: "Svalbard International Seed Vault",
@@ -561,7 +624,10 @@
                 img: {
                     badge_img: "b19.svg",
                     project_img: "p19.svg"
-                }
+                },
+                agency: "Global Crop Diversity Trust, Nordic Genetic Resource Center คณะรัฐมนตรียุโรปภาคเหนือ",
+                date: "เริ่มโครงการ: 26 กุมภาพันธ์ 2008 - ปัจจุบัน",
+                cr: "https://www.seedvault.no/"
             }, {
                 id: 20,
                 name: "Starlink",
@@ -576,7 +642,10 @@
                 img: {
                     badge_img: "b20.svg",
                     project_img: "p20.svg"
-                }
+                },
+                agency: "Tesla ประเทศสหรัฐอเมริกา",
+                date: "เริ่มโครงการในปี 2015 - ปัจจุบัน",
+                cr: "https://www.starlink.com/"
             }]
         },
         methods: {
