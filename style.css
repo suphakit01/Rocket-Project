@@ -5,10 +5,10 @@ body {
 }
 
 .center_dis {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .preloader {
@@ -433,8 +433,9 @@ a {
 .modalDetail {
     overflow: auto;
     padding: 0 5px;
-    height: 45%;
+    /* height: 45%; */
     margin-bottom: 0;
+    max-height: 25vh;
 }
 
 .moneyModal {
@@ -480,6 +481,15 @@ a {
 .bagde_Score_img {
     padding-right: 0 !important;
     width: 4.5rem !important;
+}
+
+.warningIcon {
+    position: absolute;
+    z-index: 9999;
+    max-width: 15%;
+    margin: 2.5em;
+    right: 0;
+    bottom: 0;
 }
 
 

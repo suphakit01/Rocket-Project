@@ -197,6 +197,7 @@
 
                     <div class="modal-body" v-if="popupStatus == 1">
                         <div class="modalInvest">
+                            <img class="warningIcon" src="img/modals/warning.svg" v-if="data[index].state == 'Bad'">
                             <img class="sunray rotating" src="img/modals/sunray1.png" v-if="data[index].state == 'Good'">
                             <img class="sunray rotating" src="img/modals/sunray2.png" v-else>
                             <img class="modalImg center_dis bounce" :src="'img/modals/'+data[index].img.project_img">
@@ -244,12 +245,21 @@
                             <h4 class="alert-heading fz_600">{{ badgeDetail.name }}</h4>
                             <p>{{ badgeDetail.details }}</p>
                             <hr>
-                            <p class="mb-0">งบประมาณที่ใช้ ${{ badgeDetail.budget }}</p>
+                            <p class="mb-0">
+                                <i class="fas fa-usd-circle"></i> งบประมาณที่ใช้ ${{ badgeDetail.budget }}
+                                <br>
+                                <i class="fas fa-building"></i> {{ badgeDetail.agency }}
+                                <br>
+                                <i class="fas fa-clock"></i> {{ badgeDetail.date }}
+                                <br>
+                                <br>
+                                <a class="ci2" :href="badgeDetail.cr" target="_blank">อ่านเพิ่มเติม <i class="fad fa-angle-double-right"></i></a>
+                            </p>
                         </div>
                         <div class="row w-75 mx-auto">
                             <div class="col-md-3" v-for="(badge, index) in badgeAppend">
                                 <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
-                                <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else @click="getBadgeDetail(index)" />
+                                <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else/>
                             </div>
                         </div>
 
