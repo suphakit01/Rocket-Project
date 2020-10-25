@@ -1,7 +1,7 @@
 body {
-    /* background-color: #002a3f !important; */
     font-family: 'Kodchasan', sans-serif;
     overflow-x: hidden !important;
+    background-color: #002a3f;
 }
 
 .center_dis {
@@ -97,46 +97,46 @@ body {
 
 /*------------------------------------------------------------ Border */
 
-.border0 {
+.xborder0 {
     /* around */
     border: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border1 {
+.xborder1 {
     /* top, bottom, left */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-bottom: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border2 {
+.xborder2 {
     /* top, left, right */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border3 {
+.xborder3 {
     /* left, right */
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border4 {
+.xborder4 {
     /* bottom, left, right */
     border-bottom: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border5 {
+.xborder5 {
     /* top, left, right */
     border-top: solid var(--ci1) var(--bd_size) !important;
     border-left: solid var(--ci1) var(--bd_size) !important;
     border-right: solid var(--ci1) var(--bd_size) !important;
 }
 
-.border6 {
+.xborder6 {
     /* bottom, top */
     border-bottom: solid var(--ci1) var(--bd_size) !important;
     border-top: solid var(--ci1) var(--bd_size) !important;
@@ -259,10 +259,10 @@ a {
     position: absolute;
     z-index: 999;
     top: -5em;
-    left: 1.5em;
-    width: 3.25em;
+    left: -.5em;
+    width: 100%;
     height: 10em;
-    background-image: url('img/character/c1.png');
+    background-image: url('img/character/c1.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -424,6 +424,47 @@ a {
     animation: bounce 1.25s ease-in-out infinite;
 }
 
+.jump {
+    -webkit-animation: jump 1.1s ease-in-out infinite;
+    -moz-animation: jump 1.1s ease-in-out infinite;
+    -ms-animation: jump 1.1s ease-in-out infinite;
+    -o-animation: jump 1.1s ease-in-out infinite;
+    animation: jump 1.1s ease-in-out infinite;
+}
+
+@-webkit-keyframes jump
+/* Safari and Chrome */
+
+{
+    from {
+        -webkit-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+    to {
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    }
+    40% {
+        transform: translate3d(0, 30%, 0) scale3d(.7, 1.5, 1);
+    }
+    100% {
+        transform: translate3d(0, 100%, 0) scale3d(1.5, .7, 1);
+    }
+}
+
+.jump {
+    transform-origin: 100% 100%;
+    animation: jump .5s linear alternate infinite;
+}
+
 
 /* modal image style */
 
@@ -507,4 +548,13 @@ a {
 
 .myhover:hover {
     transform: scale(1.1);
+}
+
+
+/* Bg Animation */
+
+.myBG {
+    position: fixed !important;
+    overflow: hidden;
+    overflow-y: hidden;
 }

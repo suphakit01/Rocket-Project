@@ -22,7 +22,6 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/6ddd12fa46.js" crossorigin="anonymous"></script>
 
     <!-- Style, Script -->
     <link rel="stylesheet" href="style.css">
@@ -30,10 +29,24 @@
 </head>
 
 <body>
+    <!-- <?xml version="1.0" encoding="utf-8"?>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 600" style="enable-background:new 0 0 800 600;" xml:space="preserve">
+    <g id="comets">
+
+        <line stroke="#FFD066" mask="url(#Mask1)" x1="0" y1="581" x2="737.7" y2="0.3" />
+        <line stroke="#FFD066" mask="url(#Mask2)" x1="3.5" y1="456" x2="572.5" y2="8.1" />
+        <line stroke="#FFD066" mask="url(#Mask3)" x1="381.3" y1="600" x2="800" y2="270.4" />
+
+    </g>
+    </svg> -->
+
+    <img class="myBG" src="img/background/bg1.svg">
+
 
     <!-------------------------------------------------------------------------------->
     <!--------------------------------------------------------------------- loading -->
     <section class="center_dis">
+
         <div class="preloader"></div>
 
         <div id="app">
@@ -70,7 +83,9 @@
                         <div class="pt-5 row">
                             <div class="col-3"></div>
                             <!-- <div class="col-1 chs4 border1" id="pos0" style="background-image : url('img/boards/start.svg');background-repeat: no-repeat;background-size: contain;background-position: center;"></div> -->
-                            <div class="col-1" id="pos0"></div>
+                            <div class="col-1" id="pos0">
+                                <div class="character bounce"></div>
+                            </div>
                             <div class="col-1 chs1 border1 boardImg" id="pos1" style="background-image : url('img/modals/p1.svg');"></div>
                             <div class="col-1 chs2 border1 boardImg" id="pos2" style="background-image : url('img/modals/p2.svg');">
                             </div>
@@ -154,11 +169,11 @@
                         <div class="modal-header">
                             <div v-if="popupStatus == 2"></div>
                             <button type="button" class="close" v-else-if="token <= 0 || count >= 20" @click="popupStatus = 2">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                             <button type="button" class="close" v-else data-dismiss="modal" aria-label="Close" @click="popupStatus = 0">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
 
                         <div class="modal-body" v-if="popupStatus == 0">
@@ -282,6 +297,7 @@
     </section>
 </body>
 
+
 <!----------------------------------------------------------------------------->
 <!--------------------------------------------------------------------- Vue -->
 
@@ -303,6 +319,7 @@
             badgeAppend: [],
             badgeOpenDetail: 0,
             badgeDetail: 0,
+            setEnd: false,
             data: [{
                 id: 1,
                 name: "China Sky Eye",
@@ -675,14 +692,22 @@
                 this.index = this.count - 1;
 
                 document.querySelector('#pos' + this.before).innerHTML = '';
+                document.querySelector('#pos' + this.count).innerHTML = '<div class="character bounce"></div>';
+
+
+                setTimeout(function() {
+                    $('#staticBackdrop').modal('show')
+                }, 4500);
+
+
                 if (this.count >= 20) {
-                    this.count = 20;
+                    this.count = 20 - (this.count - 20);
+                }
+                if (this.token - this.data[index].token <= 0) {
+                    this.setEnd = true;
                     this.selectResult();
                 }
-                console.log(this.count)
 
-
-                document.querySelector('#pos' + this.count).innerHTML = '<div class="character bounce"></div>';
             },
 
             // New Random Rolling Dice Function
@@ -696,16 +721,18 @@
                     setTimeout(() => {
                         var randomNumber = Math.floor(Math.random() * 6) + 1;
                         var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
-                        if (i === ROLLING_NUMBER) {
-                            $('#staticBackdrop').modal('show')
-                            this.walkAway(randomNumber)
-                        }
+                        // if (i === ROLLING_NUMBER) {
+                        //     $('#staticBackdrop').modal('show')
+                        //     this.walkAway(randomNumber)
+                        // }
                     }, 100 * i);
                 }
 
-                setTimeout(function() {
-                    $('#staticBackdrop').modal('show')
-                }, 5000);
+                this.walkAway(randomNumber)
+
+                // setTimeout(function() {
+                //     $('#staticBackdrop').modal('show')
+                // }, 10000);
 
                 // this.tokenStateFn()
             },
@@ -717,7 +744,7 @@
             },
 
             selectResult: function(status, index) {
-                if (this.count >= 20 || this.token <= 0) {
+                if (this.count >= 20 || this.token <= 0 || this.setEnd == true) {
                     this.popupStatus = 2;
                     this.loadBadge();
                 } else if (this.popupStatus != 2) {
@@ -771,6 +798,7 @@
         },
         mounted() {
             this.walkAway(0);
+
         },
     })
 
