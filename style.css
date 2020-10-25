@@ -160,6 +160,11 @@ body {
 
 /*------------------------------------------------------------ intro */
 
+section {
+    height: 100vh;
+    text-align: center;
+}
+
 .intro_img {
     max-width: 12vw;
     margin-bottom: 2vw;

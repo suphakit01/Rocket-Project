@@ -9,6 +9,10 @@
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -30,7 +34,43 @@
 </head>
 
 <body>
-    <div class="intro center_dis">
+
+    <section class="center_dis">
+        <img class="intro_img tagline" src="img/intro/i1.png" alt="">
+        <h1 class="ci2 fz_300 tagline">Dice your <span class="fz_600">Big Project</span></h1>
+    </section>
+
+    <section class="center_dis">
+        <img class="img_sh1 intro_img tagline" src="img/intro/i2.png" alt="">
+        <h1 class="ci2 fz_300 tagline">หากว่าคุณเป็น <span class="fz_600">มหาเศรษฐี</span> ที่ร่ำรวยที่สุดในโลก</h1>
+    </section>
+
+    <section class="center_dis">
+        <img class="intro_img tagline" src="img/intro/i3.png" alt="">
+        <h1 class="ci2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
+        <br>
+        <a href="boardgame.html">
+            <button class="btn btn-success myhover">เริ่มเล่น</button>
+        </a>
+    </section>
+
+    <script>
+        gsap.to(".img_sh1", {
+            scrollTrigger: {
+                trigger: '.img_sh1',
+                start: "bottom center"
+
+            },
+            x: 500
+
+        });
+    </script>
+
+
+
+
+
+    <!-- <div class="intro center_dis">
         <img class="intro_img tagline" src="img/intro/i1.png" alt="">
 
         <h1 class="ci2 fz_300 tagline">Dice your <span class="fz_600">Big Project</span></h1>
@@ -72,7 +112,7 @@
                 document.querySelector('.arrow').style.display = 'none'
             }
         });
-    </script>
+    </script> -->
 </body>
 
 
