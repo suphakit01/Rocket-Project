@@ -148,9 +148,6 @@
                             <div class="col-1 chs2 border0 boardImg" id="pos20" style="background-image : url('img/modals/p20.svg');">
                             </div>
                         </div>
-
-                        <!--------------------------------------------------------------------- row6 -->
-
                     </div>
                 </div>
             </div>
@@ -247,8 +244,10 @@
 
                         <div class="modal-body" v-if="popupStatus == 2">
                             <div class="modalInvest">
-                                <img class="sunray rotating" src="img/modals/sunray1.png">
-                                <img class="modalImg center_dis bounce" src="img/modals/ResultLabel.svg">
+                                <img class="sunray rotating" src="img/modals/sunray1.png" v-if="point > 0">
+                                <img class="sunray rotating" src="img/modals/sunray2.png" v-else>
+                                <img class="modalImg center_dis bounce" src="img/modals/ResultLabel_1.svg" v-if="point > 0">
+                                <img class="modalImg center_dis bounce" src="img/modals/ResultLabel_2.svg" v-else>
                             </div>
 
                             <div class="row">
@@ -258,11 +257,10 @@
                                     <h1 class="fz_600 center_dis fz_700">{{ point }}</h1>
                                     <br>
                                     <hr>
-                                    <h5 class="fz_300 center_dis mt-2">badge ที่คุณได้รับ</h5>
+                                    <h5 class="fz_300 center_dis mt-2">นี่คือ Badge ทั้งหมดที่คุณได้รับ</h5>
                                 </div>
                             </div>
-                            <!-- <div class="alert alert-secondary w-75 mx-auto my-3" role="alert"
-                                v-if="badgeOpenDetail == 1">
+                            <div class="alert alert-secondary w-75 mx-auto my-3" role="alert" v-if="badgeOpenDetail == 1">
                                 <h4 class="alert-heading fz_600">{{ badgeDetail.name }}</h4>
                                 <p>{{ badgeDetail.details }}</p>
                                 <hr>
@@ -277,7 +275,7 @@
                                     <a class="ci2" :href="badgeDetail.cr" target="_blank">อ่านเพิ่มเติม <i
                                             class="fad fa-angle-double-right"></i></a>
                                 </p>
-                            </div> -->
+                            </div>
                             <div class="row w-75 mx-auto">
                                 <div class="col-md-3" v-for="(badge, index) in badgeAppend" :key="index">
                                     <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
@@ -386,7 +384,6 @@
                 points: 500,
                 badge: "ห้องปฏิบัติการลอยฟ้า",
                 budget: 35000000000,
-                /*35-100 billion*/
                 currency: "billion",
                 img: {
                     badge_img: "b4.svg",
@@ -742,7 +739,7 @@
 
             },
 
-            // New Random Rolling Dice Function
+            // Random Rolling Dice Function
 
             roll: function() {
                 const ROLLING_NUMBER = 5;
@@ -814,12 +811,12 @@
                         this.badgeAppend.push(obj);
                     }
                 }
-                console.log('badgeAppend', this.badgeAppend);
+                // console.log('badgeAppend', this.badgeAppend);
 
             },
 
             getBadgeDetail: function(index) {
-                console.log(0);
+                // console.log(0);
                 this.badgeOpenDetail = 1;
                 this.badgeDetail = this.data[index];
             }
