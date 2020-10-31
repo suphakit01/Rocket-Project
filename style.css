@@ -257,7 +257,7 @@ a {
 .character {
     position: absolute;
     z-index: 999;
-    top: -5em;
+    top: -3em;
     left: -.5em;
     width: 100%;
     height: 10em;
@@ -557,3 +557,206 @@ a {
     overflow: hidden;
     overflow-y: hidden;
 }
+
+
+/*------------------------------------------------------------ dice 3d */
+
+@keyframes rotateDice {
+    30% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    100% {
+        transform: rotate3d(1, 1, 1, 720deg);
+    }
+}
+
+@keyframes rotatePerFace {
+    16% {
+        transform: rotate3d(-0.1, 0.6, -0.4, 180deg);
+    }
+    32% {
+        transform: rotate3d(-0.85, -0.42, 0.73, 180deg);
+    }
+    48% {
+        transform: rotate3d(-0.8, 0.3, -0.75, 180deg);
+    }
+    64% {
+        transform: rotate3d(0.3, 0.45, 0.9, 180deg);
+    }
+    80% {
+        transform: rotate3d(-0.16, 0.6, 0.18, 180deg);
+    }
+    100% {
+        transform: rotate3d(-0.1, 0.3, -1, 180deg);
+    }
+}
+
+@keyframes throwDice {
+    20% {
+        margin-top: -100px;
+    }
+    40% {
+        margin-top: 0px;
+    }
+    60% {
+        margin-top: -30px;
+    }
+    80% {
+        margin-top: 0px;
+    }
+    85% {
+        margin-top: -10px;
+    }
+    90% {
+        margin-top: 0px;
+    }
+    95% {
+        margin-top: -3px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+.dice3d {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transform-style: preserve-3d;
+    transform: rotate3d(0, 0.9, 0.9, 90deg);
+    transition: 0.5s cubic-bezier(0.42, 1.57, 0.62, 0.86);
+}
+
+.dice3d.rolling {
+    animation: rotatePerFace 3s cubic-bezier(0.42, 1.57, 0.62, 0.86) infinite;
+}
+
+.dice3d.throw {
+    animation: rotateDice 0.7s ease-in reverse, throwDice 1s linear;
+}
+
+.diceFace {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #f6f3f0;
+    border: 2px solid white;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+.diceFace::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    transform: translateZ(-1px);
+}
+
+.diceFace::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    background-color: #131210;
+    border-radius: 100%;
+    transform: translateZ(1px);
+}
+
+.dice3d .front {
+    transform: translateZ(50px);
+}
+
+.dice3d .front::after {
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    background-color: #f63330;
+}
+
+.dice3d .up {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.dice3d .up::after {
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px #131210;
+}
+
+.dice3d .left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.dice3d .left::after {
+    margin: -40px 0 0 -40px;
+    box-shadow: 30px 30px #131210, 60px 60px #131210;
+}
+
+.dice3d .right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.dice3d .right::after {
+    margin: -30px 0 0 -30px;
+    background-color: #f63330;
+    box-shadow: 40px 0px #f63330, 0px 40px #f63330, 40px 40px #f63330;
+}
+
+.dice3d .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.dice3d .bottom::after {
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px #131210, 52px 52px #131210, 52px 0px #131210, 0px 52px #131210;
+}
+
+.dice3d .back {
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.dice3d .back::after {
+    margin: -40px 0 0 -30px;
+    box-shadow: 40px 0px #131210, 0px 30px #131210, 40px 30px #131210, 0px 60px #131210, 40px 60px #131210;
+}
+
+.controller {
+    position: absolute;
+    width: 200px;
+    padding: 20px;
+    bottom: 0;
+    left: calc(50% - 100px);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+
+.diceWrap {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+.diceWrap::before {
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 10%;
+    top: 90%;
+    left: 15%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    filter: blur(10px);
+}
+
+*/

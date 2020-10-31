@@ -63,12 +63,28 @@
                             <h4 class="buget_value fz_600 ci1">{{ tokenState }}</h4>
                         </div>
 
-                        <div class="dice myhover mt-5">
+                        <div class=" mt-5">
                             <!-- Dice -->
+                            <a @click.prevent="roll">
+                                <div class="diceWrap">
+                                    <div class="dice3d rolling">
+                                        <div class="diceFace front "></div>
+                                        <div class="diceFace up"></div>
+                                        <div class="diceFace left"></div>
+                                        <div class="diceFace right"></div>
+                                        <div class="diceFace bottom"></div>
+                                        <div class="diceFace back"></div>
+                                    </div>
+                                </div>
+                                <!-- <img id="dice" src="img/dice/d1.svg"> -->
+                            </a>
+                        </div>
+
+                        <!-- <div class="dice myhover mt-5">
                             <a @click.prevent="roll">
                                 <img id="dice" src="img/dice/d1.svg">
                             </a>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -300,6 +316,23 @@
 <!--------------------------------------------------------------------- Vue -->
 
 <script>
+    //All values
+    let allVal = {
+        x: 0,
+        y: 0,
+        z: 0
+    };
+
+    //Rotation value on each side
+    const perFace = [
+        [-0.1, 0.3, -1],
+        [-0.1, 0.6, -0.4],
+        [-0.85, -0.42, 0.73],
+        [-0.8, 0.3, -0.75],
+        [0.3, 0.45, 0.9],
+        [-0.16, 0.6, 0.18]
+    ];
+
     var app = new Vue({
         el: '#app',
         data: {
@@ -741,25 +774,69 @@
 
             // Random Rolling Dice Function
 
+
+
+            // Random Rolling Dice Function
+
             roll: function() {
                 const ROLLING_NUMBER = 5;
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
-                var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+                // var dice = document.getElementById('dice').src = "img/dice/d" + randomNumber + ".svg";
+
+                //Set value
+                const setVal = (num) => {
+                    $(".dice3d").css("transform", `rotate3d(${perFace[num - 1]}, 180deg)`);
+                };
+
+                //Get the value
+                const getVal = () => {
+                    $.each(allVal, (i, n) => {
+                        //Get value
+                        n = Math.cos(($(`#r${i}`).val() / 100) * 3.142).toFixed(3);
+                        //Output value
+                        $(`#n${i}`).html(n);
+                        //Change the values of all Val
+                        Object.defineProperty(allVal, i, {
+                            value: n
+                        });
+                    });
+                };
+
+                //Set dice
+                const setDice = () => {
+                    getVal();
+                    $(".dice3d").css("transform", `rotate3d(${Object.values(allVal)}, 180deg)`);
+                };
+
+                setDice();
+
 
                 for (let i = 0; i <= ROLLING_NUMBER; i++) {
                     setTimeout(() => {
                         if (i < 5) {
                             var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-                            document.querySelector('#dice').src = "img/dice/d" + randomNumber2 + ".svg";
+                            $(".dice3d").removeClass("throw rolling");
+                            setVal(randomNumber2);
+                            $("#diceVal").empty();
+                            setTimeout(() => {
+                                $(".dice3d").addClass("throw");
+                            }, 50);
                         } else {
-                            document.querySelector('#dice').src = "img/dice/d" + randomNumber + ".svg";
+                            $(".dice3d").removeClass("throw rolling");
+                            setVal(randomNumber);
+                            $("#diceVal").empty();
+                            setTimeout(() => {
+                                $(".dice3d").addClass("throw");
+                            }, 50);
                         }
                     }, 100 * i);
                 }
 
+
+
                 setTimeout(() => {
                     this.walkAway(randomNumber)
-                }, 500);
+                }, 2000);
             },
 
             // Calculation token Function
