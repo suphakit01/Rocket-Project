@@ -29,16 +29,6 @@
 </head>
 
 <body>
-    <!-- <?xml version="1.0" encoding="utf-8"?>
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 600" style="enable-background:new 0 0 800 600;" xml:space="preserve">
-    <g id="comets">
-
-        <line stroke="#FFD066" mask="url(#Mask1)" x1="0" y1="581" x2="737.7" y2="0.3" />
-        <line stroke="#FFD066" mask="url(#Mask2)" x1="3.5" y1="456" x2="572.5" y2="8.1" />
-        <line stroke="#FFD066" mask="url(#Mask3)" x1="381.3" y1="600" x2="800" y2="270.4" />
-
-    </g>
-    </svg> -->
 
     <img class="myBG" src="img/background/bg1.svg">
 
@@ -63,7 +53,7 @@
                             <h4 class="buget_value fz_600 ci1">{{ tokenState }}</h4>
                         </div>
 
-                        <div class=" mt-5">
+                        <div class="pointer">
                             <!-- Dice -->
                             <a @click.prevent="roll">
                                 <div class="diceWrap">
@@ -259,7 +249,7 @@
                         <!-- Result modal -->
 
                         <div class="modal-body" v-if="popupStatus == 2">
-                            <div class="modalInvest">
+                            <div class="modaulResult">
                                 <img class="sunray rotating" src="img/modals/sunray1.png" v-if="point > 0">
                                 <img class="sunray rotating" src="img/modals/sunray2.png" v-else>
                                 <img class="modalImg center_dis bounce" src="img/modals/ResultLabel_1.svg" v-if="point > 0">
@@ -267,14 +257,17 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-4"></div>
-                                <div class="col-4">
-                                    <h3 class="fz_600 center_dis">SCORE</h3>
-                                    <h1 class="fz_600 center_dis fz_700">{{ point }}</h1>
+                                <div class="col-2"></div>
+                                <div class="col-8">
+                                    <h5 class="fz_600 center_dis">YOUR SCORE</h5>
+                                    <h1 class="myScore fz_600 center_dis fz_700">{{ point }}</h1>
                                     <br>
                                     <hr>
                                     <h5 class="fz_300 center_dis mt-2">นี่คือ Badge ทั้งหมดที่คุณได้รับ</h5>
+                                    <br>
                                 </div>
+                                <div class="col-2"></div>
+
                             </div>
                             <div class="alert alert-secondary w-75 mx-auto my-3" role="alert" v-if="badgeOpenDetail == 1">
                                 <h4 class="alert-heading fz_600">{{ badgeDetail.name }}</h4>
@@ -341,7 +334,7 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 230,
+            token: 20,
             tokenState: '230 Token',
             investState: '',
             popupStatus: 0,

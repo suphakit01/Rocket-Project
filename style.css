@@ -559,6 +559,19 @@ a {
 }
 
 
+/*------------------------------------------------------------ Modaul Result */
+
+.myScore {
+    font-size: 10vh;
+}
+
+.modaulResult {
+    width: 40% !important;
+    position: inherit;
+    margin: 0 auto;
+}
+
+
 /*------------------------------------------------------------ dice 3d */
 
 @keyframes rotateDice {
@@ -757,4 +770,11 @@ a {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 100%;
     filter: blur(10px);
+}
+
+
+/*------------------------------------------------------------ Custom Cursor */
+
+.pointer {
+    cursor: pointer;
 }
