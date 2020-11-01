@@ -178,6 +178,24 @@ body {
 
 /*------------------------------------------------------------ Board Game */
 
+.coin {
+    width: 4em;
+    animation: spin 3s cubic-bezier(0.3, 2, 0.4, 0.8) infinite both;
+    transform-style: preserve-3d;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0%,
+    10% {
+        transform: rotate(-10deg) perspective(400px);
+    }
+    90%,
+    100% {
+        transform: rotate(-10deg) perspective(400px) rotateY(180deg);
+    }
+}
+
 .boardImg {
     background-repeat: no-repeat;
     background-size: contain;
@@ -191,10 +209,6 @@ body {
 .inner_img {
     width: 100%;
     height: 100%;
-}
-
-.buget_img {
-    width: 5em;
 }
 
 .tokenState {
