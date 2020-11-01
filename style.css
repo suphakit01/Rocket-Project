@@ -1,7 +1,6 @@
 body {
     font-family: 'Kodchasan', sans-serif;
     overflow-x: hidden !important;
-    background-color: #002a3f;
 }
 
 .center_dis {
@@ -241,17 +240,24 @@ a {
     height: 6em !important;
 }
 
-.character {
+
+/* .character {
     position: absolute;
     z-index: 999;
     top: -3em;
     left: -.5em;
     width: 100%;
     height: 10em;
-    /* background-image: url('img/character/c1.svg'); */
+    background-image: url('img/character/c1.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+} */
+
+.character {
+    z-index: 999;
+    position: absolute;
+    top: -3em !important;
 }
 
 
@@ -536,13 +542,10 @@ a {
     transform: scale(1.1);
 }
 
-
-/* Bg Animation */
-
-.myBG {
-    position: fixed !important;
-    overflow: hidden;
-    overflow-y: hidden;
+.myBg {
+    background: url(img/background/bg1.svg) center/cover no-repeat;
+    height: 100vh;
+    width: 100vw;
 }
 
 
@@ -620,6 +623,7 @@ a {
 
 .dice3d {
     position: absolute;
+    z-index: 999;
     width: 100px;
     height: 100px;
     top: calc(50% - 50px);
@@ -995,6 +999,7 @@ symbol {
 
 svg {
     position: absolute;
+    z-index: 1;
     max-width: 100vw;
     max-height: 100vh;
     margin-top: 50vh;
