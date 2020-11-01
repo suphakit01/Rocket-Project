@@ -34,89 +34,31 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
 
+
 </head>
 
 <body>
-
-    <!-- <section class="center_dis">
-        <img class="intro_img tagline" src="img/intro/i1.png" alt="">
-        <h1 class="ci2 fz_300 tagline">Dice your <span class="fz_600">Big Project</span></h1>
-    </section>
-
-    <section class="center_dis">
-        <img class="img_sh1 intro_img tagline" src="img/intro/i2.png" alt="">
-        <h1 class="ci2 fz_300 tagline">หากว่าคุณเป็น <span class="fz_600">มหาเศรษฐี</span> ที่ร่ำรวยที่สุดในโลก</h1>
-    </section>
-
-    <section class="center_dis">
-        <img class="intro_img tagline" src="img/intro/i3.png" alt="">
-        <h1 class="ci2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
-        <br>
-        <a href="boardgame.html">
-            <button class="btn btn-success myhover">เริ่มเล่น</button>
-        </a>
-    </section>
-
-    <script>
-        gsap.to(".img_sh1", {
-            scrollTrigger: {
-                trigger: '.img_sh1',
-                start: "bottom center"
-
-            },
-            x: 500
-
-        });
-    </script> -->
-
-
-
-
-
-    <div class="intro center_dis">
-        <img class="intro_img tagline" src="img/intro/i1.png" alt="">
-
-        <h1 class="ci2 fz_300 tagline">Dice your <span class="fz_600">Big Project</span></h1>
+    <div class="container center_dis" style="height: 100vh;">
+        <div class="row">
+            <div class="col-md-7">
+                <img class="introImg bounce" src="/img/intro/i1.svg">
+                <img class="sunray rotating" src="img/modals/sunray1.png">
+            </div>
+            <div class="col-md-5 center_dis">
+                <h4 class="ci1 fz_400">
+                    Dice your
+                </h4>
+                <h1 class="ci1 fz_700">
+                    Big Project
+                </h1>
+                <br>
+                <a href="boardgame.html">
+                    <button class="fz_700 btn neumorphic-btn green">เริ่มเกม</button>
+                </a>
+            </div>
+        </div>
 
     </div>
-    <div class="intro center_dis">
-        <img class="intro_img tagline" src="img/intro/i2.png" alt="">
-        <h1 class="ci2 fz_300 tagline">หากว่าคุณเป็น <span class="fz_600">มหาเศรษฐี</span> ที่ร่ำรวยที่สุดในโลก</h1>
-    </div>
-    <div class="intro center_dis">
-        <img class="intro_img tagline" src="img/intro/i3.png" alt="">
-        <h1 class="ci2 fz_300 tagline">จะสร้าง <span class="fz_600">Big Project</span> อะไรได้บ้างนะ</h1>
-        <br>
-        <a href="boardgame.html">
-            <button class="btn btn-success myhover">เริ่มเล่น</button>
-        </a>
-    </div>
-
-    <div>
-
-    </div>
-
-    <div class="arrow bounceIntro">
-        <a><i class="fas fa-angle-down punchline"></i></a>
-    </div>
-
-
-    <script>
-        ScrollReveal().reveal('.headline');
-        ScrollReveal().reveal('.tagline', {
-            delay: 500
-        });
-        ScrollReveal().reveal('.punchline', {
-            delay: 1000
-        });
-
-        $(window).scroll(function() {
-            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                document.querySelector('.arrow').style.display = 'none'
-            }
-        });
-    </script>
 </body>
-
 
 </html>

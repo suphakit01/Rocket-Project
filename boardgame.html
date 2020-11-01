@@ -205,6 +205,7 @@
 
                                 <div class="col-lg-6">
                                     <h3 class="ci1 fz_600">{{ data[index].name }}</h3>
+                                    <hr>
                                     <p class="ci2 fz_300 modalDetail">
                                         <br> {{ data[index].details }}
                                         <br><br>
@@ -223,9 +224,8 @@
                                         <img class="buget_Modal_img" src="img/boards/coin.svg">
                                         <h5 class="buget_Modal_value fz_600 ci2">{{ data[index].token }}</h5>
                                     </div>
-
-                                    <button class="btn btn-success" @click="selectResult(true, index)">ลงทุน</button>
-                                    <button class="btn btn-danger" data-dismiss="modal" aria-label="Close" aria-hidden="true">ไม่ลงทุน</button>
+                                    <button class="btn neumorphic-btn green" @click="selectResult(true, index)"><i class="fas fa-sack-dollar"></i> ลงทุน</button>
+                                    <button class="btn neumorphic-btn red" data-dismiss="modal" aria-label="Close" aria-hidden="true"><i class="fas fa-ban"></i> ไม่ลงทุน</button>
                                     <br><br>
                                 </div>
                             </div>
@@ -313,10 +313,10 @@
                                 </div>
                             </div>
 
-                            <br>
+                            <br><br>
                             <div class="text-center">
-                                <button class="text-center btn btn-success mb-5" onClick="window.location.href=window.location.href">เล่นอีกครั้ง <i
-                                        class="fas fa-redo-alt"></i></button>
+                                <button class="btn neumorphic-btn green mb-5" onClick="window.location.href=window.location.href"><i
+                                    class="fas fa-redo-alt"></i> เล่นอีกครั้ง</button>
                             </div>
                         </div>
                     </div>
@@ -356,7 +356,7 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 230,
+            token: 2,
             tokenState: '230',
             investState: '',
             popupStatus: 0,

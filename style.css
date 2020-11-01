@@ -31,10 +31,6 @@ body {
     --ci2: #666666 !important;
     --ci3: #999999 !important;
     --ci4: #cfcfcf !important;
-    /* --chs1: #FFCC66 !important;
-    --chs2: #EA7B6C !important;
-    --chs3: #66B2D8 !important;
-    --chs4: #61AF61 !important; */
     --bg1: #FFFFFF !important;
     --bg2: #EFEFEF !important;
     --bg3: rgba(51, 51, 51, 0.45) !important;
@@ -148,55 +144,35 @@ body {
 
 /*------------------------------------------------------------ intro */
 
-section {
-    height: 100vh;
+.introImg {
+    position: absolute;
+    z-index: 9;
 }
 
-.intro_img {
-    max-width: 12vw;
-    margin-bottom: 2vw;
+
+/*------------------------------------------------------------ Button */
+
+.neumorphic-btn {
+    border: none;
+    padding: 5px 20px;
+    border-radius: 40px;
+    color: #6d7587;
+    background-color: var(--back-color);
+    /* box-shadow: 3px 4px 6px 1px rgba(0, 0, 0, 0.3), -2px -2px 4px 2px rgba(255, 255, 255, 1), inset -14px -14px 20px -10px rgba(0, 0, 0, 0.1), inset 14px 14px 20px -10px rgba(255, 255, 255, 0.5) !important; */
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0.2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0) !important;
+    transition: box-shadow 0.25s ease !important;
 }
 
-.intro {
-    /* width: 100vw; */
-    height: 98vh;
+.neumorphic-btn:active {
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, 0), inset 7px 7px 15px rgba(55, 84, 170, 0.15), inset -7px -7px 20px rgba(255, 255, 255, 1), 0px 0px 4px rgba(255, 255, 255, 0.2) !important;
 }
 
-.arrow {
-    text-align: center;
-    font-size: 4vw;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: var(--ci3);
-    text-align: center;
+.green:hover {
+    color: #28a745 !important;
 }
 
-a {
-    text-decoration: none;
-}
-
-.bounceIntro {
-    -moz-animation: bounceIntro 2s infinite;
-    -webkit-animation: bounceIntro 2s infinite;
-    animation: bounceIntro 2s infinite;
-}
-
-@keyframes bounceIntro {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
+.red:hover {
+    color: #dc3545 !important;
 }
 
 
