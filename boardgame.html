@@ -308,8 +308,8 @@
                             </div>
                             <div class="row w-75 mx-auto">
                                 <div class="col-md-3" v-for="(badge, index) in badgeAppend" :key="index">
-                                    <img class="w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
-                                    <img class="w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else />
+                                    <img class="pointer w-100 myhover" :src="badge.badge_img" v-if="badge.status == true" @click="getBadgeDetail(index)" />
+                                    <img class="pointer w-100 myhover" style="filter: grayscale(100%);" :src="badge.badge_img" v-else />
                                 </div>
                             </div>
 
@@ -356,7 +356,7 @@
             count: 0,
             index: 0,
             dice: 0,
-            token: 230,
+            token: 50,
             tokenState: '230',
             investState: '',
             popupStatus: 0,
