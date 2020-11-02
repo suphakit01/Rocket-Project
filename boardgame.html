@@ -167,6 +167,26 @@
                 </div>
             </div>
 
+            <!-------------------------------------------------------------------------------->
+            <!--------------------------------------------------------------------- Alert -->
+
+            <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-bottom: 0;padding-top: 0.5em;">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body center_dis">
+                            <img class="alertlImg center_dis bounce" src="img/modals/alert.svg">
+                            <p class="alertTxt">โอ๊ะโอ!!! คุณได้ลงทุนในโครงการ <b>{{ data[index].name }}</b> ไปแล้วนะ!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <!------------------------------------------------------------------------------>
             <!--------------------------------------------------------------------- Modal -->
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -331,6 +351,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+<!-- Axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js" integrity="sha512-bYkaBWaFtfPIMYt9+CX/4DWgfrjcHinjerNYxQmQx1VM76eUsPPKZa5zWV8KksVkBF/DaHSADCwil2J5Uq2ctA==" crossorigin="anonymous"></script>
 
 <!----------------------------------------------------------------------------->
 <!--------------------------------------------------------------------- Vue -->
@@ -373,6 +396,7 @@
             badgeOpenDetail: 0,
             badgeDetail: 0,
             setEnd: false,
+            // data: [],
             data: [{
                 id: 1,
                 name: "China Sky Eye",
@@ -761,7 +785,10 @@
                         }, 1000);
                     } else if (this.count > 0) {
                         setTimeout(function() {
-                            alert('คุณเคยลงทุนไปแล้ว')
+                            // document.querySelector('#alt').innerHTML = '<div class="center_dis"><div class="alert w-50 alert-light alert-dismissible fade show" role="alert"><h4 class="alert-heading fz_700">โอ๊ะโอววว!</h4><p>คุณได้ลงทุนในโครงการ <b>{{ data[index].name }}</b > ไปแล้ว</p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
+                            // $('.alert').alert('show')
+                            $('#alertModal').modal('show')
+                                // alert('คุณเคยลงทุนไปแล้ว')
                         }, 1000);
                     }
                 } else {
@@ -782,7 +809,9 @@
                         }, 1000);
                     } else {
                         setTimeout(function() {
-                            alert('คุณเคยลงทุนไปแล้ว')
+                            // document.querySelector('#alt').innerHTML = '<div class="center_dis"><div class="alert w-50 alert-light alert-dismissible fade show" role="alert"><h4 class="alert-heading fz_700">โอ๊ะโอววว!</h4><p>คุณได้ลงทุนในโครงการ <b>{{ data[index].name }}</b > ไปแล้ว</p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
+                            // $('.alert').alert('show')
+                            $('#alertModal').modal('show')
                         }, 1000);
                     }
                 }
@@ -897,17 +926,18 @@
                         this.badgeAppend.push(obj);
                     }
                 }
-                // console.log('badgeAppend', this.badgeAppend);
 
             },
 
             getBadgeDetail: function(index) {
-                // console.log(0);
                 this.badgeOpenDetail = 1;
                 this.badgeDetail = this.data[index];
             }
         },
         mounted() {
+            // axios.get('project.json').then(response => {
+            //     this.data = response.data;
+            // })
             this.walkAway(0);
 
         },

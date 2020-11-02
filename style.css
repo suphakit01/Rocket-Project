@@ -230,20 +230,6 @@ body {
     height: 6em !important;
 }
 
-
-/* .character {
-    position: absolute;
-    z-index: 999;
-    top: -3em;
-    left: -.5em;
-    width: 100%;
-    height: 10em;
-    background-image: url('img/character/c1.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-} */
-
 .character {
     z-index: 999;
     position: absolute;
@@ -485,6 +471,20 @@ body {
 .invest_img {
     width: 6rem !important;
     margin: 0 auto;
+}
+
+
+/* Alert Style */
+
+.alertlImg {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.alertTxt {
+    margin: 0 5em 2em 5em;
+    text-align: center;
 }
 
 
