@@ -396,7 +396,6 @@
             badgeOpenDetail: 0,
             badgeDetail: 0,
             setEnd: false,
-            // data: [],
             data: [{
                 id: 1,
                 name: "China Sky Eye",
@@ -677,7 +676,6 @@
                 points: 250,
                 badge: "ผู้พิชิตดาวอังคาร",
                 budget: 1300000000,
-                /*>1.3 Billion*/
                 currency: "billion",
                 img: {
                     badge_img: "b16.svg",
@@ -785,10 +783,7 @@
                         }, 1000);
                     } else if (this.count > 0) {
                         setTimeout(function() {
-                            // document.querySelector('#alt').innerHTML = '<div class="center_dis"><div class="alert w-50 alert-light alert-dismissible fade show" role="alert"><h4 class="alert-heading fz_700">โอ๊ะโอววว!</h4><p>คุณได้ลงทุนในโครงการ <b>{{ data[index].name }}</b > ไปแล้ว</p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-                            // $('.alert').alert('show')
                             $('#alertModal').modal('show')
-                                // alert('คุณเคยลงทุนไปแล้ว')
                         }, 1000);
                     }
                 } else {
@@ -809,8 +804,6 @@
                         }, 1000);
                     } else {
                         setTimeout(function() {
-                            // document.querySelector('#alt').innerHTML = '<div class="center_dis"><div class="alert w-50 alert-light alert-dismissible fade show" role="alert"><h4 class="alert-heading fz_700">โอ๊ะโอววว!</h4><p>คุณได้ลงทุนในโครงการ <b>{{ data[index].name }}</b > ไปแล้ว</p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-                            // $('.alert').alert('show')
                             $('#alertModal').modal('show')
                         }, 1000);
                     }
@@ -935,9 +928,6 @@
             }
         },
         mounted() {
-            // axios.get('project.json').then(response => {
-            //     this.data = response.data;
-            // })
             this.walkAway(0);
 
         },
@@ -948,7 +938,6 @@
         document.querySelector(".preloader").remove();
     }
     setTimeout(fadeOut, 1500);
-    // setTimeout(fadeOut, 100);
 </script>
 
 
