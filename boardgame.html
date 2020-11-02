@@ -774,7 +774,7 @@
                         this.index = this.count - 1;
                     }
                     document.querySelector('#pos' + this.before).innerHTML = '';
-                    if (this.count >= 8 && this.count <= 16) {
+                    if ((this.count >= 8 && this.count <= 16) && this.returnWalk == "go") {
                         document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c2.svg" class="character bounce">';
                     } else {
                         document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c1.svg" class="character bounce">';
@@ -802,7 +802,7 @@
                         this.index = this.count - 1;
                     }
                     document.querySelector('#pos' + this.before).innerHTML = '';
-                    if (this.count >= 8 && this.count <= 16) {
+                    if ((this.count >= 8 && this.count <= 16) && this.returnWalk == "go") {
                         document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c2.svg" class="character bounce">';
                     } else {
                         document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c1.svg" class="character bounce">';
