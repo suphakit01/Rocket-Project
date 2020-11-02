@@ -196,7 +196,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <div v-if="popupStatus == 2"></div>
-                            <button type="button" class="close" v-else-if="token <= 0 || count >= 20" @click="popupStatus = 2">
+                            <button type="button" class="close" v-else-if="token <= 0" @click="popupStatus = 2">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <button type="button" class="close" v-else data-dismiss="modal" aria-label="Close" @click="popupStatus = 0">
@@ -763,7 +763,7 @@
             walkAway: function(add) {
                 if (this.returnWalk == "go") {
 
-                    if (this.count + add > 20) {
+                    if (this.count + add >= 20) {
                         this.returnWalk = "back";
                         this.before = this.count;
                         this.count = 20 - (this.count + add - 20);
@@ -786,9 +786,11 @@
                             $('#alertModal').modal('show')
                         }, 1000);
                     }
-                } else {
+                } else if (this.returnWalk == "back") {
                     if (this.count - add <= 0) {
                         this.returnWalk = "go";
+                        this.before = this.count;
+                        this.count = 2 + (add - this.count);
                     } else {
                         this.before = this.count;
                         this.count -= add;
@@ -815,6 +817,7 @@
 
             roll: function() {
                 const ROLLING_NUMBER = 5;
+                // var randomNumber = 6;
                 var randomNumber = Math.floor(Math.random() * 6) + 1;
 
                 //Set value
@@ -895,6 +898,8 @@
                             this.badgeResult.push(this.data[index].img.badge_img);
                             this.checkPoint.push(index);
                         } else {
+                            this.checkPoint.push(index);
+                            this.badgeResult.push(this.data[index].img.badge_img);
                             this.point -= this.data[index].points;
                         }
                     } else {
