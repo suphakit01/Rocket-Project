@@ -1,5 +1,5 @@
-# Rocket-Project-Multimedia-Programming
-text here
+# Rocket-Project
+* Multimedia Programming 2020 | IT KMITL.
 
 ## Topic
 * เว็บไซต์แบบ Interactive ที่มีเนื้อหาเกี่ยวกับโครงการทางวิทยาศาสตร์หรือเทคโนโลยีที่สำคัญของโลกอันเป็นองค์ความรู้ของมนุษยชาติโดยนำเสนอในรูปแบบของ เกมกระดาน
