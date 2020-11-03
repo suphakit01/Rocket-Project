@@ -2,14 +2,16 @@
 text here
 
 ## Topic
-* topic details here
+* เว็บไซต์แบบ Interactive ที่มีเนื้อหาเกี่ยวกับโครงการทางวิทยาศาสตร์หรือเทคโนโลยีที่สำคัญของโลกอันเป็นองค์ความรู้ของมนุษยชาติโดยนำเสนอในรูปแบบของ เกมกระดาน
 
 ## Presentation
-* [Website](https://suphakit01.github.io/BTS-since1999/)
+* [Website](https://suphakit01.github.io/Rocket-Project/)
 
 ## Built With
 * HTML5
 * JavaScript
+* Vue.js
+* Bootstrap 4
 
 ## Authors
 * Suphakit  Nachom        61070250 - [suphakit01](https://github.com/suphakit01)
