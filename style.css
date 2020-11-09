@@ -582,7 +582,19 @@ body {
     background: url(img/background/bg1.svg) center/cover no-repeat;
     height: 100vh;
     width: 100vw;
+    /* animation: zoom 30s infinite;
+    -webkit-animation: zoom 5s; */
 }
+
+
+/* @keyframes zoom {
+    0% {
+        background-size: 105%;
+    }
+    100% {
+        background-size: 100%;
+    }
+} */
 
 
 /*------------------------------------------------------------ Modaul Result */
