@@ -44,7 +44,7 @@
 
     <!-------------------------------------------------------------------------------->
     <!--------------------------------------------------------------------- loading -->
-    <section class="center_dis">
+    <section class="center_dis" style="width: 100vw;">
         <div class="preloader"></div>
 
         <!------------------------------------------------------------------------------>
@@ -762,64 +762,38 @@
         methods: {
             // walk function
             walkAway: function(add) {
-                if (this.returnWalk == "go") {
+                if ((this.count + add) > 20) {
+                    this.before = this.count;
+                    this.count = (this.count + add) - 20;
+                    this.index = this.count - 1;
+                } else {
+                    this.before = this.count;
+                    this.count += add;
+                    this.index = this.count - 1;
+                }
 
-                    if (this.count + add >= 20) {
-                        this.returnWalk = "back";
-                        this.before = this.count;
-                        this.count = 20 - ((this.count + add) - 20);
-                        this.index = this.count - 1;
-                    } else {
-                        this.before = this.count;
-                        this.count += add;
-                        this.index = this.count - 1;
+                document.querySelector('#pos' + this.before).innerHTML = '<img src="img/character/c1.svg" class="character bounce fade-out">';
+                document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c1.svg" class="character bounce fade-in">';
+
+                setTimeout(() => {
+                    if (this.count >= 1) {
+                        document.querySelector('#pos' + this.before).innerHTML = '';
                     }
-                    document.querySelector('#pos' + this.before).innerHTML = '';
-                    if ((this.count >= 8 && this.count <= 16) && this.returnWalk == "go") {
-                        document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c2.svg" class="character bounce">';
-                    } else {
-                        document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c1.svg" class="character bounce">';
+                }, 1200);
 
-                    }
-
+                setTimeout(() => {
                     if (this.count > 0 && !this.checkPoint.includes(this.index)) {
                         console.log(this.checkPoint.includes(this.index))
                         setTimeout(function() {
-                            $('#staticBackdrop').modal('show')
+                            $('#staticBackdrop').modal('show');
                         }, 1000);
                     } else if (this.count > 0) {
                         setTimeout(function() {
-                            $('#alertModal').modal('show')
+                            $('#alertModal').modal('show');
                         }, 1000);
                     }
-                } else if (this.returnWalk == "back") {
-                    if (this.count - add <= 0) {
-                        this.returnWalk = "go";
-                        this.before = this.count;
-                        this.count = add - this.count;
-                    } else {
-                        this.before = this.count;
-                        this.count -= add;
-                        this.index = this.count - 1;
-                    }
-                    document.querySelector('#pos' + this.before).innerHTML = '';
-                    if ((this.count >= 8 && this.count <= 16) && this.returnWalk == "go") {
-                        document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c2.svg" class="character bounce">';
-                    } else {
-                        document.querySelector('#pos' + this.count).innerHTML = '<img src="img/character/c1.svg" class="character bounce">';
-                    }
+                }, 1000);
 
-                    if (this.count > 0 && !this.checkPoint.includes(this.index)) {
-                        console.log(this.checkPoint.includes(this.index))
-                        setTimeout(function() {
-                            $('#staticBackdrop').modal('show')
-                        }, 1000);
-                    } else {
-                        setTimeout(function() {
-                            $('#alertModal').modal('show')
-                        }, 1000);
-                    }
-                }
 
             },
 
@@ -827,8 +801,8 @@
 
             roll: function() {
                 const ROLLING_NUMBER = 5;
-                // var randomNumber = 19;
-                var randomNumber = Math.floor(Math.random() * 6) + 1;
+                var randomNumber = 5;
+                // var randomNumber = Math.floor(Math.random() * 6) + 1;
 
                 //Set value
                 const setVal = (num) => {
@@ -880,7 +854,7 @@
 
                 setTimeout(() => {
                     this.walkAway(randomNumber)
-                }, 2000);
+                }, 2500);
             },
 
             // Calculation token Function

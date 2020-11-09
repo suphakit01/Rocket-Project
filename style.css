@@ -23,6 +23,45 @@ body {
     background-position: center;
 }
 
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity !important;
+    animation-iteration-count: 1 !important;
+    animation-timing-function: ease-in !important;
+    animation-duration: 1.2s !important;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.fade-out {
+    opacity: 1;
+    animation-name: fadeOutOpacity !important;
+    animation-iteration-count: 1 !important;
+    animation-timing-function: ease-out !important;
+    animation-duration: 1.2s !important;
+}
+
+@keyframes fadeOutOpacity {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
 
 /*------------------------------------------------------------ color */
 
@@ -241,15 +280,6 @@ body {
     align-items: center;
 }
 
-
-/* .dice_img {
-    width: 150px;
-} */
-
-.col-1 {
-    height: 6em !important;
-}
-
 .character {
     z-index: 999;
     position: absolute;
@@ -260,8 +290,8 @@ body {
 /*------------------------------------------------------------ Dice */
 
 .col-1 {
+    height: 6em !important;
     width: 7rem;
-    height: 7rem;
 }
 
 
