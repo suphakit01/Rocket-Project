@@ -796,7 +796,7 @@
                     if (this.count - add <= 0) {
                         this.returnWalk = "go";
                         this.before = this.count;
-                        this.count = 2 + (add - this.count);
+                        this.count = add - this.count;
                     } else {
                         this.before = this.count;
                         this.count -= add;
@@ -899,6 +899,7 @@
                     if (status == true) {
                         // If Click button 'Invest'
                         this.investState = this.data[index].result;
+                        document.querySelector('#pos' + this.count).style.backgroundImage = "url('img/modals/invested/p" + this.count + ".svg')";
                         // Calc Token Total
                         this.token = this.token - this.data[index].token;
                         this.tokenState = this.token;
